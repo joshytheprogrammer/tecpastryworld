@@ -8,7 +8,7 @@ export default {
       let w = window.innerWidth
 
       // If statement to check width
-      w >= 728 ? state.isMobile = false : state.isMobile = true
+      w >= 768 ? state.isMobile = false : state.isMobile = true
       
       return
     }
