@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <NuxtLink to="/" class="logo" title="Go home">tec</NuxtLink>
+    <h2 class="logo" title="Go home">tec</h2>
     <Bar />
     <Links />
   </nav>
@@ -12,15 +12,24 @@ import Links from "./Helpers/Desktop/NavLinks.vue"
 export default {
   components: {
     Bar,
+    Links
   }
 }
 </script>
 
 <style lang="scss" scoped>
 nav {
+  background: $primary;
+  width: 100%;
+  padding: 0 1rem;
+  height: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   .logo {
     @include logo-styles;
+    color: $light;
   }
 }
 </style>
