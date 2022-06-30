@@ -29,6 +29,6 @@ export default {
 
 <style lang="scss" scoped>
 .menu_icons {
-  padding: 0 12px;
+  padding-left: 12px;
 }
 </style>

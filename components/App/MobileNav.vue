@@ -49,7 +49,7 @@ nav {
     align-items: center;
 
     .search_icon {
-      padding: 0 12px;
+      padding-left: 12px;
     }
   }
 }
