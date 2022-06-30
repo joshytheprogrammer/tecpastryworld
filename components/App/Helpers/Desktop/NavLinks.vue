@@ -2,10 +2,7 @@
   <div class="links">
     <NuxtLink to="/">Home</NuxtLink>
     <NuxtLink to="/shop">Shop</NuxtLink>
-    <div class="cart" @click="$router.push('/shop')">
-      <span>0</span>
-      <Icon icon="akar-icons:cart" width="24" height="24" />
-    </div>
+    
   </div>
 </template>
 

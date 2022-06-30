@@ -1,4 +1,4 @@
-import mobile from "./mobile"
+import mobile from "./mobile/index"
 
 export const state = () => ({
     
