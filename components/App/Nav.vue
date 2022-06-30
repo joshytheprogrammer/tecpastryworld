@@ -29,7 +29,6 @@ nav {
 
   .logo {
     @include logo-styles;
-    cursor: pointer;
     color: $light;
   }
 }

@@ -5,6 +5,8 @@
     weight: 600;
   }
   text-transform: uppercase;
+  cursor: pointer;
+  user-select: none;
 }
 
 @mixin search-text {
