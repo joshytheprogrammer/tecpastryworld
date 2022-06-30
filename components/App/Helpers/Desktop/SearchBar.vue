@@ -1,6 +1,6 @@
 <template>
   <div class="bar">
-    <input type="text">
+    <input type="text" v-model="search_term">
     <button><Icon icon="akar-icons:search" width="24" height="24" /></button>
   </div>
 </template>
@@ -10,6 +10,11 @@ import {Icon} from '@iconify/vue2'
 export default {
   components: {
     Icon
+  },
+  data(){
+    return {
+      search_term: this.$route.query.k,
+    }
   }
 }
 </script>

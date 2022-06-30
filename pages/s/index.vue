@@ -1,5 +1,7 @@
 <template>
-  
+  <div>
+    {{$route.query.k}}
+  </div>
 </template>
 
 <script>
