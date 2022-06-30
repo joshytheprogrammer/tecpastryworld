@@ -2,13 +2,15 @@
   <nav>
     <h2 class="logo">tec</h2>
     <div class="actions">
-      <!-- Search -->
-
-      <!-- Cart -->
+      <!-- Search Icon with other functions-->
+      <div class="search_icon">
+        <Icon icon="akar-icons:search" width="24" height="24" />
+      </div>
+      <!-- Cart Icon-->
       <CartIcon />
 
-      <!-- Menu -->
-      <div class="menuIcons" @click="toggleMenu">
+      <!-- Menu Icon-->
+      <div class="menu_icons" @click="toggleMenu">
         <Icon icon="eva:menu-arrow-fill" width="24" height="24" v-if="!isOpen" />
 
         <Icon icon="ep:circle-close" width="24" height="24" v-else />
@@ -60,7 +62,11 @@ nav {
     justify-content: space-between;
     align-items: center;
 
-    .menuIcons {
+    .search_icon {
+      padding: 0 12px;
+    }
+
+    .menu_icons {
       padding: 0 12px;
     }
   }
