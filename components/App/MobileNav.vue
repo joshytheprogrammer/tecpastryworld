@@ -8,37 +8,23 @@
       </div>
       <!-- Cart Icon-->
       <CartIcon />
-
-      <!-- Menu Icon-->
-      <div class="menu_icons" @click="toggleMenu">
-        <Icon icon="eva:menu-arrow-fill" width="24" height="24" v-if="!isOpen" />
-
-        <Icon icon="ep:circle-close" width="24" height="24" v-else />
-      </div>
+      <!-- Menu Icon -->
+      <MenuIcon />
     </div>
   </nav>
 </template>
 
 <script>
-import {mapMutations, mapGetters} from "vuex"
 import {Icon} from '@iconify/vue2'
 import CartIcon from "./Helpers/CartIcon.vue"
+import MenuIcon from "./Helpers/Mobile/MenuIcon.vue"
 
 export default {
-  computed: {
-    ...mapGetters({
-      isOpen: 'mobile/isOpen'
-    })
-  },
   components: {
     CartIcon,
+    MenuIcon,
     Icon
   },
-  methods: {
-    ...mapMutations({
-      toggleMenu: 'mobile/toggleMenu'
-    })
-  }
 }
 </script>
 
@@ -63,10 +49,6 @@ nav {
     align-items: center;
 
     .search_icon {
-      padding: 0 12px;
-    }
-
-    .menu_icons {
       padding: 0 12px;
     }
   }
