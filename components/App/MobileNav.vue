@@ -32,7 +32,7 @@ export default {
 nav {
   background: $light;
   width: 100%;
-  padding: 0 1rem;
+  padding: 0 12px;
   height: 72px;
   display: flex;
   justify-content: space-between;
