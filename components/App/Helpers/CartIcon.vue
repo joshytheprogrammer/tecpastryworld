@@ -26,5 +26,9 @@ export default {
     font-size: 8px;
     text-align: center;
   }
+
+  @media screen and (max-width: $medium) {
+    color: $primary;
+  }
 }
 </style>

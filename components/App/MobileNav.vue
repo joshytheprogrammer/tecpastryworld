@@ -4,14 +4,23 @@
     <div class="actions">
       <!-- Search -->
       <!-- Cart -->
+      <CartIcon />
       <!-- Menu -->
+      <div class="menuIcon">
+
+      </div>
     </div>
   </nav>
 </template>
 
 <script>
+import CartIcon from "./Helpers/CartIcon.vue"
+import {Icon} from '@iconify/vue2'
 export default {
-
+  components: {
+    CartIcon,
+    Icon
+  }
 }
 </script>
 
