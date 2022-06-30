@@ -19,6 +19,9 @@ export default {
 
 <style lang="scss" scoped>
 nav {
+  padding: 14px 16px;
+  position: fixed;
+  top: 0;
   background: $primary;
   width: 100%;
   padding: 0 12px;

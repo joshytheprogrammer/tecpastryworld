@@ -35,9 +35,13 @@ export default {
 
 <style lang="scss" scoped>
 .navbar {
+  position: fixed;
+  top: 0;
+  background: $light;
+  width: 100%;
+
   nav {
-    background: $light;
-    width: 100%;
+    
     padding: 0 12px;
     border-bottom: 2px solid $primary;
     height: 72px;

@@ -52,16 +52,19 @@ export default {
 
 <style lang="scss" scoped>
 .menu {
-  width: 200px;
+  right: 0;
+  z-index: 12;
+  width: 180px;
+  position: fixed;
   display: flex;
   flex-direction: column;
-  float: right;
 
   .menuItem {
     width: 100%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    font-size: 14px;
     padding: 8px 12px;
     border-bottom: 2px solid $primary;
 
