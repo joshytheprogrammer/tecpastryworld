@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <h2 class="logo">tec</h2>
+    <h2 class="logo" @click="$router.push('/')">tec</h2>
     <div class="actions">
       <!-- Search Icon with other functions-->
       <SearchIcon />

@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <h2 class="logo" title="Go home">tec</h2>
+    <h2 class="logo" title="Go home" @click="$router.push('/')">tec</h2>
     <Bar />
     <Links />
   </nav>
