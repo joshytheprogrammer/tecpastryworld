@@ -3,9 +3,7 @@
     <h2 class="logo">tec</h2>
     <div class="actions">
       <!-- Search Icon with other functions-->
-      <div class="search_icon">
-        <Icon icon="akar-icons:search" width="24" height="24" />
-      </div>
+      <SearchIcon />
       <!-- Cart Icon-->
       <CartIcon />
       <!-- Menu Icon -->
@@ -17,12 +15,14 @@
 <script>
 import {Icon} from '@iconify/vue2'
 import CartIcon from "./Helpers/CartIcon.vue"
+import SearchIcon from "./Helpers/Mobile/SearchIcon.vue"
 import MenuIcon from "./Helpers/Mobile/MenuIcon.vue"
 
 export default {
   components: {
     CartIcon,
     MenuIcon,
+    SearchIcon,
     Icon
   },
 }
@@ -47,10 +47,6 @@ nav {
     display: inline-flex;
     justify-content: space-between;
     align-items: center;
-
-    .search_icon {
-      padding-left: 12px;
-    }
   }
 }
 </style>
