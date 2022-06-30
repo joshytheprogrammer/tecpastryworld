@@ -1,27 +1,32 @@
 <template>
-  <nav>
-    <h2 class="logo" @click="$router.push('/')">tec</h2>
-    <div class="actions">
-      <!-- Search Icon with other functions-->
-      <SearchIcon />
-      <!-- Cart Icon-->
-      <CartIcon />
-      <!-- Menu Icon -->
-      <MenuIcon />
-    </div>
-  </nav>
+  <div class="navbar">
+    <nav>
+      <h2 class="logo" @click="$router.push('/')">tec</h2>
+      <div class="actions">
+        <!-- Search Icon with other functions-->
+        <SearchIcon />
+        <!-- Cart Icon-->
+        <CartIcon />
+        <!-- Menu Icon -->
+        <MenuIcon />
+      </div>
+    </nav>
+    <Menu />
+  </div>
 </template>
 
 <script>
 import {Icon} from '@iconify/vue2'
 import CartIcon from "./Helpers/CartIcon.vue"
 import SearchIcon from "./Helpers/Mobile/SearchIcon.vue"
+import Menu from "./Helpers/Mobile/Menu.vue"
 import MenuIcon from "./Helpers/Mobile/MenuIcon.vue"
 
 export default {
   components: {
     CartIcon,
     MenuIcon,
+    Menu,
     SearchIcon,
     Icon
   },
@@ -29,25 +34,27 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-nav {
-  background: $light;
-  width: 100%;
-  padding: 0 12px;
-  border-bottom: 2px solid $primary;
-  height: 72px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  .logo {
-    @include logo-styles;
-    color: $primary;
-  }
-
-  .actions {
-    display: inline-flex;
+.navbar {
+  nav {
+    background: $light;
+    width: 100%;
+    padding: 0 12px;
+    border-bottom: 2px solid $primary;
+    height: 72px;
+    display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .logo {
+      @include logo-styles;
+      color: $primary;
+    }
+
+    .actions {
+      display: inline-flex;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 }
 </style>
