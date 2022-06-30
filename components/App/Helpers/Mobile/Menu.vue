@@ -1,6 +1,6 @@
 <template>
   <div class="menu" v-if="isOpen">
-    <div class="menuItem" v-for="item in menuItems" :key="item.id">
+    <div class="menuItem" v-for="item in menuItems" :key="item.id" @click="$router.push(item.link)">
       <div class="icon">
         <Icon :icon="item.icon" width="24" height="24"  />
       </div>
@@ -27,22 +27,26 @@ export default {
         {
           id: 1,
           icon: 'akar-icons:home',
-          text: 'Home'
+          text: 'Home',
+          link: '/'
         },
         {
           id: 2,
           icon: 'ant-design:shop-outlined',
-          text: 'Shop'
+          text: 'Shop',
+          link: '/shop'
         },
         {
           id: 3,
           icon: 'clarity:image-gallery-line',
-          text: 'Gallery'
+          text: 'Gallery',
+          link: '/gallery'
         },
         {
           id: 4,
           icon: 'ic:outline-play-lesson',
-          text: 'Free Classes'
+          text: 'Free Classes',
+          link: '/tutorial/free'
         },
       ]
     }
