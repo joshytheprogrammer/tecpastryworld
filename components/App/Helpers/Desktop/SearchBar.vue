@@ -1,6 +1,6 @@
 <template>
   <div class="bar">
-    <input type="text" v-model="search_term">
+    <input type="text" v-model="search_term" @keypress.enter="search">
     <button @click="search"><Icon icon="akar-icons:search" width="24" height="24" /></button>
   </div>
 </template>
