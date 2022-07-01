@@ -59,6 +59,7 @@ export default {
   right: 0;
   z-index: 12;
   width: 180px;
+  background: $light;
   position: fixed;
   display: flex;
   flex-direction: column;
