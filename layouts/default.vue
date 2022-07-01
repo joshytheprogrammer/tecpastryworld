@@ -2,7 +2,10 @@
   <div class="app">
     <MNavigation v-if="mobile" />
     <DNavigation v-else />
-    <Nuxt />
+    <div class="body">
+      <Nuxt />
+    </div>
+    
   </div>
 </template>
 
@@ -39,3 +42,10 @@ export default {
   
 }
 </script>
+
+<style lang="scss">
+.body {
+  min-height: 100vh;
+  margin-top: 70px;
+}
+</style>

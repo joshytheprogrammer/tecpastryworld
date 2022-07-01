@@ -1,7 +1,7 @@
 <template>
   <div class="bar">
     <input type="text" v-model="search_term">
-    <button><Icon icon="akar-icons:search" width="24" height="24" /></button>
+    <button @click="search"><Icon icon="akar-icons:search" width="24" height="24" /></button>
   </div>
 </template>
 
@@ -14,6 +14,13 @@ export default {
   data(){
     return {
       search_term: this.$route.query.k,
+    }
+  },
+  methods: {
+    search(){
+      if(this.search_term.length > 2) {
+        this.$router.push({path: 's', query: {k: this.search_term}})
+      }
     }
   }
 }
