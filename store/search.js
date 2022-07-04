@@ -7,8 +7,11 @@ export default {
     handleSearchBar(state) {
       state.searching = !state.searching
     },
-    search(state) {
-      
+    search(state, payload) {
+      if(payload.length > 2) {
+        this.$router.push({path: 's', query: {k: payload}})
+        state.searching = false
+      }
     }
   },
   getters: {

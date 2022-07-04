@@ -1,21 +1,35 @@
 <template>
   <div class="bar" v-if="isSearching">
-    <input type="text">
-    <button @click="search"><Icon icon="akar-icons:search" width="24" height="24" /></button>
+    <input type="text" v-model="search_term" @keypress.enter="triggerSearch">
+    <button @click="triggerSearch"><Icon icon="akar-icons:search" width="24" height="24" /></button>
   </div>
 </template>
 
 <script>
 import {Icon} from '@iconify/vue2'
-import {mapGetters} from "vuex"
+import {mapGetters, mapMutations} from "vuex"
+
 export default {
+  components: {
+    Icon
+  },
   computed: {
     ...mapGetters({
       isSearching: 'search/isSearchOpen'
-    })
+    }),
   },
-  components: {
-    Icon
+  data(){
+    return {
+      search_term: this.$route.query.k,
+    }
+  },
+  methods: {
+    ...mapMutations({
+      'search': 'search/search'
+    }),
+    triggerSearch(){
+      this.search(this.search_term)
+    },
   }
 }
 </script>

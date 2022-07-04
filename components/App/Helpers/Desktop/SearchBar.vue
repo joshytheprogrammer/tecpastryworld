@@ -1,12 +1,14 @@
 <template>
   <div class="bar">
-    <input type="text" v-model="search_term" @keypress.enter="search">
-    <button @click="search"><Icon icon="akar-icons:search" width="24" height="24" /></button>
+    <input type="text" v-model="search_term" @keypress.enter="triggerSearch">
+    <button @click="triggerSearch"><Icon icon="akar-icons:search" width="24" height="24" /></button>
   </div>
 </template>
 
 <script>
 import {Icon} from '@iconify/vue2'
+import {mapMutations} from "vuex"
+
 export default {
   components: {
     Icon
@@ -17,11 +19,12 @@ export default {
     }
   },
   methods: {
-    search(){
-      if(this.search_term.length > 2) {
-        this.$router.push({path: 's', query: {k: this.search_term}})
-      }
-    }
+    ...mapMutations({
+      'search': 'search/search'
+    }),
+    triggerSearch(){
+      this.search(this.search_term)
+    },
   }
 }
 </script>
