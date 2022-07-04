@@ -11,6 +11,7 @@
         <MenuIcon />
       </div>
     </nav>
+    <SearchBar />
     <Menu />
   </div>
 </template>
@@ -19,6 +20,7 @@
 import {Icon} from '@iconify/vue2'
 import CartIcon from "./Helpers/CartIcon.vue"
 import SearchIcon from "./Helpers/Mobile/SearchIcon.vue"
+import SearchBar from "./Helpers/Mobile/SearchBar.vue"
 import Menu from "./Helpers/Mobile/Menu.vue"
 import MenuIcon from "./Helpers/Mobile/MenuIcon.vue"
 
@@ -27,6 +29,7 @@ export default {
     CartIcon,
     MenuIcon,
     Menu,
+    SearchBar,
     SearchIcon,
     Icon
   },

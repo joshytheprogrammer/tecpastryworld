@@ -6,6 +6,9 @@ export default {
   mutations: {
     handleSearchBar(state) {
       state.searching = !state.searching
+    },
+    search(state) {
+      
     }
   },
   getters: {
