@@ -25,5 +25,11 @@ export default {
       color: $secondary;
     }
   }
+
+  @media screen and (max-width: $medium) {
+    p {
+      font-size: 14px;
+    }
+  }
 }
 </style>
