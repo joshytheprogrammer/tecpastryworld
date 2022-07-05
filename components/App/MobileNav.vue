@@ -46,6 +46,7 @@ export default {
   nav {
     padding: 0 12px;
     border-bottom: 2px solid $primary;
+    user-select: none;
     height: 72px;
     display: flex;
     justify-content: space-between;

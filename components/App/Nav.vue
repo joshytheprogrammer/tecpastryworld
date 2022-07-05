@@ -22,6 +22,7 @@ nav {
   padding: 14px 16px;
   position: fixed;
   top: 0;
+  user-select: none;
   background: $primary;
   width: 100%;
   padding: 0 12px;
