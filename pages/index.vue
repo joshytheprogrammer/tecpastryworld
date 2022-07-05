@@ -1,13 +1,18 @@
 <template>
-  
+  <div class="home">
+
+  </div>
 </template>
 
 <script>
+import Jumbotron from "../components/Home/Jumbotron.vue"
 export default {
-
+  components: {
+    Jumbotron
+  }
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 
 </style>
