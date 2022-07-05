@@ -44,7 +44,6 @@ export default {
   width: 100%;
 
   nav {
-    
     padding: 0 12px;
     border-bottom: 2px solid $primary;
     height: 72px;
