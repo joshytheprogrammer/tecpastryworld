@@ -34,6 +34,13 @@ export default {
       text-decoration-color: $light;
       text-underline-offset: 9px; 
     }
+
+    &.nuxt-link-exact-active {
+      text-decoration: underline;
+      text-decoration-color: $light;
+      text-underline-offset: 9px; 
+      color: $light;
+    }
   }
 }
 </style>
