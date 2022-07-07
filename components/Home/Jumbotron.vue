@@ -11,7 +11,7 @@ export default {
   data(){
     return {
       home: {
-        heading: 'Welcome to the official TECpastryworld website',
+        heading: 'Welcome to the official TECpastryworld website.',
         message: 'Here you can find the best products and deals we offer.'
       }
     }
