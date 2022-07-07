@@ -1,14 +1,21 @@
 <template>
   <section class="jumbotron">
-    <h1>Welcome to the official TECpastryworld website</h1>
-    <p>Here you can find the best products and deals we offer.</p>
+    <h1>{{home.heading}}</h1>
+    <p>{{home.message}}</p>
     <NuxtLink to="/shop">Shop Now</NuxtLink>
   </section>
 </template>
 
 <script>
 export default {
-
+  data(){
+    return {
+      home: {
+        heading: 'Welcome to the official TECpastryworld website',
+        message: 'Here you can find the best products and deals we offer.'
+      }
+    }
+  }
 }
 </script>
 
