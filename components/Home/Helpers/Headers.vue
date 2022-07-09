@@ -26,12 +26,14 @@ export default {
   }
 
   @media screen and (max-width: $medium) {
-    padding-bottom: 2rem;
-    height: 500px;
+    h2 {
+      font-size: 28px;
+    }
+  }
 
-    h1 {
-      font-size: 36px;
-      font-weight: 500;
+  @media screen and (max-width: $small) {
+    h2 {
+      font-size: 24px;
     }
   }
 }
