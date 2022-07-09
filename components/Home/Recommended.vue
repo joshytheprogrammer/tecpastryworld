@@ -45,7 +45,15 @@ export default {
 
     display: grid;
     gap: 1rem;
+    justify-items: center;
     grid-template-columns: repeat(5,1fr);
+
+    @media screen and (max-width: $large) {
+      width: 100%;
+      margin: 0;
+      padding: 0.9rem;
+      grid-template-columns: repeat(4,1fr);
+    }
 
     @media screen and (max-width: $m-large) {
       width: 100%;
