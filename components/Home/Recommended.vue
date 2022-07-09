@@ -3,7 +3,7 @@
     <Headers>
       <template #title>Recommended this season</template>
     </Headers>
-    <Card />
+    <!-- <Card /> -->
     <!-- <div v-for="item in recommended" :key="item.id">
       <img :src="item.thumbnail" width="250px" height="250px" alt="">
       <p>{{item._id}}</p>

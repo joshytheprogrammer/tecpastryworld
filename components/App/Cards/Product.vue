@@ -17,5 +17,46 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.product {
+  padding: 1rem 0;
 
+  .s {
+    img {
+      width: 100%; //remove r = width: 100%;
+      max-height: 100%; 
+      object-fit: cover;
+      border-radius: 10px;
+
+      &:hover {
+        // Make image zoom properly later
+        // zoom: 2;
+      }
+    }
+
+    ._details {
+      display: block;
+      padding: 1rem 0.5rem;
+      color: $primary;
+
+      a {
+        padding: 0.2rem 0;
+        display: inherit;
+        color: inherit;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: 500;
+
+        &:hover {
+          text-decoration: underline;
+          text-decoration-color: $primary;
+        }
+      }
+
+      span {
+        font-size: 18px;
+        font-weight: 400;
+      }
+    }
+  }
+}
 </style>
