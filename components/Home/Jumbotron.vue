@@ -38,14 +38,13 @@ export default {
   text-align: center;
 
   h1 {
-    font-weight: 600;
-    font-size: 48px;
+    font-weight: 400;
+    font-size: 50px;
     padding: 1rem 0;
   }
 
   p { 
-    line-height: 1.235;
-    font-size: 28px;
+    font-size: 24px;
     padding: 1rem 0;
   }
 
@@ -71,7 +70,6 @@ export default {
 
     h1 {
       font-size: 36px;
-      font-weight: 500;
     }
 
     p {
@@ -85,7 +83,6 @@ export default {
 
     h1 {
       font-size: 28px;
-      font-weight: 400;
     }
 
     p {
