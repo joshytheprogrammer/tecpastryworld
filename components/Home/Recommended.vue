@@ -1,5 +1,8 @@
 <template>
   <div class="recommended">
+    <Headers>
+      <template #title>Recommended this season</template>
+    </Headers>
     <!-- <div v-for="item in recommended" :key="item.id">
       <img :src="item.thumbnail" width="250px" height="250px" alt="">
       <p>{{item._id}}</p>
@@ -12,17 +15,21 @@
 
 <script>
 import axios from "axios"
+import Headers from "./Helpers/Headers.vue"
 export default {
+  components: {
+    Headers
+  },
   data() {
     return {
       recommended: []
     }
   },
-  async fetch() {
-    await axios.get('http://127.0.0.1:8000/api/home/recommended').then((response) => {
-      this.recommended.push(...response.data.data)
-    })
-  },
+  // async fetch() {
+  //   await axios.get('http://127.0.0.1:8000/api/home/recommended').then((response) => {
+  //     this.recommended.push(...response.data.data)
+  //   })
+  // },
 }
 </script>
 
