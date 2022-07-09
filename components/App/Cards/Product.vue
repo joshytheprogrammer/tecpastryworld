@@ -70,7 +70,6 @@ export default {
       height: 150px;
       border-right: 1px solid $primary;
       border-radius: 10px 0px 0px 10px;
-      // object-fit: contain;
     }
 
     ._details {
