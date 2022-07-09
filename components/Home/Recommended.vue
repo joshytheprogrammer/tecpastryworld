@@ -3,6 +3,7 @@
     <Headers>
       <template #title>Recommended this season</template>
     </Headers>
+    <Card />
     <!-- <div v-for="item in recommended" :key="item.id">
       <img :src="item.thumbnail" width="250px" height="250px" alt="">
       <p>{{item._id}}</p>
@@ -16,9 +17,11 @@
 <script>
 import axios from "axios"
 import Headers from "./Helpers/Headers.vue"
+import Card from "../App/Cards/Product.vue"
 export default {
   components: {
-    Headers
+    Headers,
+    Card
   },
   data() {
     return {
