@@ -9,7 +9,7 @@ export default {
     },
     search(state, payload) {
       if(payload.length > 2) {
-        this.$router.push({path: 's', query: {k: payload}})
+        this.$router.push({path: '/s', query: {k: payload}})
         state.searching = false
       }
     }
