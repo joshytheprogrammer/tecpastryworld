@@ -5,7 +5,6 @@
     <div class="body">
       <Nuxt />
     </div>
-    
   </div>
 </template>
 

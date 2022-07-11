@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="">
     Hello World
     {{this.$route.params.slug}}
   </div>
