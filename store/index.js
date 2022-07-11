@@ -1,6 +1,6 @@
 import mobile from "./mobile/index"
 import search from "./search"
-import errors from "./errors"
+import notification from "./global/notification"
 
 export const state = () => ({
     
@@ -16,5 +16,5 @@ export const actions = {
 export const modules = {
   mobile,
   search,
-  errors
+  notification
 }
