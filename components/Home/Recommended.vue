@@ -6,7 +6,6 @@
     <div class="products">
       <Card v-for="item in recommended" :key="item.id" :item="item" />
     </div>
-    
   </div>
 </template>
 
