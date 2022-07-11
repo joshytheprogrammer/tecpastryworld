@@ -4,7 +4,7 @@
       <p>
         The following error has occured : {{data.message}}.
       </p>
-      <button @click="clear">Seen</button>
+      <button @click="clear">Clear</button>
     </div>
   </div>
 </template>
@@ -29,6 +29,7 @@ export default {
 .BzC {
   display: flex;
   justify-content: center;
+  margin-top: 2rem;
 
   .notification {
     border-radius: 8px;
