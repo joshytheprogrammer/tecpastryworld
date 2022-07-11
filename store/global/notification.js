@@ -2,14 +2,16 @@ export default {
   namespaced: true,
   state : () => ({
     notification: {
-      type: null, // success, warning, error
-      message: ""
+      type: 'error', // success, warning, error
+      message: 'Product cannot be found'
     }
   }),
   mutations: {
     
   },
   getters: {
-    
+    notyData(state) {
+      return state.notification
+    }
   }
 }

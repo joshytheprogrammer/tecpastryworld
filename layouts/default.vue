@@ -2,8 +2,8 @@
   <div class="app">
     <MNavigation v-if="mobile" />
     <DNavigation v-else />
+    <Notification />
     <div class="body">
-      <Notification />
       <Nuxt />
     </div>
   </div>
