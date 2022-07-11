@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import CartIcon from "../CartIcon.vue"
+import CartIcon from "../Global/CartIcon.vue"
 export default {
   components: {
     CartIcon

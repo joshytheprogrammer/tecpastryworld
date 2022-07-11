@@ -18,7 +18,7 @@
 
 <script>
 import {Icon} from '@iconify/vue2'
-import CartIcon from "./Helpers/CartIcon.vue"
+import CartIcon from "./Helpers/Global/CartIcon.vue"
 import SearchIcon from "./Helpers/Mobile/SearchIcon.vue"
 import SearchBar from "./Helpers/Mobile/SearchBar.vue"
 import Menu from "./Helpers/Mobile/Menu.vue"
