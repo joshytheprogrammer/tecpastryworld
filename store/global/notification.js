@@ -7,7 +7,10 @@ export default {
     }
   }),
   mutations: {
-    
+    CLEAR_NOTIFICATION(state) {
+      state.notification.type = null
+      state.notification.message = null
+    }
   },
   getters: {
     notyData(state) {

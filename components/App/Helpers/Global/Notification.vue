@@ -1,22 +1,27 @@
 <template>
-  <div class="BzC">
-    <div class="notification" v-if="data.message" :class="data.type">
+  <div class="BzC" v-if="data.message">
+    <div class="notification" :class="data.type">
       <p>
         The following error has occured : {{data.message}}.
       </p>
-      <button>Seen</button>
+      <button @click="clear">Seen</button>
     </div>
   </div>
 </template>
 
 <script>
-import {mapGetters} from "vuex"
+import {mapGetters, mapMutations} from "vuex"
 export default {
   computed: {
     ...mapGetters({
       data: 'global/notification/notyData'
     })
   },
+  methods: {
+    ...mapMutations({
+      clear: 'global/notification/CLEAR_NOTIFICATION'
+    })
+  }
 }
 </script>
 
@@ -24,14 +29,11 @@ export default {
 .BzC {
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
 
   .notification {
     border-radius: 8px;
     display: flex;
     justify-content: space-between;
-    font-weight: 500;
-    font-size: 16px;
     position: fixed;
     color: $light;
     padding: 12px;
