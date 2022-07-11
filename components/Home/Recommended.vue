@@ -5,10 +5,6 @@
     </Headers>
     <div class="products">
       <Card v-for="item in recommended" :key="item.id" :item="item" />
-      <Card v-for="item in recommended" :key="item.id" :item="item" />
-      <Card v-for="item in recommended" :key="item.id" :item="item" />
-      <Card v-for="item in recommended" :key="item.id" :item="item" />
-      <Card v-for="item in recommended" :key="item.id" :item="item" />
     </div>
     
   </div>
