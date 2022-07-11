@@ -3,6 +3,7 @@
     <MNavigation v-if="mobile" />
     <DNavigation v-else />
     <div class="body">
+      <Notification />
       <Nuxt />
     </div>
   </div>
@@ -11,6 +12,7 @@
 <script>
 import DNavigation from "../components/App/Nav.vue" // Desktop Navbar
 import MNavigation from "../components/App/MobileNav.vue" // Mobile Navbar
+import Notification from "../components/App/Helpers/Global/Notification.vue"
 
 import { mapMutations, mapGetters } from 'vuex'
 
@@ -22,7 +24,8 @@ export default {
   },
   components: {
     DNavigation,
-    MNavigation
+    MNavigation,
+    Notification
   },
   mounted() {
     this.isMobile()
