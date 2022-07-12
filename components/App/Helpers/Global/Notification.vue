@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import {mapGetters, mapMutations} from "vuex"
+import {mapGetters, mapActions} from "vuex"
 import {Icon} from '@iconify/vue2'
 export default {
   computed: {
@@ -22,8 +22,8 @@ export default {
     Icon
   },
   methods: {
-    ...mapMutations({
-      clear: 'global/notification/CLEAR_NOTIFICATION'
+    ...mapActions({
+      clear: 'global/notification/clearNotification'
     })
   }
 }

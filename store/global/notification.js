@@ -2,14 +2,26 @@ export default {
   namespaced: true,
   state : () => ({
     notification: {
-      type: 'error', // success, warning, error
-      message: 'Product imparted'
+      type: null, // success, warning, error
+      message: null
     }
   }),
   mutations: {
     CLEAR_NOTIFICATION(state) {
       state.notification.type = null
       state.notification.message = null
+    },
+    SET_NOTIFICATION(state, payload) {
+      state.notification.type = payload.type
+      state.notification.message = payload.message
+    }
+  },
+  actions: {
+    setNotification({ commit }, notification) {
+      commit('SET_NOTIFICATION', notification)
+    },
+    clearNotification({ commit }) {
+      commit('CLEAR_NOTIFICATION')
     }
   },
   getters: {
