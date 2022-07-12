@@ -2,8 +2,8 @@ export default {
   namespaced: true,
   state : () => ({
     notification: {
-      type: 'error', // success, warning, error
-      message: 'Product cannot be found'
+      type: 'success', // success, warning, error
+      message: 'Product imparted'
     }
   }),
   mutations: {
