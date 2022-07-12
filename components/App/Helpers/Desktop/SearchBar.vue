@@ -7,7 +7,7 @@
 
 <script>
 import {Icon} from '@iconify/vue2'
-import {mapMutations} from "vuex"
+import {mapActions} from "vuex"
 
 export default {
   components: {
@@ -19,7 +19,7 @@ export default {
     }
   },
   methods: {
-    ...mapMutations({
+    ...mapActions({
       'search': 'search/search'
     }),
     triggerSearch(){
