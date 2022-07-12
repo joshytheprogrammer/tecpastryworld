@@ -8,25 +8,27 @@ export default {
       state.searching = !state.searching
     },
     SEARCH(state, payload) {
-      if(payload.length > 3) {
-        this.$router.push({path: '/s', query: {k: payload}})
-        state.searching = false
-      }else {
-        let error = {
-          type: 'error',
-          message: 'Search term should be greater than 3 characters'
-        }
-        // context.commit("global/notification", error)
-        // console.log(this.$store)
-      }
+      this.$router.push({path: '/s', query: {k: payload}})
+      state.searching = false
+      
     }
   },
   actions: {
     handleSearchBar({commit}) {
       commit("HANDLE_SEARCH_BAR")
     },
-    search({commit}, payload) {
-      commit("SEARCH", payload)
+    search({commit, dispatch}, search_term) {
+      if(search_term.length > 3) {
+        commit("SEARCH", search_term)
+      }else {
+        let error = {
+          type: 'error',
+          message: 'Search term should be greater than 3 characters'
+        }
+        console.log(dispatch)
+        // dispatch("global/notification/setNotification")
+      }
+      
     }
   },
   getters: {
