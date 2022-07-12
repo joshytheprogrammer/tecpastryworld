@@ -4,7 +4,7 @@
       <img loading="lazy" :src="item.thumbnail" :alt="item.name">
       <div class="_details">
         <NuxtLink :to="'/shop/'+item._slug">{{item.name}}</NuxtLink>
-        <span class="prices">{{JSON.parse(item.price).lowest + "-" + JSON.parse(item.price).highest}}</span>
+        <span class="prices"> {{formatter(item.price)}} </span>
       </div>
     </div>
   </div>
@@ -12,7 +12,28 @@
 
 <script>
 export default {
-  props: ['item']
+  props: ['item'],
+  data(){
+    return {
+      price: ""
+    }
+  },
+  methods: {
+    formatter(price) {
+      price = JSON.parse(price)
+      
+      let lowest = price.lowest
+      let highest = price.highest
+
+      let currency = '₦'
+
+      var formatter = new Intl.NumberFormat('en-US');
+      price = currency + formatter.format(lowest) + ' - ' + currency + formatter.format(highest)
+
+      // Return (price)
+      return price
+    }
+  }
 }
 </script>
 
