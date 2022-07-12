@@ -51,9 +51,6 @@ export default {
     }
 
     @media screen and (max-width: $m-large) {
-      width: 100%;
-      margin: 0;
-      padding: 0.9rem;
       grid-template-columns: repeat(3,1fr);
     }
 
