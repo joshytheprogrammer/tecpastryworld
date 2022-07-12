@@ -3,7 +3,7 @@
     <MNavigation v-if="mobile" />
     <DNavigation v-else />
     <div class="body">
-      <Notification />
+      <Notification v-if="notyExists.message" />
       <Nuxt />
     </div>
   </div>
@@ -20,6 +20,7 @@ export default {
   computed: {
     ...mapGetters({
       mobile: 'mobile/mobile',
+      notyExists: 'global/notification/notyData'
     }),
   },
   components: {

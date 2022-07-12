@@ -21,6 +21,11 @@ export default {
   components: {
     Icon
   },
+  mounted() {
+    setTimeout(() => {
+      this.clear()
+    }, 5000)
+  },
   methods: {
     ...mapActions({
       clear: 'global/notification/clearNotification'
