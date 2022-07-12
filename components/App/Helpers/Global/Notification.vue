@@ -4,18 +4,22 @@
       <p>
         Notification : <b>{{data.message}}</b>.
       </p>
-      <span @click="clear">x</span>
+      <span @click="clear"><Icon icon="ep:circle-close" width="24" height="24" /></span>
     </div>
   </div>
 </template>
 
 <script>
 import {mapGetters, mapMutations} from "vuex"
+import {Icon} from '@iconify/vue2'
 export default {
   computed: {
     ...mapGetters({
       data: 'global/notification/notyData'
     })
+  },
+  components: {
+    Icon
   },
   methods: {
     ...mapMutations({
@@ -47,19 +51,9 @@ export default {
       padding-right: 2rem;
     }
 
-    button {
-      background: $light;
-      font-weight: 500;
+    span {
       cursor: pointer;
-      color: $primary;
-      width: fit-content;
-      height: 100%;
-      border: none;
-
-      &:hover {
-        background: $primary;
-        color: $light;
-      }
+      padding: 3px 0 0 2px;
     }
 
     &.success {

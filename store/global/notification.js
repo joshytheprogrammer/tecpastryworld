@@ -2,7 +2,7 @@ export default {
   namespaced: true,
   state : () => ({
     notification: {
-      type: 'success', // success, warning, error
+      type: 'error', // success, warning, error
       message: 'Product imparted'
     }
   }),
