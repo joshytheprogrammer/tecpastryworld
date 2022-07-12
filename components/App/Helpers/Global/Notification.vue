@@ -2,9 +2,9 @@
   <div class="BzC" v-if="data.message">
     <div class="notification" :class="data.type">
       <p>
-        The following error has occured : {{data.message}}.
+        Notification : <b>{{data.message}}</b>.
       </p>
-      <button @click="clear">Clear</button>
+      <span @click="clear">x</span>
     </div>
   </div>
 </template>
@@ -29,24 +29,31 @@ export default {
 .BzC {
   display: flex;
   justify-content: center;
-  margin-top: 2rem;
 
   .notification {
-    border-radius: 8px;
+    margin-top: 2rem;
+    border-radius: 10px;
+
+    padding: 12px;
+    position: fixed;
+    color: $primary;
+    width: fit-content;
+    
     display: flex;
     justify-content: space-between;
-    position: fixed;
-    color: $light;
-    padding: 12px;
-    width: 90%;
+    align-items: center;
+
+    p {
+      padding-right: 2rem;
+    }
 
     button {
       background: $light;
       font-weight: 500;
       cursor: pointer;
       color: $primary;
-      border-radius: 2px;
-      padding: 4px 12px;
+      width: fit-content;
+      height: 100%;
       border: none;
 
       &:hover {
