@@ -4,7 +4,7 @@ export default {
     searching: false,
   }),
   mutations: {
-    handleSearchBar(state) {
+    HANDLE_SEARCH_BAR(state) {
       state.searching = !state.searching
     },
     search(state, payload) {
@@ -19,6 +19,11 @@ export default {
         context.commit("global/notification", error)
         // console.log(this.$store)
       }
+    }
+  },
+  actions: {
+    handleSearchBar({commit}) {
+      commit("HANDLE_SEARCH_BAR")
     }
   },
   getters: {

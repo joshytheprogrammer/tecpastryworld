@@ -6,13 +6,13 @@
 
 <script>
 import {Icon} from '@iconify/vue2'
-import {mapMutations} from "vuex"
+import {mapActions} from "vuex"
 export default {
   components: {
     Icon
   },
   methods: {
-    ...mapMutations({
+    ...mapActions({
       toggleSearch: 'search/handleSearchBar'
     })
   }
