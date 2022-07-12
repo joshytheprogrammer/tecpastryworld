@@ -17,7 +17,7 @@ export default {
     handleSearchBar({commit}) {
       commit("HANDLE_SEARCH_BAR")
     },
-    search({commit, dispatch}, search_term) {
+    search({dispatch, commit}, search_term) {
       if(search_term.length > 3) {
         commit("SEARCH", search_term)
       }else {
@@ -25,8 +25,8 @@ export default {
           type: 'error',
           message: 'Search term should be greater than 3 characters'
         }
-        console.log(dispatch)
-        // dispatch("global/notification/setNotification")
+        commit("HANDLE_SEARCH_BAR")
+        dispatch("global/notification/setNotification", error, {root: true})
       }
       
     }
