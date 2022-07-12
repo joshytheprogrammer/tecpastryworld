@@ -35,12 +35,12 @@ export default {
   justify-content: center;
 
   .notification {
-    margin-top: 2rem;
+    margin: 1rem;
     border-radius: 10px;
 
     padding: 12px;
     position: fixed;
-    color: $primary;
+    color: $light;
     width: fit-content;
     
     display: flex;
