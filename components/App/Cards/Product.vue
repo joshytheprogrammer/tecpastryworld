@@ -13,15 +13,10 @@
 <script>
 export default {
   props: ['item'],
-  data(){
-    return {
-      price: ""
-    }
-  },
   methods: {
     formatter(price) {
       price = JSON.parse(price)
-      
+
       let lowest = price.lowest
       let highest = price.highest
 
