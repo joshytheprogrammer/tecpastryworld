@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import {mapMutations, mapGetters} from "vuex"
+import {mapActions, mapGetters} from "vuex"
 import {Icon} from '@iconify/vue2'
 export default {
   computed: {
@@ -19,7 +19,7 @@ export default {
     Icon
   },
   methods: {
-    ...mapMutations({
+    ...mapActions({
       toggleMenu: 'mobile/toggleMenu'
     })
   }

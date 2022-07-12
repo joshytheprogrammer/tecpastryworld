@@ -15,8 +15,13 @@ export default {
       
       return
     },
-    toggleMenu(state) {
+    TOGGLE_MENU(state) {
       state.menu.showing = !state.menu.showing
+    }
+  },
+  actions: {
+    toggleMenu({commit}) {
+      commit('TOGGLE_MENU')
     }
   },
   getters: {
