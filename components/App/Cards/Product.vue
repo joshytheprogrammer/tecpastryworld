@@ -25,7 +25,6 @@ export default {
       var formatter = new Intl.NumberFormat('en-US');
       price = currency + formatter.format(lowest) + ' - ' + currency + formatter.format(highest)
 
-      // Return (price)
       return price
     }
   }
