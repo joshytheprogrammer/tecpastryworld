@@ -1,11 +1,7 @@
 <template>
   <div class="product">
-    <div class="item" v-if="product">
-      {{this.product}}
-    </div>
-    <div v-else>
-      <Loader type="clip" />
-    </div>
+    <Loader v-if="$fetchState.pending" type="clip" />
+    <div v-else>{{this.product}}</div>
   </div>
 </template>
 
