@@ -79,7 +79,7 @@ form {
     font-size: 14px;
     font-weight: 400;
     border-radius: 8px;
-    height: 40px;
+    height: 45px;
     width: 120px;
     padding: 4px 24px;
     margin: 1rem 0;
