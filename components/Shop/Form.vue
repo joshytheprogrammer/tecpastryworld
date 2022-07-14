@@ -2,7 +2,7 @@
   <form>
     <div class="form-group">
       <label>Select Size</label>
-      <select class="form-control">
+      <select class="form-control" @change="onChange">
         <option value="8" selected>8 inches</option>
         <option value="10">10 inches</option>
         <option value="12">12 inches</option>
@@ -11,7 +11,7 @@
     </div>
     <div class="form-group">
       <label>Type of Cake</label>
-      <select class="form-control">
+      <select class="form-control" @change="onChange">
         <option value="bc" selected>Vanilla Cake</option>
         <option value="cc">Chocolate Cake</option>
         <option value="rv">Red Velvet Cake</option>
@@ -28,7 +28,11 @@
 
 <script>
 export default {
-
+  methods: {
+    onChange() {
+      console.log('changed')
+    }
+  }
 }
 </script>
 
