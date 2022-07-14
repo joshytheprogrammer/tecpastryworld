@@ -85,5 +85,30 @@ export default {
       }
     }
   }
+
+  @media screen and (max-width: $medium) {
+    max-width: 100%;
+    padding: 1rem;
+
+    ._item {
+      width: 100%;
+      max-height: fit-content;
+      display: block;
+
+      img {
+        border-radius: 10px 10px 0px 0px;
+      }
+
+      .details .inherent {
+        .n {
+          font-size: 24px;
+        }
+
+        .p_r {
+          font-size: 18px;
+        }
+      }
+    }
+  }
 }
 </style>
