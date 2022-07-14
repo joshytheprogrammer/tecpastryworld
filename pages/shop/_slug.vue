@@ -2,7 +2,9 @@
   <div class="product">
     <Loader v-if="$fetchState.pending" type="clip" />
     <NetworkError v-else-if="$fetchState.error || error" :message="error" />
-    <Product :item="product" v-else />
+    <Item :item="product" v-else />
+    <!-- <Gallery /> -->
+    <!-- <Reviews /> -->
   </div>
 </template>
 
@@ -10,13 +12,13 @@
 import axios from "axios"
 import Loader from "../../components/App/Helpers/Global/Loader.vue"
 import NetworkError from "../../components/App/Helpers/Global/Error.vue"
-import Product from "../../components/Shop/Slug.vue"
+import Item from "../../components/Shop/Item.vue"
 
 export default {
   components: {
     Loader,
     NetworkError,
-    Product
+    Item
   },
   data() {
     return {
