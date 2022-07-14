@@ -60,7 +60,7 @@ form {
 
       &::placeholder {
         padding: 0 0 0 0.2rem;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: normal;
       }
 

@@ -44,5 +44,10 @@ export default {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
+
+  @media screen and (max-width: $medium) {
+    font-size: 20px;
+    width: fit-content;
+  }
 }
 </style>
