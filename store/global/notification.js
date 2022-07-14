@@ -19,6 +19,7 @@ export default {
   actions: {
     setNotification({ commit }, notification) {
       commit('SET_NOTIFICATION', notification)
+      // this.$store.dispatch("global/notification/setNotification", {type: "error", message: error.message}, {root: true})
     },
     clearNotification({ commit }) {
       commit('CLEAR_NOTIFICATION')
