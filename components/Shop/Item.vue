@@ -52,6 +52,7 @@ export default {
     border-radius: 10px;
     width: fit-content;
     max-height: 700px;
+    color: $primary;
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     gap: 1rem;
