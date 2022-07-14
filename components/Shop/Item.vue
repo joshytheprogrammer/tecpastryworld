@@ -86,8 +86,16 @@ export default {
     }
   }
 
+  @media screen and (max-width: $large) {
+    ._item {
+      img {
+        object-fit: fill;
+      }
+    }
+  }
+
   @media screen and (max-width: $medium) {
-    max-width: 100%;
+    max-width: 80%;
     padding: 1rem;
 
     ._item {
@@ -96,6 +104,7 @@ export default {
       display: block;
 
       img {
+        height: 500px;
         border-radius: 10px 10px 0px 0px;
       }
 
@@ -108,6 +117,15 @@ export default {
           font-size: 18px;
         }
       }
+    }
+  }
+
+  @media screen and (max-width: $s-medium) {
+    max-width: 100%;
+
+    img {
+      height: 400px;
+      object-fit: contain;
     }
   }
 }
