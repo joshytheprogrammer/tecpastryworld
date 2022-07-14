@@ -53,12 +53,13 @@ form {
       border: none;
       outline: 1px solid $primary;
       border-radius: 8px;
-      padding: 0 0 0 0.2rem;
+      padding: 0 0 0 0.4rem;
       transition: background .2s linear,outline .1s ease-in-out;
       font-size: 16px;
       font-weight: 400;
 
       &::placeholder {
+        padding: 0 0 0 0.2rem;
         font-size: 16px;
         font-weight: normal;
       }
