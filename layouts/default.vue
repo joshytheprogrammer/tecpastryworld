@@ -4,7 +4,7 @@
     <DNavigation v-else />
     <div class="body">
       <Notification v-if="notyExists.message" />
-      <Nuxt />
+      <Nuxt keep-alive :keep-alive-props="{ max: 10 }" />
     </div>
   </div>
 </template>
