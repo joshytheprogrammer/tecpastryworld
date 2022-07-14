@@ -59,9 +59,9 @@ export default {
 
     img {
       width: 100%;
-      height: auto;
+      height: 100%;
       max-height: 700px;
-      object-fit: contain;
+      object-fit: cover;
       border-radius: 10px 0px 0px 10px;
       transition: 0.5s all ease-in-out;
     }
