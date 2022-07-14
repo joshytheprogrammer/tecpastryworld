@@ -7,15 +7,21 @@
           <h1 class="n"> {{item.name}}. </h1>
           <p class="p_r" title="the range of prices available">[ {{formatter(item.price)}} ]</p>
         </div>
-        <!-- <Price /> -->
-        <!-- <Fo -->
+        <Price />
+        <Form />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import Price from "./Price.vue"
+import Form from "./Form.vue"
 export default {
+  components: {
+    Price,
+    Form
+  },
   props: ["item"],
   methods: {
     formatter(price) {
