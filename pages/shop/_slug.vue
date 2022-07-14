@@ -1,7 +1,7 @@
 <template>
   <div class="product">
-    <NetworkError message="A network error has occured" />
     <Loader v-if="$fetchState.pending" type="clip" />
+    <NetworkError v-else-if="$fetchState.error || error" :message="error" />
     <div v-else>{{this.product}}</div>
   </div>
 </template>
@@ -17,7 +17,8 @@ export default {
   },
   data() {
     return {
-      product: null
+      product: null,
+      error: '',
     }
   },
   mounted(){
@@ -26,6 +27,8 @@ export default {
   async fetch() {
     await axios.get('http://127.0.0.1:8000/api/shop/'+this.$route.params.slug).then((response) => {
       this.product = response.data.data[0]
+    }).catch((error) => {
+      this.error = error.message
     })
   }
 }
