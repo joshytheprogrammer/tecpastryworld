@@ -44,11 +44,6 @@ export default {
       object-fit: cover;
       border-radius: 10px;
       transition: 0.5s all ease-in-out;
-
-      // &:hover {
-      //   // Make image zoom properly later
-      //   transform: scale(1.5);
-      // }
     }
 
     ._details {
