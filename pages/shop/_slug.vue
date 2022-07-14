@@ -1,5 +1,6 @@
 <template>
   <div class="product">
+    <NetworkError message="A network error has occured" />
     <Loader v-if="$fetchState.pending" type="clip" />
     <div v-else>{{this.product}}</div>
   </div>
@@ -8,9 +9,11 @@
 <script>
 import axios from "axios"
 import Loader from "../../components/App/Helpers/Global/Loader.vue"
+import NetworkError from "../../components/App/Helpers/Global/Error.vue"
 export default {
   components: {
-    Loader
+    Loader,
+    NetworkError
   },
   data() {
     return {
