@@ -11,3 +11,13 @@
 h1, h2, h3, h4, h5 ,h6 {
   font-family: 'Poppins', Georgia;
 }
+
+/* Global Loader styles */
+.v-spinner {
+  margin: auto;
+  padding: 2rem 0;
+}
+
+.v-spinner .v-bounce {
+  margin: auto;
+}

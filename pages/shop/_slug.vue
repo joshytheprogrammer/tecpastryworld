@@ -4,14 +4,18 @@
       {{this.product}}
     </div>
     <div v-else>
-      Loading ...
+      <Loader type="clip" />
     </div>
   </div>
 </template>
 
 <script>
 import axios from "axios"
+import Loader from "../../components/App/Helpers/Global/Loader.vue"
 export default {
+  components: {
+    Loader
+  },
   data() {
     return {
       product: null
