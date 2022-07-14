@@ -67,7 +67,7 @@ export default {
     }
 
     .details {
-      padding: 1rem 0;
+      padding: 1rem;
 
       .inherent {
         text-align: left;

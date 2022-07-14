@@ -1,7 +1,7 @@
 <template>
   <div class="price">
     <div class="loader"></div>
-    <p>₦14,000</p>
+    <!-- <p>₦14,000</p> -->
   </div>
 </template>
 
