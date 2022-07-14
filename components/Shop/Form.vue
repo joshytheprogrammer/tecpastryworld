@@ -22,7 +22,7 @@
       <label>Cake Message</label>
       <input class="form-control" type="text" placeholder="What message would you like on top of the cake">
     </div>
-    <button class="btn">Submit</button>
+    <button class="btn" disabled type="submit">Add to Cart</button>
   </form>
 </template>
 
@@ -72,10 +72,10 @@ form {
   }
 
   .btn {
-    background: $secondary;
+    background: $primary;
     color: $light;
     border: none;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     border-radius: 8px;
     height: 40px;
@@ -84,6 +84,11 @@ form {
     margin: 1rem 0;
     cursor: pointer;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    &:disabled {
+      background: rgb(203, 198, 198);
+      cursor: not-allowed;
+    }
   }
 }
 </style>
