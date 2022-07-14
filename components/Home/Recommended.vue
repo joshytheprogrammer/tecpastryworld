@@ -32,7 +32,7 @@ export default {
     }
   },
   async fetch() {
-    await axios.get('http://127.0.0.1:8000/api/hoe/recommended').then((response) => {
+    await axios.get('http://127.0.0.1:8000/api/home/recommended').then((response) => {
       this.recommended.push(...response.data.data)
     }).catch((error) => {
       this.error = error.message
@@ -44,6 +44,7 @@ export default {
 <style lang="scss" scoped>
 .recommended {
   background: $light;
+  margin-bottom: 2rem;
 
   .products {
     margin: 2rem;
