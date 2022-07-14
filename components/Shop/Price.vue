@@ -20,13 +20,14 @@ export default {
   border: 1px solid $primary;
   width: 150px;
   margin: 0.5rem 0;
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 400;
   color: $primary;
 
   p {
     user-select: none;
     padding: 0.6rem 1rem;
+    text-align: center;
   }
 
   .loader {

@@ -39,7 +39,7 @@ form {
     label {
       display: inline-block;
       margin: 18px 0 3px;
-      font-size: 0.6rem;
+      font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 1px;
       font-weight: bold;
