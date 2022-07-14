@@ -3,7 +3,9 @@
     <Headers>
       <template #title>Popular Categories</template>
     </Headers>
-    <div class="categories">
+    <Loader v-if="$fetchState.pending" type="clip" />
+    <NetworkError v-else-if="$fetchState.error || error" :message="error" />
+    <div v-else class="categories">
       <Card v-for="item in categories" :key="item.id" :item="item" />
     </div>
   </div>
@@ -14,19 +16,26 @@ import axios from "axios"
 import Headers from "./Helpers/Headers.vue"
 import Card from "../App/Cards/Category.vue"
 
+import Loader from "../App/Helpers/Global/Loader.vue"
+import NetworkError from "../App/Helpers/Global/Error.vue"
 export default {
   components: {
     Headers,
-    Card
+    Card,
+    Loader,
+    NetworkError
   },
   data() {
     return {
-      categories: []
+      categories: [],
+      error: '',
     }
   },
   async fetch() {
     await axios.get('http://127.0.0.1:8000/api/home/categories').then((response) => {
       this.categories.push(...response.data.data)
+    }).catch((error) => {
+      this.error = error.message
     })
   }
 }
@@ -35,6 +44,7 @@ export default {
 <style lang="scss" scoped>
 .popular {
   background: $light;
+  margin-bottom: 2rem;
 
   .categories {
     margin: 2rem;

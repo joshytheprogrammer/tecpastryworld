@@ -18,6 +18,7 @@ import Card from "../App/Cards/Product.vue"
 
 import Loader from "../App/Helpers/Global/Loader.vue"
 import NetworkError from "../App/Helpers/Global/Error.vue"
+
 export default {
   components: {
     Headers,
