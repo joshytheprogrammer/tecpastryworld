@@ -48,7 +48,7 @@ form {
     .form-control {
       width: 100%;
       height: 45px;
-      background: $background;
+      background: $light;
       color: $primary;
       border: none;
       outline: 1px solid $primary;
@@ -78,7 +78,7 @@ form {
     font-size: 16px;
     font-weight: 400;
     border-radius: 8px;
-    height: 36px;
+    height: 40px;
     width: 120px;
     padding: 4px 24px;
     margin: 1rem 0;
