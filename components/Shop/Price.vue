@@ -32,7 +32,7 @@ export default {
   .loader {
     margin: 0.6rem auto;
     border: 8px solid $light;
-    border-top: 8px solid $primary;
+    border-top: 8px solid $secondary;
     border-radius: 50%;
     width: 30px;
     height: 30px;

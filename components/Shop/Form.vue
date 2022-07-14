@@ -22,6 +22,7 @@
       <label>Cake Message</label>
       <input class="form-control" type="text" placeholder="What message would you like on top of the cake">
     </div>
+    <button class="btn">Submit</button>
   </form>
 </template>
 
@@ -34,6 +35,7 @@ export default {
 <style lang="scss" scoped>
 form {
   .form-group {
+
     label {
       display: inline-block;
       margin: 18px 0 3px;
@@ -45,12 +47,12 @@ form {
 
     .form-control {
       width: 100%;
-      height: 48px;
+      height: 45px;
       background: $background;
       color: $primary;
       border: none;
       outline: 1px solid $primary;
-      border-radius: 4px;
+      border-radius: 8px;
       padding: 0 0 0 0.2rem;
       transition: background .2s linear,outline .1s ease-in-out;
       font-size: 16px;
@@ -67,6 +69,21 @@ form {
         outline: $secondary solid 0.1rem ;
       }
     }
+  }
+
+  .btn {
+    background: $secondary;
+    color: $light;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 8px;
+    height: 36px;
+    width: 120px;
+    padding: 4px 24px;
+    margin: 1rem 0;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 }
 </style>
