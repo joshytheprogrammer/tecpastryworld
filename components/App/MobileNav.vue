@@ -1,7 +1,7 @@
 <template>
   <div class="navbar">
     <nav>
-      <h2 class="logo" @click="$router.push('/')">tec</h2>
+      <NuxtLink to="/" class="logo" title="Go home">tec</NuxtLink>
       <div class="actions">
         <!-- Search Icon with other functions-->
         <SearchIcon />
