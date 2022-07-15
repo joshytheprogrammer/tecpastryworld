@@ -8,7 +8,7 @@
           <p class="p_r" title="the range of prices available">[ {{formatter(item.price)}} ]</p>
         </div>
         <Price />
-        <Form />
+        <Form :id="item._id" />
       </div>
     </div>
   </div>
