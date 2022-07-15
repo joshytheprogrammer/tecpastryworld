@@ -75,6 +75,7 @@ export default {
         .n {
           font-size: 36px;
           font-weight: 500;
+          text-transform: capitalize;
         }
 
         .p_r {
