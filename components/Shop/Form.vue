@@ -12,7 +12,7 @@
     <div class="form-group">
       <label>Type of Cake*</label>
       <select class="form-control" @change="onChange">
-        <option value="bc" selected>Vanilla Cake</option>
+        <option value="bc" selected>Butter Cream Cake</option>
         <option value="cc">Chocolate Cake</option>
         <option value="rv">Red Velvet Cake</option>
         <option value="fc">Fruit Cake</option>
