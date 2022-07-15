@@ -104,7 +104,7 @@ export default {
       display: block;
 
       img {
-        height: 500px;
+        max-height: 500px;
         border-radius: 10px 10px 0px 0px;
       }
 
@@ -124,7 +124,7 @@ export default {
     max-width: 100%;
 
     img {
-      height: 400px;
+      max-height: 400px;
       object-fit: contain;
     }
   }

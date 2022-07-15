@@ -1,7 +1,7 @@
 <template>
   <form>
     <div class="form-group">
-      <label>Select Size</label>
+      <label>Select Size*</label>
       <select class="form-control" @change="onChange">
         <option value="8" selected>8 inches</option>
         <option value="10">10 inches</option>
@@ -10,7 +10,7 @@
       </select>
     </div>
     <div class="form-group">
-      <label>Type of Cake</label>
+      <label>Type of Cake*</label>
       <select class="form-control" @change="onChange">
         <option value="bc" selected>Vanilla Cake</option>
         <option value="cc">Chocolate Cake</option>
@@ -19,7 +19,7 @@
       </select>
     </div>
     <div class="form-group">
-      <label>Cake Message</label>
+      <label>Cake Message*</label>
       <input class="form-control" type="text" placeholder="What message would you like on top of the cake">
     </div>
     <button class="btn" type="submit">Add to Cart</button>
