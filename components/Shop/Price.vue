@@ -16,6 +16,7 @@ export default {
   background: $background;
   border-radius: 10px;
   border: 1px solid $primary;
+  min-width: 150px;
   width: 150px;
   margin: 0.5rem 0;
   font-size: 24px;
