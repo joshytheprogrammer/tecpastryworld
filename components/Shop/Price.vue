@@ -1,15 +1,13 @@
 <template>
   <div class="price">
-    <div class="loader"></div>
-    <!-- <p>₦14,000</p> -->
+    <div class="loader" v-if="loading"></div>
+    <p v-else> {{price}} </p>
   </div>
 </template>
 
 <script>
 export default {
-  components: {
-    
-  }
+  props: ['loading', 'price']
 }
 </script>
 

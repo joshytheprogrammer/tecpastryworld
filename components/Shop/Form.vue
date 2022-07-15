@@ -1,7 +1,6 @@
 <template>
   <div>
-    <Price />
-    {{data}}
+    <Price :loading="loading" :price="data.price" />
     <form v-if="configurable">
       <div class="form-group">
         <label>Select Size*</label>
@@ -17,8 +16,8 @@
         <select class="form-control" v-model="data.type" @change="onChange">
           <option value="sc">Sponge Cake</option>
           <option value="cc">Chocolate Cake</option>
-          <option value="rv">Red Velvet Cake</option>
           <option value="fc">Fruit Cake</option>
+          <option value="rv">Red Velvet Cake</option>
         </select>
       </div>
       <div class="form-group">
@@ -45,7 +44,9 @@ export default {
   data() {
     return {
       configurable: false,
+      loading: true,
       data: {
+        price: '',
         size: '',
         type: '',
       }
@@ -59,17 +60,44 @@ export default {
       // Decide whether to show form or not
       this.configurable = isFormAllowed
       
-      if(format) {
-        this.data.size = format.size
-        this.data.type = format.type
+      if(!format) {
+        return
       }
+
+      // Assign Variables
+      this.data.size = format.size
+      this.data.type = format.type
+
+      // Return Price
+      this.getPrice()
 
     })
   },
   props: ["id"],
   methods: {
     onChange() {
-      console.log('changed')
+      this.getPrice()
+    },
+    async getPrice() {
+      this.loading = false
+
+      let data = {
+        "product_id": this.id,
+        "type": this.data.type,
+        "size": this.data.size
+      }
+
+      await axios.post('http://127.0.0.1:8000/api/config/getCost', data).then((response) => {
+        this.data.price = this.formatPrice(response.data)
+        this.loading = false
+      })
+
+    },
+    formatPrice(price) {
+      let currency = '₦'
+      var formatter = new Intl.NumberFormat('en-US');
+      
+      return currency+formatter.format(price)
     }
   }
 }
