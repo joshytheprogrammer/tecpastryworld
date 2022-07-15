@@ -1,7 +1,7 @@
 <template>
   <div class="price">
     <div class="loader" v-if="loading"></div>
-    <p v-else> {{price}} </p>
+    <p v-if="price"> {{price}} </p>
   </div>
 </template>
 

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <NetworkError v-if="$fetchState.error || error" :message="error" />
     <Price :loading="loading" :price="data.price" />
     <form v-if="configurable">
       <div class="form-group">
@@ -26,7 +27,8 @@
       </div>
       <button class="btn" type="submit">Add to Cart</button>
     </form>
-    <div v-else class="m">
+    
+    <div v-if="!configurable" class="m">
       <p>Product not available online</p>
       <button>Whatsapp to Order</button>
     </div>
@@ -36,10 +38,12 @@
 <script>
 import axios from "axios"
 import Price from "./Price.vue"
+import NetworkError from "../../components/App/Helpers/Global/Error.vue"
 
 export default {
   components: {
-    Price
+    Price,
+    NetworkError
   },
   data() {
     return {
@@ -49,11 +53,13 @@ export default {
         price: '',
         size: '',
         type: '',
-      }
+      },
+      error: '',
     }
   },
   async fetch() {
     await axios.get('http://127.0.0.1:8000/api/config/getFormat/'+this.id).then((response) => {
+
       let isFormAllowed = response.data[0].configurable
       let format = JSON.parse(response.data[0].format)
 
@@ -71,6 +77,8 @@ export default {
       // Return Price
       this.getPrice()
 
+    }).catch((error) => {
+      this.error = error.message
     })
   },
   props: ["id"],
@@ -79,7 +87,9 @@ export default {
       this.getPrice()
     },
     async getPrice() {
-      this.loading = false
+      // Make price load
+      this.loading = true
+      this.data.price = ''
 
       let data = {
         "product_id": this.id,
@@ -90,7 +100,9 @@ export default {
       await axios.post('http://127.0.0.1:8000/api/config/getCost', data).then((response) => {
         this.data.price = this.formatPrice(response.data)
         this.loading = false
-      })
+      }).catch((error) => {
+      this.error = error.message
+    })
 
     },
     formatPrice(price) {
