@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Price />
     {{data}}
     <form v-if="configurable">
       <div class="form-group">
@@ -35,8 +36,12 @@
 
 <script>
 import axios from "axios"
+import Price from "./Price.vue"
 
 export default {
+  components: {
+    Price
+  },
   data() {
     return {
       configurable: false,

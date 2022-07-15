@@ -1,7 +1,7 @@
 <template>
   <div class="price">
-    <!-- <div class="loader"></div> -->
-    <p>₦14,000</p>
+    <div class="loader"></div>
+    <!-- <p>₦14,000</p> -->
   </div>
 </template>
 
@@ -33,7 +33,7 @@ export default {
   .loader {
     margin: 0.6rem auto;
     border: 8px solid $light;
-    border-top: 8px solid $secondary;
+    border-top: 8px solid $primary;
     border-radius: 50%;
     width: 30px;
     height: 30px;
