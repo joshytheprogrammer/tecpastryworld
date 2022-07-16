@@ -65,11 +65,11 @@ export default {
   async fetch() {
     await axios.get('http://127.0.0.1:8000/api/config/getFormat/'+this.id).then((response) => {
 
-      let isFormAllowed = response.data[0].configurable
+      // Decide whether to show form or not
+      this.configurable = response.data[0].configurable
       let format = JSON.parse(response.data[0].format)
 
-      // Decide whether to show form or not
-      this.configurable = isFormAllowed
+      
       
       if(!format) {
         return
@@ -80,7 +80,7 @@ export default {
       this.data.type = format.type
 
       // Return Price
-      this.getPrice()
+      this.refreshPrice()
 
     }).catch((error) => {
       this.error = error.message
@@ -88,9 +88,9 @@ export default {
   },
   methods: {
     onChange() {
-      this.getPrice()
+      this.refreshPrice()
     },
-    async getPrice() {
+    async refreshPrice() {
       // Make price load
       this.loading = true
       this.data.price = ''
@@ -107,6 +107,9 @@ export default {
       }).catch((error) => {
       this.error = error.message
     })
+
+    },
+    setData(format) {
 
     },
     formatPrice(price) {
