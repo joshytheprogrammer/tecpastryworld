@@ -3,7 +3,7 @@
     <p class="warn">Product not eligible for online purchase. </p>
     <p class="inform">Scan the code <b>OR</b> the click the button below to Order.</p>
     <qrcode class="qr" :value="value" :size="size" level="H" foreground="#001021" />
-    <a href="#" class="btn">Whatsapp to Order</a>
+    <a :href="value" target="_blank" class="btn">Whatsapp to Order</a>
   </div>
 </template>
 
@@ -11,6 +11,7 @@
 import Qrcode from 'qrcode.vue'
 
 export default {
+  props: ["id", "img"],
   data() {
     return {
       value: '',
@@ -19,6 +20,16 @@ export default {
   },
   components: {
     Qrcode
+  },
+  mounted() {
+    this.generateLink()
+  },
+  methods: {
+    generateLink() {
+      let base = "https://api.whatsapp.com/send?phone=2347010718819&text=Hi there I would like to order the product < "+this.id+" >. It looks like "+this.img+""
+
+      this.value = base
+    }
   }
 }
 </script>

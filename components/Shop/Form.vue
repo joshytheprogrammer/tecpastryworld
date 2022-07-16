@@ -30,7 +30,7 @@
       </form>
     </div>
     <div v-else>
-      <NoForm  />
+      <NoForm :id="id" :img="img" />
     </div>
   </div>
 </template>
@@ -43,7 +43,7 @@ import NetworkError from "../../components/App/Helpers/Global/Error.vue"
 import NoForm from "./NoForm.vue"
 
 export default {
-  props: ["id"],
+  props: ["id", "img"],
   components: {
     Price,
     NoForm,

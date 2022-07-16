@@ -7,7 +7,7 @@
           <h1 class="n"> {{item.name}}. </h1>
           <p class="p_r" title="the range of prices available">[ {{formatter(item.price)}} ]</p>
         </div>
-        <Form :id="item._id" />
+        <Form :id="item._id" :img="item.thumbnail" />
       </div>
     </div>
   </div>
