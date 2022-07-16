@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="after_item">
     <NetworkError v-if="$fetchState.error || error" :message="error" />
     <div v-else-if="configurable">
       <Price :loading="loading" :price="data.price" />
