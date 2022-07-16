@@ -44,6 +44,7 @@ import NoForm from "./NoForm.vue"
 export default {
   components: {
     Price,
+    NoForm,
     NetworkError
   },
   data() {
