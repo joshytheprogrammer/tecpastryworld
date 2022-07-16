@@ -30,7 +30,7 @@
       </form>
     </div>
     <div v-else>
-
+      <NoForm />
     </div>
   </div>
 </template>
@@ -39,6 +39,7 @@
 import axios from "axios"
 import Price from "./Price.vue"
 import NetworkError from "../../components/App/Helpers/Global/Error.vue"
+import NoForm from "./NoForm.vue"
 
 export default {
   components: {
