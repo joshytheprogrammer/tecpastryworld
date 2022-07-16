@@ -50,6 +50,9 @@ export default {
   }
 
   .btn {
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
     background: $success;
     color: $primary;
     border: none;
@@ -57,7 +60,7 @@ export default {
     font-weight: 400;
     border-radius: 8px;
     height: 45px;
-    padding: 4px 24px;
+    padding: 12px 24px;
     margin: 1rem 0;
     cursor: pointer;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
