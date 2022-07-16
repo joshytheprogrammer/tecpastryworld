@@ -56,9 +56,9 @@ export default {
     }
   }
 
-  .qr {
+  // .qr {
     
-  }
+  // }
 
   .btn {
     display: inline-block;
