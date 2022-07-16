@@ -27,11 +27,6 @@
       </div>
       <button class="btn" type="submit">Add to Cart</button>
     </form>
-    
-    <div v-if="!configurable" class="m">
-      <p>Product not available online</p>
-      <button>Whatsapp to Order</button>
-    </div>
   </div>
 </template>
 
