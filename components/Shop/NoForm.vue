@@ -37,7 +37,6 @@ export default {
 
 <style lang="scss" scoped>
 .m {
-
   max-width: 300px;
 
   .qr {
@@ -82,6 +81,16 @@ export default {
 
     &:hover {
       box-shadow: 0px 4px 4px $dark;
+    }
+  }
+
+  @media screen and (max-width: $large) {
+    .qr {
+      margin: 0.1rem 0;
+    }
+
+    .btn {
+      margin: 0.5rem 0;
     }
   }
 }
