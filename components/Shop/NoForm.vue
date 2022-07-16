@@ -1,9 +1,9 @@
 <template>
   <div class="m">
-    <p>Product not eligible for online purchase. </p>
-    <p>Scan the code OR the click the button below to Order.</p>
-    <qrcode :value="value" :size="size" level="H" />
-    <button>Whatsapp to Order</button>
+    <p class="warn">Product not eligible for online purchase. </p>
+    <p class="inform">Scan the code <b>OR</b> the click the button below to Order.</p>
+    <qrcode class="qr" :value="value" :size="size" level="H" foreground="#001021" />
+    <a href="#" class="btn">Whatsapp to Order</a>
   </div>
 </template>
 
@@ -13,7 +13,7 @@ import Qrcode from 'qrcode.vue'
 export default {
   data() {
     return {
-      value: 'https://example.com',
+      value: '',
       size: 300,
     }
   },
@@ -27,7 +27,6 @@ export default {
 .m {
 
   p {
-    background: $warning;
     color: $primary;
     padding: 0.5rem 1rem;
     margin: 1rem 0;
@@ -35,9 +34,22 @@ export default {
     font-weight: 400;
     border-radius: 4px;
     width: fit-content;
+
+    &.warn {
+      background: $warning;
+    }
+
+    &.inform {
+      background: $primary;
+      color: $light;
+    }
   }
 
-  button {
+  .qr {
+    
+  }
+
+  .btn {
     background: $success;
     color: $primary;
     border: none;
