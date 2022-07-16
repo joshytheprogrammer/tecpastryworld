@@ -10,6 +10,7 @@
         <Form :id="item._id" :img="item.thumbnail" />
       </div>
     </div>
+    <a href="#" @click.stop="$router.back(-1)">Back</a>
   </div>
 </template>
 
