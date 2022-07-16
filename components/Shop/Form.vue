@@ -43,6 +43,7 @@ import NetworkError from "../../components/App/Helpers/Global/Error.vue"
 import NoForm from "./NoForm.vue"
 
 export default {
+  props: ["id"],
   components: {
     Price,
     NoForm,
@@ -85,7 +86,6 @@ export default {
       this.error = error.message
     })
   },
-  props: ["id"],
   methods: {
     onChange() {
       this.getPrice()
