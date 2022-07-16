@@ -69,19 +69,13 @@ export default {
       this.configurable = response.data[0].configurable
       let format = JSON.parse(response.data[0].format)
 
-      
-      
-      if(!format) {
-        return
+      // Checks if format exists
+      if(format) {
+        this.setData(format)
       }
 
-      // Assign Variables
-      this.data.size = format.size
-      this.data.type = format.type
-
-      // Return Price
-      this.refreshPrice()
-
+      // End this async function
+      return
     }).catch((error) => {
       this.error = error.message
     })
@@ -93,6 +87,8 @@ export default {
     async refreshPrice() {
       // Make price load
       this.loading = true
+      
+      // Reset price
       this.data.price = ''
 
       let data = {
@@ -110,7 +106,12 @@ export default {
 
     },
     setData(format) {
+      // Assign Variables
+      this.data.size = format.size
+      this.data.type = format.type
 
+      // Return Price
+      this.refreshPrice()
     },
     formatPrice(price) {
       let currency = '₦'
