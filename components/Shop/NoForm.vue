@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!configurable" class="m">
+  <div class="m">
     <p>Product not available online</p>
     <button>Whatsapp to Order</button>
   </div>
