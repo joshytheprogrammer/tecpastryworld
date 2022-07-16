@@ -8,7 +8,7 @@
           <p class="p_r" title="the range of prices available">[ {{formatter(item.price)}} ]</p>
         </div>
         <Form :id="item._id" :img="item.thumbnail" />
-        <BackLink />
+        <!-- <BackLink /> -->
       </div> 
     </div>
     

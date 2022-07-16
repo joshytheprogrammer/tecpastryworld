@@ -1,8 +1,9 @@
 <template>
   <div class="m">
-    <p class="warn">Product not eligible for online purchase. </p>
-    <p class="inform">Scan the code <b>OR</b> the click the button below to Order.</p>
     <qrcode class="qr" :value="value" :size="size" level="H" foreground="#001021" />
+    <p class="warn">Product not eligible for online purchase. </p>
+    <p class="inform">Scan the code <b>OR</b> click the button below to order.</p>
+    
     <a :href="value" target="_blank" class="btn">Whatsapp to Order</a>
   </div>
 </template>
@@ -15,7 +16,7 @@ export default {
   data() {
     return {
       value: '',
-      size: 300,
+      size: '300',
     }
   },
   components: {
@@ -37,6 +38,12 @@ export default {
 <style lang="scss" scoped>
 .m {
 
+  max-width: 300px;
+
+  .qr {
+    margin: 1rem 0;
+  }
+
   p {
     color: $primary;
     padding: 0.5rem 1rem;
@@ -55,10 +62,6 @@ export default {
       color: $light;
     }
   }
-
-  // .qr {
-    
-  // }
 
   .btn {
     display: inline-block;

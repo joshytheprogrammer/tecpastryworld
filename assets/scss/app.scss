@@ -24,3 +24,10 @@ body  {
   background: $background;
   overflow-x: hidden;
 }
+
+@media screen and (max-width: $s-medium) {
+  canvas {
+    max-width: 100%;
+    max-height: 200px;
+  }
+}
