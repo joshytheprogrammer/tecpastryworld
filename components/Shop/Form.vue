@@ -30,7 +30,7 @@
       </form>
     </div>
     <div v-else>
-      <NoForm />
+      <NoForm  />
     </div>
   </div>
 </template>

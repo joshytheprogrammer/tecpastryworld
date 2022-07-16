@@ -1,13 +1,25 @@
 <template>
   <div class="m">
-    <p>Product not eligible for online purchase.</p>
+    <p>Product not eligible for online purchase. </p>
+    <p>Scan the code OR the click the button below to Order.</p>
+    <qrcode :value="value" :size="size" level="H" />
     <button>Whatsapp to Order</button>
   </div>
 </template>
 
 <script>
-export default {
+import Qrcode from 'qrcode.vue'
 
+export default {
+  data() {
+    return {
+      value: 'https://example.com',
+      size: 300,
+    }
+  },
+  components: {
+    Qrcode
+  }
 }
 </script>
 
