@@ -1,32 +1,37 @@
 <template>
   <div>
     <NetworkError v-if="$fetchState.error || error" :message="error" />
-    <Price :loading="loading" :price="data.price" />
-    <form v-if="configurable">
-      <div class="form-group">
-        <label>Select Size*</label>
-        <select class="form-control" v-model="data.size" @change="onChange">
-          <option value="8">8 inches</option>
-          <option value="10">10 inches</option>
-          <option value="12">12 inches</option>
-          <option value="14">14 inches</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Type of Cake*</label>
-        <select class="form-control" v-model="data.type" @change="onChange">
-          <option value="sc">Sponge Cake</option>
-          <option value="cc">Chocolate Cake</option>
-          <option value="fc">Fruit Cake</option>
-          <option value="rv">Red Velvet Cake</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Cake Message*</label>
-        <input class="form-control" type="text" placeholder="What message would you like on top of the cake">
-      </div>
-      <button class="btn" type="submit">Add to Cart</button>
-    </form>
+    <div v-else-if="configurable">
+      <Price :loading="loading" :price="data.price" />
+      <form>
+        <div class="form-group">
+          <label>Select Size*</label>
+          <select class="form-control" v-model="data.size" @change="onChange">
+            <option value="8">8 inches</option>
+            <option value="10">10 inches</option>
+            <option value="12">12 inches</option>
+            <option value="14">14 inches</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Type of Cake*</label>
+          <select class="form-control" v-model="data.type" @change="onChange">
+            <option value="sc">Sponge Cake</option>
+            <option value="cc">Chocolate Cake</option>
+            <option value="fc">Fruit Cake</option>
+            <option value="rv">Red Velvet Cake</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Cake Message*</label>
+          <input class="form-control" type="text" placeholder="What message would you like on top of the cake">
+        </div>
+        <button class="btn" type="submit">Add to Cart</button>
+      </form>
+    </div>
+    <div v-else>
+
+    </div>
   </div>
 </template>
 
