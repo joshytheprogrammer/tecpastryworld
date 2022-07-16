@@ -8,7 +8,6 @@
           <p class="p_r" title="the range of prices available">[ {{formatter(item.price)}} ]</p>
         </div>
         <Form :id="item._id" :img="item.thumbnail" />
-        <BackLink />
       </div> 
     </div>
   </div>
@@ -16,11 +15,9 @@
 
 <script>
 import Form from "./Form.vue"
-import BackLink from "../../components/App/Helpers/Global/Back.vue"
 export default {
   components: {
     Form,
-    BackLink
   },
   props: ["item"],
   methods: {
