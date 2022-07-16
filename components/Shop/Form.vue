@@ -24,7 +24,7 @@
         </div>
         <div class="form-group">
           <label>Cake Message*</label>
-          <input class="form-control" type="text" placeholder="What message would you like on top of the cake">
+          <input class="form-control" type="text" placeholder="What message would you like on top of the cake" v-model="data.message">
         </div>
         <button class="btn" type="submit">Add to Cart</button>
       </form>
@@ -37,6 +37,7 @@
 
 <script>
 import axios from "axios"
+
 import Price from "./Price.vue"
 import NetworkError from "../../components/App/Helpers/Global/Error.vue"
 import NoForm from "./NoForm.vue"
@@ -55,6 +56,7 @@ export default {
         price: '',
         size: '',
         type: '',
+        message: ''
       },
       error: '',
     }
