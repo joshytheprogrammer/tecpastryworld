@@ -1,5 +1,5 @@
 <template>
-  <a class="back" href="#" @click.stop="$router.back(-1)">Back</a>
+  <button class="back" href="#" @click.stop="$router.back(-1)">Back</button>
 </template>
 
 <script>
@@ -11,15 +11,18 @@ export default {
 <style lang="scss" scoped>
 .back {
   display: block;
+  cursor: pointer;
   text-decoration: none;
-  margin: 1rem 0;
-  color: $primary;
+  margin: 0.5rem 0;
+  padding: 0.2rem 1rem;
+  background: $primary;
+  border-radius: 8px;
+  color: $light;
   font-size: 18px;
   font-weight: 400;
 
   &:hover {
-    text-decoration: underline;
-    text-underline-offset: 2px;
+    box-shadow: 0px 4px 4px $dark;
   }
 }
 </style>

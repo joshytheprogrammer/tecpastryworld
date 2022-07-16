@@ -1,5 +1,5 @@
 <template>
-  <div class="m">
+  <div class="m" v-if="id">
     <qrcode class="qr" :value="value" :size="size" level="H" foreground="#001021" />
     <p class="warn">Product not eligible for online purchase. </p>
     <p class="inform">Scan the code <b>OR</b> click the button below to order through Whatsapp.</p>
