@@ -14,7 +14,7 @@
           </select>
         </div>
         <div class="form-group">
-          <label>Type of Cake*</label>
+          <label title="This is the flavour of the cake itself. Not the decoration">Type of Cake*</label>
           <select class="form-control" v-model="data.type" @change="onChange">
             <option value="sc">Sponge Cake</option>
             <option value="cc">Chocolate Cake</option>
@@ -87,7 +87,7 @@ export default {
     async refreshPrice() {
       // Make price load
       this.loading = true
-      
+
       // Reset price
       this.data.price = ''
 
