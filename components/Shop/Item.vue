@@ -40,6 +40,7 @@ export default {
 
 <style lang="scss" scoped>
 .Qdw {
+  min-width: 90%;
   max-width: 90%;
   margin: 0 auto;
   padding: 2rem 0;
@@ -93,6 +94,7 @@ export default {
   }
 
   @media screen and (max-width: $medium) {
+    min-width: 80%;
     max-width: 80%;
     padding: 1rem;
 
@@ -119,6 +121,7 @@ export default {
   }
 
   @media screen and (max-width: $s-medium) {
+    min-width: 100%;
     max-width: 100%;
 
     img {
