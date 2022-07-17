@@ -2,11 +2,11 @@
   <div class="after_item">
     <NetworkError v-if="$fetchState.error || error" :message="error" />
     <div v-if="configurable">
-      <Price :loading="loading" :price="data.price" />
+      <Price :loading="priceLoading" :price="data.price" />
       <form>
         <div class="form-group">
           <label>Select Size*</label>
-          <select class="form-control" v-model="data.size" @change="onChange">
+          <select class="form-control" v-model="data.size" @change="onChange" required>
             <option value="8">8 inches</option>
             <option value="10">10 inches</option>
             <option value="12">12 inches</option>
@@ -15,7 +15,7 @@
         </div>
         <div class="form-group">
           <label title="This is the flavour of the cake itself. Not the decoration">Type of Cake*</label>
-          <select class="form-control" v-model="data.type" @change="onChange">
+          <select class="form-control" v-model="data.type" @change="onChange" required>
             <option value="sc">Sponge Cake</option>
             <option value="cc">Chocolate Cake</option>
             <option value="fc">Fruit Cake</option>
@@ -24,12 +24,12 @@
         </div>
         <div class="form-group">
           <label>Cake Message*</label>
-          <input class="form-control" type="text" placeholder="What message would you like on top of the cake" v-model="data.message">
+          <input class="form-control" type="text" placeholder="What message would you like on top of the cake" v-model="data.message" required>
         </div>
         <button class="btn" type="submit">Add to Cart</button>
       </form>
     </div>
-    <div v-else>
+    <div v-if="!configurable && !loading">
       <NoForm :id="id" :img="img" />
     </div>
   </div>
@@ -53,6 +53,7 @@ export default {
     return {
       configurable: true,
       loading: true,
+      priceLoading: true,
       data: {
         price: '',
         size: '',
@@ -74,6 +75,8 @@ export default {
         this.setData(format)
       }
 
+      this.loading = false
+
       // End this async function
       return
     }).catch((error) => {
@@ -86,7 +89,7 @@ export default {
     },
     async refreshPrice() {
       // Make price load
-      this.loading = true
+      this.priceLoading = true
 
       // Reset price
       this.data.price = ''
@@ -99,11 +102,12 @@ export default {
 
       await axios.post('http://127.0.0.1:8000/api/config/getCost', data).then((response) => {
         this.data.price = this.formatPrice(response.data)
-        this.loading = false
+        this.priceLoading = false
       }).catch((error) => {
         this.error = error.message
       })
 
+      this.loading = false
     },
     setData(format) {
       // Assign Variables
