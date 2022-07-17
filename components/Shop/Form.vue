@@ -1,10 +1,7 @@
 <template>
   <div class="after_item">
     <NetworkError v-if="$fetchState.error || error" :message="error" />
-    <div v-if="!configurable">
-      <NoForm :id="id" :img="img" />
-    </div>
-    <div v-else>
+    <div v-if="configurable">
       <Price :loading="loading" :price="data.price" />
       <form>
         <div class="form-group">
@@ -32,6 +29,9 @@
         <button class="btn" type="submit">Add to Cart</button>
       </form>
     </div>
+    <div v-else>
+      <NoForm :id="id" :img="img" />
+    </div>
   </div>
 </template>
 
@@ -51,7 +51,7 @@ export default {
   },
   data() {
     return {
-      configurable: false,
+      configurable: true,
       loading: true,
       data: {
         price: '',
@@ -101,8 +101,8 @@ export default {
         this.data.price = this.formatPrice(response.data)
         this.loading = false
       }).catch((error) => {
-      this.error = error.message
-    })
+        this.error = error.message
+      })
 
     },
     setData(format) {

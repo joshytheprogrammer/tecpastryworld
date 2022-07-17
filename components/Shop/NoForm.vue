@@ -17,6 +17,7 @@ export default {
     return {
       value: '',
       size: '300',
+      // loaded: false,
     }
   },
   components: {
@@ -24,6 +25,10 @@ export default {
   },
   mounted() {
     this.generateLink()
+
+    // setTimeout(() => {
+    //   this.loaded = true
+    // }, 1000)
   },
   methods: {
     generateLink() {
