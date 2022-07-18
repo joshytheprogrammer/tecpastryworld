@@ -23,7 +23,10 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [],
+  buildModules: [
+    '@nuxtjs/ngrok',
+    '@nuxtjs/dotenv',
+  ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -57,4 +60,9 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  ngrok: {
+    // module options
+    authtoken: process.env.NGROK_AUTHTOKEN
+  }
 }

@@ -106,8 +106,6 @@ export default {
       }).catch((error) => {
         this.error = error.message
       })
-
-      this.loading = false
     },
     setData(format) {
       // Assign Variables
