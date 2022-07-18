@@ -1,5 +1,5 @@
 <template>
-  <div class="app">
+  <div class="app" ontouchstart="">
     <MNavigation v-if="mobile" />
     <DNavigation v-else />
     <div class="body">
