@@ -13,7 +13,7 @@ export default {
 
 <style lang="scss" scoped>
 .price {
-  background: $background;
+  background: $primary;
   border-radius: 10px;
   border: 1px solid $primary;
   min-width: 150px;
@@ -21,7 +21,7 @@ export default {
   margin: 0.5rem 0;
   font-size: 24px;
   font-weight: 400;
-  color: $primary;
+  color: $background;
 
   p {
     user-select: none;
