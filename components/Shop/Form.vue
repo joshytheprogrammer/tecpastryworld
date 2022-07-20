@@ -3,7 +3,7 @@
     <NetworkError v-if="$fetchState.error || error" :message="error" />
     <div v-if="configurable">
       <Price :loading="priceLoading" :price="data.price" />
-      <form>
+      <form @submit.prevent="addItem">
         <div class="form-group">
           <label>Select Size*</label>
           <select class="form-control" v-model="data.size" @change="onChange" required>
@@ -41,6 +41,8 @@ import axios from "axios"
 import NetworkError from "../../components/App/Helpers/Global/Error.vue"
 import Price from "./Price.vue"
 import NoForm from "./NoForm.vue"
+
+import {mapActions} from "vuex"
 
 export default {
   props: ["id", "img"],
@@ -84,6 +86,9 @@ export default {
     })
   },
   methods: {
+    ...mapActions({
+      'addToCart': "global/cart/addToCart"
+    }),
     onChange() {
       this.refreshPrice()
     },
@@ -120,6 +125,9 @@ export default {
       var formatter = new Intl.NumberFormat('en-US');
       
       return currency+formatter.format(price)
+    },
+    addItem() {
+      this.addToCart()
     }
   }
 }
