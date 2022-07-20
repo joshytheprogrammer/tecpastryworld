@@ -46,8 +46,5 @@ export default {
     getCartNo(state) {
       return state.cart.length
     },
-    cartExists : (state) => (id) => {
-      return state.cart.find(c => c.id === id)
-    }
   }
 }
