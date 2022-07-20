@@ -5,10 +5,10 @@ export default {
   }),
   mutations: {
     ADD_ITEM(state, payload) {
-      
+
       state.cart.push(payload)
-      // localStorage.setItem('cart', payload)
-      // console.log(localStorage.getItem('cart'))
+      localStorage.setItem('cart', JSON.stringify(state.cart))
+      console.log(JSON.parse(localStorage.getItem('cart')))
     }
   },
   actions: {
@@ -36,6 +36,8 @@ export default {
     }
   },
   getters: {
-    
+    getCartItems(state) {
+      return state.cart
+    }
   }
 }
