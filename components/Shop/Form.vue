@@ -37,12 +37,11 @@
 
 <script>
 import axios from "axios"
+import {mapActions} from "vuex"
 
 import NetworkError from "../../components/App/Helpers/Global/Error.vue"
 import Price from "./Price.vue"
 import NoForm from "./NoForm.vue"
-
-import {mapActions} from "vuex"
 
 export default {
   props: ["item"],
