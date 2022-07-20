@@ -99,7 +99,7 @@ export default {
       this.data.price = ''
 
       let data = {
-        "product_id": this.id,
+        "product_id": this.item._id,
         "type": this.data.type,
         "size": this.data.size
       }

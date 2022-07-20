@@ -46,6 +46,8 @@ export default {
     getCartNo(state) {
       return state.cart.length
     },
-
+    cartExists(state) {
+      
+    }
   }
 }
