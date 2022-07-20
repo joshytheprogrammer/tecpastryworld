@@ -43,7 +43,6 @@ import Price from "./Price.vue"
 import NoForm from "./NoForm.vue"
 
 import {mapActions} from "vuex"
-import { data } from 'qrcode.vue'
 
 export default {
   props: ["item"],
