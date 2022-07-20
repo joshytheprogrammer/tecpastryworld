@@ -18,7 +18,7 @@ import {mapGetters} from "vuex"
 export default {
   computed: {
     ...mapGetters({
-      'cartItems': 'global/cart/getCartItems'
+      'cartItems': 'global/cart/getCartItems',
     })
   }
 }
