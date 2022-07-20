@@ -8,7 +8,7 @@ export default {
 
       state.cart.push(payload)
       localStorage.setItem('cart', JSON.stringify(state.cart))
-      console.log(JSON.parse(localStorage.getItem('cart')))
+      // console.log(JSON.parse(localStorage.getItem('cart')))
     }
   },
   actions: {
@@ -38,6 +38,10 @@ export default {
   getters: {
     getCartItems(state) {
       return state.cart
-    }
+    },
+    getCartNo(state) {
+      return state.cart.length
+    },
+    
   }
 }

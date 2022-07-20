@@ -1,13 +1,19 @@
 <template>
   <div class="cart" @click="$router.push('/cart')">
-    <span>0</span>
+    <span>{{cartNum}}</span>
     <Icon icon="akar-icons:cart" width="24" height="24" />
   </div>
 </template>
 
 <script>
+import {mapGetters} from "vuex"
 import {Icon} from '@iconify/vue2'
 export default {
+  computed: {
+    ...mapGetters({
+      'cartNum': 'global/cart/getCartNo'
+    })
+  },
   components: {
     Icon
   }
