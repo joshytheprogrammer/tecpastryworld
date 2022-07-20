@@ -8,7 +8,11 @@ export default {
 
       state.cart.push(payload)
       localStorage.setItem('cart', JSON.stringify(state.cart))
-      // console.log(JSON.parse(localStorage.getItem('cart')))
+    },
+    INITIATE_CART(state) {
+      if(localStorage.getItem('cart')){
+        state.cart = JSON.parse(localStorage.getItem('cart'))
+      }
     }
   },
   actions: {
@@ -33,7 +37,7 @@ export default {
 
       // Dispatch Notification
       dispatch("global/notification/setNotification", {type: "success", message: 'Item added successfully'}, {root: true})
-    }
+    },
   },
   getters: {
     getCartItems(state) {
@@ -42,6 +46,6 @@ export default {
     getCartNo(state) {
       return state.cart.length
     },
-    
+
   }
 }

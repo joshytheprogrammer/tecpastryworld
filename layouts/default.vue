@@ -28,6 +28,9 @@ export default {
     MNavigation,
     Notification
   },
+  beforeMount() {
+    this.$store.commit("global/cart/INITIATE_CART")
+  },
   mounted() {
     this.isMobile()
 
