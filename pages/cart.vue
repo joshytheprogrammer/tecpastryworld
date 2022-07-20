@@ -1,13 +1,13 @@
 <template>
   <div>
     <div v-for="item in cartItems" :key="item.id">
-      <p>{{item.id}}</p>
+      <p> {{item.id}} </p>
       <p> {{item.img}} </p>
       <p> {{item.name}} </p>
       <p> {{item.data.size}} </p>
       <p> {{item.data.type}} </p>
       <p> {{item.data.price}} </p>
-      <p> {{item.data.message}}</p>
+      <p> {{item.data.message}} </p>
       <hr><br>
     </div>
   </div>  

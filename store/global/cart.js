@@ -7,6 +7,9 @@ export default {
     ADD_ITEM(state, payload) {
 
       state.cart.push(payload)
+      
+      // if(){}
+
       localStorage.setItem('cart', JSON.stringify(state.cart))
     },
     INITIATE_CART(state) {
