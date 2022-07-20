@@ -30,7 +30,7 @@
       </form>
     </div>
     <div v-if="!configurable && !loading">
-      <NoForm :id="id" :img="img" />
+      <NoForm :id="item._id" :img="item.thumbnail" />
     </div>
   </div>
 </template>
@@ -43,9 +43,10 @@ import Price from "./Price.vue"
 import NoForm from "./NoForm.vue"
 
 import {mapActions} from "vuex"
+import { data } from 'qrcode.vue'
 
 export default {
-  props: ["id", "img"],
+  props: ["item"],
   components: {
     Price,
     NoForm,
@@ -66,7 +67,7 @@ export default {
     }
   },
   async fetch() {
-    await axios.get('http://127.0.0.1:8000/api/config/getFormat/'+this.id).then((response) => {
+    await axios.get('http://127.0.0.1:8000/api/config/getFormat/'+this.item._id).then((response) => {
 
       // Decide whether to show form or not
       this.configurable = response.data[0].configurable
@@ -127,7 +128,11 @@ export default {
       return currency+formatter.format(price)
     },
     addItem() {
-      this.addToCart()
+      let data = [
+        this.item,
+        this.data
+      ]
+      this.addToCart(data)
     }
   }
 }
