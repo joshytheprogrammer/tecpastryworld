@@ -4,27 +4,19 @@ export default {
     cart: []
   }),
   mutations: {
-    ADD_ITEMS(state, payload) {
-      // {
-      //   id: '', // product_id
-      //   thumbnail: '',
-      //   name: '',
-      //   data: {
-      //     size: '',
-      //     type: '',
-      //     message: ''
-      //   }
-      // }
-
-      localStorage.setItem('cart', state.cart)
-      console.log(localStorage.getItem('cart'))
+    ADD_ITEM(state, payload) {
+      
+      state.cart.push(payload)
+      // localStorage.setItem('cart', payload)
+      // console.log(localStorage.getItem('cart'))
     }
   },
   actions: {
-    addToCart({ commit }, product) {
+    addToCart({ commit, dispatch }, product) {
       let info = product[0]
       let details = product[1]
 
+      // assigning variables
       let item = {
         id: info._id,
         img: info.thumbnail,
@@ -36,8 +28,11 @@ export default {
           message: details.message
         }
       }
-      
-      console.log("in cart", item)
+
+      commit('ADD_ITEM', item)
+
+      // Dispatch Notification
+      dispatch("global/notification/setNotification", {type: "success", message: 'Item added successfully'}, {root: true})
     }
   },
   getters: {
