@@ -20,6 +20,11 @@ export default {
     ...mapGetters({
       'cartItems': 'global/cart/getCartItems',
     })
+  },
+  data() {
+    return {
+      
+    }
   }
 }
 </script>
