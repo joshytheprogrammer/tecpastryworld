@@ -15,9 +15,8 @@
               <span> <b>Writing:</b>{{item.data.message}}</span>
             </p>
             <div class="actions">
-              <select name="Qty" id="">
-                <option value="">1</option>
-              </select>
+              <a href="#">Delete</a>
+              <a href="#">Save for Later</a>
             </div>
           </div>
           <div class="_price">
