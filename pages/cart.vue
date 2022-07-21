@@ -35,7 +35,7 @@ export default {
 <style lang="scss" scoped>
 .cart {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 3fr 1fr;
 
   .items {
     background: $light;
