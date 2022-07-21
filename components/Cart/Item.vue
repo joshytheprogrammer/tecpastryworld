@@ -9,8 +9,8 @@
         <p> {{item.data.price}} </p>
       </div>
       <div class="data"> 
-        <span> <b>Size:</b>{{item.data.size}}</span>
-        <span> <b>Type:</b>{{item.data.type}}</span>
+        <span> <b>Size:</b>{{item.data.size}} inches</span>
+        <span> <b>Type:</b>{{formatData(item.data.type, "type")}}</span>
         <span> <b>Writing:</b>"{{item.data.message}}"</span>
       </div>
       <div class="actions">
@@ -29,7 +29,14 @@ export default {
   components: {
     
   },
-  props: ["item"]
+  props: ["item"],
+  methods: {
+    formatData(value, type){
+      if(type == "type") {
+        
+      }
+    }
+  }
 }
 </script>
 
