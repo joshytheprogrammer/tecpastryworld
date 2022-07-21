@@ -60,5 +60,19 @@ export default {
     margin-left: 0.5rem;
     background: $light;
   }
+
+  @media screen and (max-width: $medium){
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+
+    .items {
+      border: none;
+    }
+
+    .checkout {
+      margin-left: 0;
+    }
+  }
 }
 </style>
