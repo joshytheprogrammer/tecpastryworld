@@ -5,11 +5,11 @@
     </div>
     <div class="_details">
       <h3> {{item.name}} </h3>
-      <p> 
+      <div> 
         <span> <b>Size:</b>{{item.data.size}}</span>
         <span> <b>Type:</b>{{item.data.type}}</span>
         <span> <b>Writing:</b>{{item.data.message}}</span>
-      </p>
+      </div>
       <div class="actions">
         <a href="#">Delete</a>
         <a href="#">Save for Later</a>
@@ -42,7 +42,13 @@ export default {
   }
 
   ._details {
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    h3 {
+      
+    }
   }
 }
 </style>
