@@ -174,7 +174,6 @@ export default {
       .actions {
         a {
           font-size: 14px;
-          padding-right: 0.3rem;
         }
       }
     }
