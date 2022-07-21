@@ -10,7 +10,7 @@
       <p> {{item.data.message}} </p>
       <hr><br>
     </div>
-  </div>  
+  </div>
 </template>
 
 <script>

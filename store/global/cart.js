@@ -5,9 +5,9 @@ export default {
   }),
   mutations: {
     ADD_ITEM(state, payload) {
-
       state.cart.push(payload)
       localStorage.setItem('cart', JSON.stringify(state.cart))
+      
     },
     INITIATE_CART(state) {
       if(localStorage.getItem('cart')){
