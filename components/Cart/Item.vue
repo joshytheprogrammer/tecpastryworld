@@ -128,6 +128,13 @@ export default {
           }
         }
       }
+
+      .actions {
+        a {
+          font-size: 14px;
+          padding-right: 0.5rem;
+        }
+      }
     }
 
     ._price {
@@ -135,8 +142,38 @@ export default {
     }
   }
 
-  @media screen and (max-width: $medium){
-    
+  @media screen and (max-width: $s-medium){
+    ._details {
+      padding: 0.3rem;
+
+      h3 {
+        font-size: 16px;
+      }
+
+      ._price {
+        p {
+          font-size: 14px;
+        }
+      }
+
+      .data {
+        span {
+          font-size: 12px;
+          padding-right: 0.3rem;
+        }
+
+        b {
+          padding-right: 0.1rem;
+        }
+      }
+
+      .actions {
+        a {
+          font-size: 14px;
+          padding-right: 0.3rem;
+        }
+      }
+    }
   }
 }
 </style>
