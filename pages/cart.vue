@@ -69,6 +69,11 @@ export default {
     .items {
       border: none;
 
+      h1 {
+        font-size: 28px;
+        padding: 20px 1rem;
+      }
+
       .Qmk {
         max-height: fit-content;
         overflow-x: hidden;
