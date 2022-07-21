@@ -1,7 +1,7 @@
 <template>
   <div class="item">
     <div class="_thumbnail">
-      <img width="120px" height="120px" :src="item.img" :alt="'Cart Item - '+item.name">
+      <img :src="item.img" :alt="'Cart Item - '+item.name">
     </div>
     <div class="_details">
       <h3> {{item.name}} </h3>
@@ -33,5 +33,11 @@ export default {
   grid-template-columns: 0.5fr 2fr 0.1fr;
   padding: 1rem;
   
+  ._thumbnail {
+    img {
+      width: 100%;
+      height: 150px;
+    }
+  }
 }
 </style>
