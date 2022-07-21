@@ -9,7 +9,7 @@
         <p> {{item.data.price}} </p>
       </div>
       <div class="data"> 
-        <span> <b>Size:</b>{{item.data.size}} inches</span>
+        <span> <b>Size:</b>{{item.data.size}}" inches</span>
         <span> <b>Type:</b>{{formatData(item.data.type, "type")}}</span>
         <span> <b>Writing:</b>"{{item.data.message}}"</span>
       </div>
@@ -33,7 +33,15 @@ export default {
   methods: {
     formatData(value, type){
       if(type == "type") {
-        
+        if(value == "rv") {
+          return "Red Velvet Cake"
+        }else if(value == "sc") {
+          return "Sponge Cake"
+        }else if(value == "cc") {
+          return "Chocolate Cake"
+        }else if(value == "fc") {
+          return "Fruit Cake"
+        }
       }
     }
   }
