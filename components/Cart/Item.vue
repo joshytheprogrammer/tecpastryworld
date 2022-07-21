@@ -5,7 +5,7 @@
     </div>
     <div class="_details">
       <h3> {{item.name}} </h3>
-      <div> 
+      <div class="data"> 
         <span> <b>Size:</b>{{item.data.size}}</span>
         <span> <b>Type:</b>{{item.data.type}}</span>
         <span> <b>Writing:</b>{{item.data.message}}</span>
@@ -42,6 +42,8 @@ export default {
   }
 
   ._details {
+    padding: 1rem 0.5rem;
+    width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -49,6 +51,22 @@ export default {
     h3 {
       font-size: 24px;
       font-weight: 500;
+    }
+
+    .data {
+      display: flex;
+      justify-content: flex-start;
+
+      span {
+        font-size: 18px;
+        font-weight: 500;
+        padding-right: 1rem;
+
+        b {
+          font-weight: 600;
+          padding-right: 0.5rem;
+        }
+      }
     }
   }
 }
