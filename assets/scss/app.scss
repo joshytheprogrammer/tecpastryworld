@@ -34,3 +34,22 @@ body  {
     max-height: 200px;
   }
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+  /* Track */
+::-webkit-scrollbar-track {
+  background: $light;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $primary;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $dark;
+}
