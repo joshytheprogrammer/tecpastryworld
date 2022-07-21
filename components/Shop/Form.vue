@@ -26,7 +26,10 @@
           <label>Cake Message*</label>
           <input class="form-control" type="text" placeholder="What message would you like on top of the cake" v-model="data.message" required>
         </div>
-        <button class="btn" type="submit">Add to Cart</button>
+        
+        <span v-if="inCart">Added to Cart</span>
+        <button v-if="!inCart" class="btn" type="submit">Add to Cart</button>
+        
       </form>
     </div>
     <div v-if="!configurable && !loading">
@@ -45,6 +48,11 @@ import NoForm from "./NoForm.vue"
 
 export default {
   props: ["item"],
+  computed: {
+    inCart() {
+      return this.$store.getters['global/cart/inCart'](this.item._id)
+    }
+  },
   components: {
     Price,
     NoForm,

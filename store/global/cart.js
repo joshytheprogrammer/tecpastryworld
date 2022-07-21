@@ -51,5 +51,15 @@ export default {
     getCartNo(state) {
       return state.cart.length
     },
+    inCart: (state) => (id) => {
+      // return id
+      let check = state.cart.find(p => p.id === id)
+
+      if(check) {
+        return true
+      }else {
+        return false
+      }
+    }
   }
 }
