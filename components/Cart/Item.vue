@@ -26,6 +26,9 @@
 
 <script>
 export default {
+  components: {
+    
+  },
   props: ["item"]
 }
 </script>
