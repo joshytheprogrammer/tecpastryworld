@@ -5,9 +5,18 @@ export default {
   }),
   mutations: {
     ADD_ITEM(state, payload) {
-      state.cart.push(payload)
-      localStorage.setItem('cart', JSON.stringify(state.cart))
+      // Check cart if item is already there.
+      if(state.cart.length) {
+        state.cart.forEach(item => {
+          console.log(item.id)
+        });
+      }else {
+        state.cart.push(payload)
+      }
+      // If item isn't in cart, push item to cart
       
+      // Update local storage
+      // localStorage.setItem('cart', JSON.stringify(state.cart))
     },
     INITIATE_CART(state) {
       if(localStorage.getItem('cart')){
