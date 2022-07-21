@@ -46,7 +46,7 @@ export default {
     width: 90%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
 
     h3 {
       font-size: 24px;
