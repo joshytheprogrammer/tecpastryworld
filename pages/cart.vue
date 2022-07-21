@@ -68,11 +68,15 @@ export default {
 
     .items {
       border: none;
+
+      .Qmk {
+        max-height: fit-content;
+        overflow-x: hidden;
+      }
     }
 
     .checkout {
       margin-left: 0;
-      padding: 2rem; //Remove
     }
   }
 }
