@@ -103,7 +103,7 @@ export default {
     }
   }
 
-  @media screen and (max-width: $m-large){
+  @media screen and (max-width: $large){
     grid-template-columns: 1fr 2fr;
 
     ._details {
@@ -122,6 +122,10 @@ export default {
         span {
           font-size: 14px;
           padding-right: 0.5rem;
+
+          b {
+            padding-right: 0.2rem;
+          }
         }
       }
     }
