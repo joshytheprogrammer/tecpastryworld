@@ -70,6 +70,7 @@ export default {
       span {
         font-size: 16px;
         font-weight: 500;
+        text-transform: capitalize;
         padding-right: 1rem;
 
         b {
