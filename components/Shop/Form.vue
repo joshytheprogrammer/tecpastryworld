@@ -194,6 +194,7 @@ div {
         color: $light;
         width: fit-content;
         padding: 12px 24px;
+        user-select: none;
         margin: 1rem 0;
         font-size: 16px;
         font-weight: 400;
