@@ -2,27 +2,8 @@
   <div class="cart">
     <div class="items">
       <h1>Shopping Cart</h1>
-      <div class="QmK">
-        <div class="item" v-for="item in cartItems" :key="item.id">
-          <div class="_thumbnail">
-            <img width="120px" height="120px" :src="item.img" :alt="'Cart Item - '+item.name">
-          </div>
-          <div class="_details">
-            <h3> {{item.name}} </h3>
-            <p> 
-              <span> <b>Size:</b>{{item.data.size}}</span>
-              <span> <b>Type:</b>{{item.data.type}}</span>
-              <span> <b>Writing:</b>{{item.data.message}}</span>
-            </p>
-            <div class="actions">
-              <a href="#">Delete</a>
-              <a href="#">Save for Later</a>
-            </div>
-          </div>
-          <div class="_price">
-            <p> {{item.data.price}} </p>
-          </div>
-        </div>
+      <div class="Qmk">
+        <Item v-for="item in cartItems" :key="item.id" :item="item" />
       </div>
     </div>
     <div class="checkout">
@@ -33,11 +14,15 @@
 
 <script>
 import {mapGetters} from "vuex"
+import Item from "../components/Cart/Item.vue"
 export default {
   computed: {
     ...mapGetters({
       'cartItems': 'global/cart/getCartItems',
     })
+  },
+  components: {
+    Item
   },
   data() {
     return {
@@ -60,9 +45,7 @@ export default {
     h1 {
       border-bottom: 1px solid $primary;
       padding: 40px 1rem;
-      
       text-align: left;
-
       font-size: 36px;
       font-weight: 400;
     }
@@ -70,13 +53,6 @@ export default {
     .QmK {
       max-height: 700px;
       overflow-x: auto;
-
-      .item {
-        display: grid;
-        grid-template-columns: 0.5fr 2fr 0.1fr;
-        padding: 1rem;
-        
-      }
     }
   }
 
