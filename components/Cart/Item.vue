@@ -5,6 +5,9 @@
     </div>
     <div class="_details">
       <h3> {{item.name}} </h3>
+      <div class="_price">
+        <p> {{item.data.price}} </p>
+      </div>
       <div class="data"> 
         <span> <b>Size:</b>{{item.data.size}}</span>
         <span> <b>Type:</b>{{item.data.type}}</span>
@@ -53,12 +56,16 @@ export default {
       font-weight: 500;
     }
 
+    ._price {
+      display: none;
+    }
+
     .data {
       display: flex;
       justify-content: flex-start;
 
       span {
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 500;
         padding-right: 1rem;
 
@@ -94,6 +101,29 @@ export default {
       font-size: 18px;
       font-weight: 600;
     }
+  }
+
+  @media screen and (max-width: $m-large){
+    grid-template-columns: 1fr 2fr;
+
+    ._details {
+      h3 {
+        font-size: 18px;
+      }
+
+      ._price {
+        padding: 0;
+        display: inline-block;
+      }
+    }
+
+    ._price {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: $medium){
+    
   }
 }
 </style>
