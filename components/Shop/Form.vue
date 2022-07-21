@@ -27,9 +27,11 @@
           <input class="form-control" type="text" placeholder="What message would you like on top of the cake" v-model="data.message" required>
         </div>
         
-        <span v-if="inCart">Added to Cart</span>
-        <button v-if="!inCart" class="btn" type="submit">Add to Cart</button>
+        <div class="bottom-bar">
+          <span class="btn-m" v-if="inCart">Added to Cart</span>
+        </div>
         
+        <button v-if="!inCart" class="btn" type="submit">Add to Cart</button>
       </form>
     </div>
     <div v-if="!configurable && !loading">
@@ -182,6 +184,21 @@ div {
           background: $light;
           outline: $secondary solid 0.1rem ;
         }
+      }
+    }
+
+    .bottom-bar {
+      .btn-m {
+        display: block;
+        background: $success;
+        color: $light;
+        width: fit-content;
+        padding: 12px 24px;
+        margin: 1rem 0;
+        font-size: 16px;
+        font-weight: 400;
+        border-radius: 8px;
+        border: 2px solid $primary;
       }
     }
 
