@@ -58,6 +58,7 @@ export default {
     img {
       width: 100%;
       height: 200px;
+      border-radius: 10px;
       object-fit: cover;
     }
   }
@@ -221,6 +222,10 @@ export default {
 
       .actions {
         padding: 0.3rem 0;
+
+        a {
+          font-size: 12px;
+        }
       }
     }
   }
