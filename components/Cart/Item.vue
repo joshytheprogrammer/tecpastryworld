@@ -8,7 +8,7 @@
       <div class="data"> 
         <span> <b>Size:</b>{{item.data.size}}</span>
         <span> <b>Type:</b>{{item.data.type}}</span>
-        <span> <b>Writing:</b>{{item.data.message}}</span>
+        <span> <b>Writing:</b>"{{item.data.message}}"</span>
       </div>
       <div class="actions">
         <a href="#">Delete</a>
@@ -67,6 +67,32 @@ export default {
           padding-right: 0.5rem;
         }
       }
+    }
+
+    .actions {
+      display: flex;
+      justify-content: flex-start;
+
+      a {
+        font-size: 16px;
+        font-weight: 500;
+        text-decoration: none;
+        padding-right: 1rem;
+        color: $primary;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  ._price {
+    padding: 1rem 0.5rem;
+
+    p {
+      font-size: 18px;
+      font-weight: 600;
     }
   }
 }

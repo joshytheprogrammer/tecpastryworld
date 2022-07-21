@@ -51,7 +51,7 @@ export default {
 
 <style lang="scss">
 .body {
-  min-height: 100vh;
+  // min-height: 100vh;
   margin-top: 70px;
 }
 </style>
