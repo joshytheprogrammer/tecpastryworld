@@ -7,7 +7,7 @@
       </div>
     </div>
     <div class="checkout">
-
+      <h1>Checkout</h1>
     </div>
   </div>
 </template>
@@ -72,6 +72,7 @@ export default {
 
     .checkout {
       margin-left: 0;
+      padding: 2rem; //Remove
     }
   }
 }
