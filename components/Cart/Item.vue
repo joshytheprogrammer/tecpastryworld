@@ -107,6 +107,8 @@ export default {
     grid-template-columns: 1fr 2fr;
 
     ._details {
+      padding: 0.5rem;
+
       h3 {
         font-size: 18px;
       }
@@ -114,6 +116,13 @@ export default {
       ._price {
         padding: 0;
         display: inline-block;
+      }
+
+      .data {
+        span {
+          font-size: 14px;
+          padding-right: 0.5rem;
+        }
       }
     }
 
