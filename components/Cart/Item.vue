@@ -194,5 +194,35 @@ export default {
       }
     }
   }
+
+  @media screen and (max-width: $small) {
+    display: block;
+
+    ._thumbnail {
+      img {
+        height: 100%;
+      }
+    }
+
+    ._details {
+      padding:0.5rem;
+
+      h3 {
+        padding: 0.5rem 0;
+      }
+
+      ._price {
+        padding: 0.2rem 0;
+      }
+
+      .data {
+        padding: 0.2rem 0;
+      }
+
+      .actions {
+        padding: 0.3rem 0;
+      }
+    }
+  }
 }
 </style>
