@@ -14,7 +14,7 @@
       </div>
     </div>
     <div class="checkout">
-      
+
     </div>
   </div>
 </template>
@@ -37,7 +37,8 @@ export default {
 
 <style lang="scss" scoped>
 .cart {
-  
+  display: grid;
+  grid-template-columns: 2fr 1fr;
 
   h1 {
     width: 100%;
