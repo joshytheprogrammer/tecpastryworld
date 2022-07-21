@@ -107,6 +107,7 @@ export default {
     grid-template-columns: 1fr 2fr;
 
     ._details {
+      width: 100%;
       padding: 0.5rem;
 
       h3 {
