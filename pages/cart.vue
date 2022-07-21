@@ -50,8 +50,8 @@ export default {
       font-weight: 400;
     }
 
-    .QmK {
-      max-height: 700px;
+    .Qmk {
+      max-height: 600px;
       overflow-x: auto;
     }
   }
