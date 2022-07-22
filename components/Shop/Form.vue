@@ -2,6 +2,7 @@
   <div class="after_item">
     <NetworkError v-if="$fetchState.error || error" :message="error" />
     <div v-if="configurable">
+      <p>**Prices exclude VAT and other taxes</p>
       <Price :loading="priceLoading" :price="data.price" />
       <form @submit.prevent="addItem">
         <div class="form-group">
@@ -17,9 +18,9 @@
           <label title="This is the flavour of the cake itself. Not the decoration">Type of Cake*</label>
           <select class="form-control" v-model="data.type" @change="onChange" required>
             <option value="sc">Sponge Cake</option>
+            <option value="rv">Red Velvet Cake</option>
             <option value="cc">Chocolate Cake</option>
             <option value="fc">Fruit Cake</option>
-            <option value="rv">Red Velvet Cake</option>
           </select>
         </div>
         <div class="form-group">

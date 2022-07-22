@@ -213,15 +213,15 @@ export default {
       }
 
       ._price {
-        padding: 0.2rem 0;
+        padding: 0.5rem 0;
       }
 
       .data {
-        padding: 0.2rem 0;
+        padding: 0.5rem 0;
       }
 
       .actions {
-        padding: 0.3rem 0;
+        padding: 0.5rem 0;
 
         a {
           font-size: 12px;
