@@ -141,7 +141,10 @@ export default {
         this.item,
         this.data
       ]
+
       this.addToCart(data)
+
+      this.$router.push('/cart')
     }
   }
 }
