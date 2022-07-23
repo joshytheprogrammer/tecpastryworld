@@ -196,7 +196,7 @@ div {
     .bottom-bar {
       .btn-m {
         display: block;
-        background: $success;
+        background: linear-gradient($success, $primary, $secondary);
         color: $light;
         width: fit-content;
         padding: 12px 24px;
