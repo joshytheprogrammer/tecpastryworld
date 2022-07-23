@@ -66,6 +66,10 @@ export default {
     .Qmk {
       max-height: 600px;
       overflow-x: auto;
+
+      p {
+        padding: 20px 1rem;
+      }
     }
   }
 
