@@ -8,6 +8,14 @@
     </div>
     <div class="checkout">
       <h1>Checkout</h1>
+      <div class="Kzs">
+        <div class="form">
+          
+        </div>
+        <div class="quotes">
+
+        </div>
+      </div>
     </div>
   </div>
 </template>
