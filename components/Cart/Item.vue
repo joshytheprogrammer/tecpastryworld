@@ -110,6 +110,7 @@ export default {
       a {
         font-size: 16px;
         font-weight: 500;
+        cursor: pointer;
         text-decoration: none;
         padding-right: 1rem;
         color: $primary;
