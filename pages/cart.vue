@@ -59,6 +59,14 @@ export default {
   .checkout {
     margin-left: 0.5rem;
     background: $light;
+    
+    h1 {
+      border-bottom: 1px solid $primary;
+      padding: 40px 1rem;
+      text-align: left;
+      font-size: 36px;
+      font-weight: 400;
+    }
   }
 
   @media screen and (max-width: $medium){
@@ -82,6 +90,11 @@ export default {
 
     .checkout {
       margin-left: 0;
+
+      h1 {
+        font-size: 28px;
+        padding: 20px 1rem;
+      }
     }
   }
 }
