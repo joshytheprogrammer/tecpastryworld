@@ -87,6 +87,7 @@ export default {
 
     .items {
       border: none;
+      margin: 1rem 0;
 
       h1 {
         font-size: 28px;
