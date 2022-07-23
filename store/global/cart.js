@@ -14,6 +14,9 @@ export default {
         console.log("Item already added")
       }
     },
+    DELETE_ITEM(state, payload) {
+
+    },
     INITIATE_CART(state) {
       if(localStorage.getItem('cart')){
         state.cart = JSON.parse(localStorage.getItem('cart'))
@@ -43,6 +46,9 @@ export default {
       // Dispatch Notification
       dispatch("global/notification/setNotification", {type: "success", message: 'Item added successfully'}, {root: true})
     },
+    deleteFromCart({ commit, dispatch }, id) {
+
+    }
   },
   getters: {
     getCartItems(state) {

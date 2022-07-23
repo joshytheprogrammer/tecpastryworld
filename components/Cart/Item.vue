@@ -14,7 +14,7 @@
         <span> <b>Writing:</b>"{{item.data.message}}"</span>
       </div>
       <div class="actions">
-        <a href="#">Delete</a>
+        <a @click.prevent="">Delete</a>
         <a href="#">Save for Later</a>
       </div>
     </div>
@@ -43,6 +43,9 @@ export default {
           return "Fruit Cake"
         }
       }
+    },
+    deleteItem() {
+      
     }
   }
 }
