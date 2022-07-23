@@ -152,7 +152,9 @@ export default {
 
 <style lang="scss" scoped>
 div {
+
   form {
+    
     .form-group {
 
       label {
