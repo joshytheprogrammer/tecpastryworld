@@ -49,7 +49,7 @@ export default {
       // Dispatch Notification
       dispatch("global/notification/setNotification", {type: "success", message: 'Item added successfully'}, {root: true})
     },
-    deleteFromCart({ commit, dispatch }, id) {
+    deleteFromCart({ commit }, id) {
       commit('DELETE_ITEM', id)
     }
   },

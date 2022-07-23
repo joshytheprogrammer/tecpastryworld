@@ -14,7 +14,7 @@
         <span> <b>Writing:</b>"{{item.data.message}}"</span>
       </div>
       <div class="actions">
-        <a @click.prevent="">Delete</a>
+        <a @click.prevent="deleteItem(item.id)">Delete</a>
         <a href="#">Save for Later</a>
       </div>
     </div>
@@ -25,12 +25,16 @@
 </template>
 
 <script>
+import {mapActions} from "vuex"
 export default {
   components: {
     
   },
   props: ["item"],
   methods: {
+    ...mapActions({
+      'deleteFromCart': "global/cart/deleteFromCart"
+    }),
     formatData(value, type){
       if(type == "type") {
         if(value == "rv") {
@@ -44,8 +48,8 @@ export default {
         }
       }
     },
-    deleteItem() {
-      
+    deleteItem(id) {
+      this.deleteFromCart()
     }
   }
 }
