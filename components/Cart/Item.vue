@@ -49,7 +49,7 @@ export default {
       }
     },
     deleteItem(id) {
-      this.deleteFromCart()
+      this.deleteFromCart(id)
     }
   }
 }
