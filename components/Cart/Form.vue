@@ -3,8 +3,8 @@
     <div class="form-group">
       <label title="">Fulfillment Method*</label>
       <select class="form-control" required>
-        <option value="delivery" selected>Delivery</option>
-        <option value="pickup">Pickup</option>
+        <option value="pickup" selected>Pickup</option>
+        <option value="delivery" disabled>Delivery (coming soon)</option>
       </select>
     </div>
     <div class="form-group">

@@ -4,6 +4,7 @@
       <h1>Shopping Cart</h1>
       <div class="Qmk">
         <Item v-for="item in cartItems" :key="item.id" :item="item" />
+        <p v-if="!cartNo">No items in cart yet</p>
       </div>
     </div>
     <div class="checkout">
@@ -29,6 +30,7 @@ export default {
   computed: {
     ...mapGetters({
       'cartItems': 'global/cart/getCartItems',
+      'cartNo': 'global/cart/getCartNo'
     })
   },
   components: {
