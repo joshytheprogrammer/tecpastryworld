@@ -10,7 +10,7 @@
       <h1>Checkout</h1>
       <div class="Kzs">
         <div class="form">
-          
+          <Form />
         </div>
         <div class="quotes">
 
@@ -23,6 +23,8 @@
 <script>
 import {mapGetters} from "vuex"
 import Item from "../components/Cart/Item.vue"
+import Form from "../components/Cart/Form.vue"
+
 export default {
   computed: {
     ...mapGetters({
@@ -30,7 +32,8 @@ export default {
     })
   },
   components: {
-    Item
+    Item,
+    Form
   },
   data() {
     return {
