@@ -1,7 +1,22 @@
 <template>
   <form>
     <div class="form-group">
-
+      <label title="">Fulfillment Method*</label>
+      <select class="form-control" required>
+        <option value="delivery" selected>Delivery</option>
+        <option value="pickup">Pickup</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label title="">Payment Method*</label>
+      <select class="form-control" required>
+        <option value="online" selected>Online</option>
+        <option value="offline">Offline</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Phone Number*</label>
+      <input class="form-control" type="text" placeholder="We'll reach out to you here" required>
     </div>
   </form>
 </template>
@@ -14,7 +29,10 @@ export default {
 
 <style lang="scss" scoped>
 form {
-  
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  width: 90%;
+
   .form-group {
 
     label {
