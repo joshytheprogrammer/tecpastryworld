@@ -13,7 +13,7 @@
       <span class="name">Total :-</span>
       <span class="value">₦22,960</span>
     </div>
-    <button disabled>Proceed to checkout</button>
+    <button>Proceed to checkout</button>
   </div>
 </template>
 
@@ -62,9 +62,17 @@ export default {
     font-size: 16px;
     font-weight: 500;
 
+    transition: box-shadow .2s ease-in-out;
+
 
     &:hover {
       box-shadow: 0px 4px 4px $primary;
+    }
+
+    &:disabled {
+      background: $background;
+      color: $primary;
+      cursor: not-allowed;
     }
   }
 }
