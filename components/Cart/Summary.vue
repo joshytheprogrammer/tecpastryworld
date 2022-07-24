@@ -20,12 +20,13 @@ export default {
 
 <style lang="scss" scoped>
 .labels {
+  width: 90%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
 
   .label {
-
+    font-size: 16px;
   }
 }
 </style>
