@@ -13,7 +13,7 @@
         <div class="form">
           <Form />
         </div>
-        <div class="quotes">
+        <div class="summary">
 
         </div>
       </div>
@@ -25,6 +25,7 @@
 import {mapGetters} from "vuex"
 import Item from "../components/Cart/Item.vue"
 import Form from "../components/Cart/Form.vue"
+import Summary from "../components/Cart/Summary.vue"
 
 export default {
   computed: {
@@ -35,7 +36,8 @@ export default {
   },
   components: {
     Item,
-    Form
+    Form,
+    Summary
   },
   data() {
     return {
