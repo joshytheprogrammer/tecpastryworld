@@ -30,7 +30,7 @@ export default {
 <style lang="scss" scoped>
 .labels {
   width: 90%;
-  margin: auto;
+  margin: 1rem auto;
 
   .label {
     padding: 0.4rem 0;
@@ -47,6 +47,15 @@ export default {
       font-size: 18px;
       font-weight: 500;
     }
+  }
+
+  button {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    border-radius: 10px;
+    border: none;
+    background: $secondary;
+
   }
 }
 </style>
