@@ -51,11 +51,20 @@ export default {
 
   button {
     width: 100%;
-    padding: 0.6rem 1rem;
+    margin: 1rem 0;
+    padding: 0.8rem 1rem;
     border-radius: 10px;
-    border: none;
+    border: 1px solid $primary;
     background: $secondary;
+    color: $light;
+    cursor: pointer;
 
+    font-size: 16px;
+
+
+    &:hover {
+      background: none;
+    }
   }
 }
 </style>
