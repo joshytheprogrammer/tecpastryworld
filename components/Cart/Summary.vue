@@ -8,6 +8,7 @@
       <span class="name">Taxes :-</span>
       <span class="value">₦2,460</span>
     </div>
+    <hr>
     <div class="label">
       <span class="name">Total :-</span>
       <span class="value">₦22,960</span>
@@ -32,7 +33,20 @@ export default {
   margin: auto;
 
   .label {
-    font-size: 16px;
+    padding: 0.4rem 0;
+
+    display: flex;
+    justify-content: space-between;
+
+    .name {
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    .value {
+      font-size: 18px;
+      font-weight: 500;
+    }
   }
 }
 </style>
