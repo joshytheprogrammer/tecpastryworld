@@ -14,7 +14,7 @@
           <Form />
         </div>
         <div class="summary">
-
+          <Summary />
         </div>
       </div>
     </div>
