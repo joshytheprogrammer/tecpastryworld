@@ -1,8 +1,16 @@
 <template>
   <div class="labels">
     <div class="label">
-      <span class="name">Subtotal (3 items)</span>
-      <h6 class="value">₦20,500</h6>
+      <span class="name">Subtotal (3 items) :-</span>
+      <span class="value">₦20,500</span>
+    </div>
+    <div class="label">
+      <span class="name">Taxes :-</span>
+      <span class="value">₦2,460</span>
+    </div>
+    <div class="label">
+      <span class="name">Total :-</span>
+      <span class="value">₦22,960</span>
     </div>
     <button>Proceed to checkout</button>
   </div>
@@ -21,9 +29,7 @@ export default {
 <style lang="scss" scoped>
 .labels {
   width: 90%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  margin: auto;
 
   .label {
     font-size: 16px;
