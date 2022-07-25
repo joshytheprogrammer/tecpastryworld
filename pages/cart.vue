@@ -22,10 +22,10 @@
 </template>
 
 <script>
-import {mapGetters} from "vuex"
 import Item from "../components/Cart/Item.vue"
 import Form from "../components/Cart/Form.vue"
 import Summary from "../components/Cart/Summary.vue"
+import {mapGetters} from "vuex"
 
 export default {
   computed: {
