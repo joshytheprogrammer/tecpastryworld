@@ -32,8 +32,8 @@
 
         <div class="bottom-bar" v-if="inCart">
           <span class="btn-m">Added to Cart</span>
-          <Back />
           <a class="danger" @click.prevent="deleteItem(item._id)">Delete</a>
+          <Back />
         </div>
       </form>
     </div>
