@@ -2,7 +2,7 @@
   <div class="labels">
     <div class="label">
       <span class="name">Subtotal ( {{cartNum}} item/s) :-</span>
-      <span class="value">₦20,500</span>
+      <span class="value"> {{formatData(subtotal, "price")}} </span>
     </div>
     <div class="label">
       <span class="name">Taxes :-</span>
@@ -13,7 +13,7 @@
       <span class="name">Total :-</span>
       <span class="value">₦22,960</span>
     </div>
-    <button @click="$store.commit('global/cart/CALCULATE_CART')">Proceed to checkout</button>
+    <button>Proceed to checkout</button>
   </div>
 </template>
 
@@ -23,13 +23,25 @@ import {mapGetters} from "vuex"
 export default {
   computed: {
     ...mapGetters({
-      'cartNum': 'global/cart/getCartNo'
+      'cartNum': 'global/cart/getCartNo',
+      'subtotal': 'global/cart/getSubtotal'
     })
   },
   data() {
     return {
 
     }
+  },
+  methods: {
+    formatData(value, type){
+      if(type == "price") {
+        let currency = '₦'
+        var formatter = new Intl.NumberFormat('en-US');
+
+        value = currency + formatter.format(value)
+        return value
+      }
+    },
   }
 }
 </script>

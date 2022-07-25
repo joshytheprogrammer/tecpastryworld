@@ -29,10 +29,7 @@ export default {
         let price = item.data.price
         
         state.subtotal = Number(state.subtotal) + Number(price)
-
-        console.log(state.subtotal)
       });
-      
     },
     INITIATE_CART(state) {
       if(localStorage.getItem('cart')){
@@ -59,12 +56,14 @@ export default {
       }
 
       commit('ADD_ITEM', item)
+      commit('CALCULATE_CART')
 
       // Dispatch Notification
       dispatch("global/notification/setNotification", {type: "success", message: 'Item added successfully'}, {root: true})
     },
     deleteFromCart({ commit }, id) {
       commit('DELETE_ITEM', id)
+      commit('CALCULATE_CART')
     }
   },
   getters: {
@@ -83,6 +82,9 @@ export default {
       }else {
         return false
       }
+    },
+    getSubtotal(state) {
+      return state.subtotal
     }
   }
 }
