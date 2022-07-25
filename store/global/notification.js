@@ -2,7 +2,7 @@ export default {
   namespaced: true,
   state : () => ({
     notification: {
-      type: null, // success, warning, error
+      type: null, // success, warning, error, neutral
       message: null
     }
   }),

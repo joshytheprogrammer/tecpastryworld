@@ -79,7 +79,7 @@ export default {
       commit('CALCULATE_CART')
 
       // Dispatch Notification
-      dispatch("global/notification/setNotification", {type: "success", message: 'Item added successfully'}, {root: true})
+      dispatch("global/notification/setNotification", {type: "neutral", message: 'Item added successfully'}, {root: true})
     },
     deleteFromCart({ commit }, id) {
       commit('DELETE_ITEM', id)
