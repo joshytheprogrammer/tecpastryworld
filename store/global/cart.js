@@ -35,7 +35,7 @@ export default {
       state.cart.forEach(item => {
         let price = item.data.price
         
-        state.subtotal = Number(state.subtotal) + Number(price)
+        state.summary.subtotal = Number(state.summary.subtotal) + Number(price)
       });
 
       // Calculate taxes

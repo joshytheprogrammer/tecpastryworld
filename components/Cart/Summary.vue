@@ -6,12 +6,12 @@
     </div>
     <div class="label">
       <span class="name">Taxes :-</span>
-      <span class="value"> {{formatData(summary.subtotal, "price")}} </span>
+      <span class="value"> {{formatData(summary.taxes, "price")}} </span>
     </div>
     <hr>
     <div class="label">
       <span class="name">Total :-</span>
-      <span class="value"> {{formatData(summary.subtotal, "price")}} </span>
+      <span class="value"> {{formatData(summary.total, "price")}} </span>
     </div>
     <button>Proceed to checkout</button>
   </div>
