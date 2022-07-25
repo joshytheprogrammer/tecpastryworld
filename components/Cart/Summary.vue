@@ -2,16 +2,16 @@
   <div class="labels">
     <div class="label">
       <span class="name">Subtotal ( {{cartNum}} item/s) :-</span>
-      <span class="value"> {{formatData(subtotal, "price")}} </span>
+      <span class="value"> {{formatData(summary.subtotal, "price")}} </span>
     </div>
     <div class="label">
       <span class="name">Taxes :-</span>
-      <span class="value">{{getTaxes(subtotal)}}</span>
+      <span class="value"> {{formatData(summary.subtotal, "price")}} </span>
     </div>
     <hr>
     <div class="label">
       <span class="name">Total :-</span>
-      <span class="value">₦22,960</span>
+      <span class="value"> {{formatData(summary.subtotal, "price")}} </span>
     </div>
     <button>Proceed to checkout</button>
   </div>
@@ -24,7 +24,7 @@ export default {
   computed: {
     ...mapGetters({
       'cartNum': 'global/cart/getCartNo',
-      'subtotal': 'global/cart/getSubtotal'
+      'summary': 'global/cart/getSummary'
     })
   },
   data() {
@@ -42,11 +42,6 @@ export default {
         return value
       }
     },
-    getTaxes(value){
-      let taxes = (value / 100) * 12
-      taxes = this.formatData(taxes, "price")
-      return taxes
-    }
   }
 }
 </script>

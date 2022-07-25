@@ -3,9 +3,10 @@ export default {
   state : () => ({
     cart: [],
     summary: {
-      subtotal: 0
-    }
-    subtotal: 0,
+      subtotal: 0,
+      taxes: 0,
+      total: 0
+    },
   }),
   mutations: {
     ADD_ITEM(state, payload) {
@@ -26,13 +27,23 @@ export default {
       localStorage.setItem('cart', JSON.stringify(state.cart))
     },
     CALCULATE_CART(state){
-      state.subtotal = 0
+      state.summary.subtotal = 0
+      state.summary.taxes = 0
+      state.summary.total = 0
 
+      // Calculate subtotal
       state.cart.forEach(item => {
         let price = item.data.price
         
         state.subtotal = Number(state.subtotal) + Number(price)
       });
+
+      // Calculate taxes
+      state.summary.taxes = (state.summary.subtotal / 100) * 12
+
+      // Calculate total
+      state.summary.total = state.summary.subtotal + state.summary.taxes
+
     },
     INITIATE_CART(state) {
       if(localStorage.getItem('cart')){
@@ -90,8 +101,8 @@ export default {
         return false
       }
     },
-    getSubtotal(state) {
-      return state.subtotal
+    getSummary(state) {
+      return state.summary
     }
   }
 }
