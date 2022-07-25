@@ -6,7 +6,7 @@
     <div class="_details">
       <h3> {{item.name}} </h3>
       <div class="_price">
-        <p> ₦{{item.data.price}} </p>
+        <p> {{formatData(item.data.price, "price")}} </p>
       </div>
       <div class="data"> 
         <span> <b>Size:</b>{{item.data.size}}" inches</span>
@@ -19,7 +19,7 @@
       </div>
     </div>
     <div class="_price">
-      <p> ₦{{item.data.price}} </p>
+      <p> {{formatData(item.data.price, "price")}} </p>
     </div>
   </div>
 </template>
@@ -46,6 +46,14 @@ export default {
         }else if(value == "fc") {
           return "Fruit Cake"
         }
+      }
+
+      if(type == "price") {
+        let currency = '₦'
+        var formatter = new Intl.NumberFormat('en-US');
+
+        value = currency + formatter.format(value)
+        return value
       }
     },
     deleteItem(id) {

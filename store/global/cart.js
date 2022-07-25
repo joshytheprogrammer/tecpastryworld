@@ -30,7 +30,7 @@ export default {
         
         state.subtotal = Number(state.subtotal) + Number(price)
 
-        console.log(state.subtotal, price, Number(5000))
+        console.log(state.subtotal)
       });
       
     },
