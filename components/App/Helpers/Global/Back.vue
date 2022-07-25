@@ -1,5 +1,6 @@
 <template>
-  <button class="back" href="#" @click.stop="$router.back(-1)">Back</button>
+  <span class="back" @click.prevent="$router.back(-1)" >Back</span>
+  <!-- -->
 </template>
 
 <script>
@@ -15,14 +16,17 @@ export default {
   text-decoration: none;
   margin: 0.5rem 0;
   padding: 0.2rem 1rem;
-  background: $primary;
+  background: $light;
+  border: 1px solid $primary;
+  text-decoration: none;
   border-radius: 8px;
-  color: $light;
-  font-size: 18px;
+  color: $primary;
+  font-size: 16px;
   font-weight: 400;
 
   &:hover {
-    box-shadow: 0px 4px 4px $dark;
+    background: $primary;
+    color: $light;
   }
 }
 </style>
