@@ -2,6 +2,9 @@ export default {
   namespaced: true,
   state : () => ({
     cart: [],
+    summary: {
+      subtotal: 0
+    }
     subtotal: 0,
   }),
   mutations: {
@@ -64,6 +67,10 @@ export default {
     deleteFromCart({ commit }, id) {
       commit('DELETE_ITEM', id)
       commit('CALCULATE_CART')
+    },
+    initializeCart({commit}) {
+      commit("INITIATE_CART")
+      commit("CALCULATE_CART")
     }
   },
   getters: {

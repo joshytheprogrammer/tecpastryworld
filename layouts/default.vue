@@ -29,7 +29,7 @@ export default {
     Notification
   },
   beforeMount() {
-    this.$store.commit("global/cart/INITIATE_CART")
+    this.$store.dispatch("global/cart/initializeCart")
   },
   mounted() {
     this.isMobile()
