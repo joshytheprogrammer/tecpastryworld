@@ -2,6 +2,7 @@ export default {
   namespaced: true,
   state : () => ({
     cart: [],
+    subtotal: 0,
   }),
   mutations: {
     ADD_ITEM(state, payload) {
@@ -20,6 +21,18 @@ export default {
       state.cart.splice(index, 1)
 
       localStorage.setItem('cart', JSON.stringify(state.cart))
+    },
+    CALCULATE_CART(state){
+      state.subtotal = 0
+
+      state.cart.forEach(item => {
+        let price = item.data.price
+        
+        state.subtotal = parseFloat(state.subtotal) + parseFloat(price)
+
+        console.log(state.subtotal)
+      });
+      
     },
     INITIATE_CART(state) {
       if(localStorage.getItem('cart')){
@@ -40,7 +53,7 @@ export default {
         data: {
           size: details.size,
           type: details.type,
-          price: details.price,
+          price: details.price.replace('₦', ''),
           message: details.message
         }
       }

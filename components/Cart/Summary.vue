@@ -13,7 +13,7 @@
       <span class="name">Total :-</span>
       <span class="value">₦22,960</span>
     </div>
-    <button>Proceed to checkout</button>
+    <button @click="$store.commit('global/cart/CALCULATE_CART')">Proceed to checkout</button>
   </div>
 </template>
 
