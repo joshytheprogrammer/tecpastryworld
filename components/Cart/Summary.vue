@@ -5,7 +5,7 @@
       <span class="value"> {{formatData(summary.subtotal, "price")}} </span>
     </div>
     <div class="label">
-      <span class="name">Taxes :-</span>
+      <span class="name">V.A.T :-</span>
       <span class="value"> {{formatData(summary.taxes, "price")}} </span>
     </div>
     <hr>

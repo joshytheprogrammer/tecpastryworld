@@ -27,22 +27,28 @@ export default {
       localStorage.setItem('cart', JSON.stringify(state.cart))
     },
     CALCULATE_CART(state){
-      state.summary.subtotal = 0
-      state.summary.taxes = 0
-      state.summary.total = 0
+      let subtotal = 0
+      let taxes = 0
+      let total = 0
 
       // Calculate subtotal
       state.cart.forEach(item => {
         let price = item.data.price
         
-        state.summary.subtotal = Number(state.summary.subtotal) + Number(price)
+        subtotal = Number(subtotal) + Number(price)
       });
 
       // Calculate taxes
-      state.summary.taxes = (state.summary.subtotal / 100) * 12
+      taxes = (subtotal / 100) * 12
 
       // Calculate total
-      state.summary.total = state.summary.subtotal + state.summary.taxes
+      total = subtotal + taxes
+
+      // Assign Values
+
+      state.summary.subtotal = subtotal
+      state.summary.taxes = taxes
+      state.summary.total = total
 
     },
     INITIATE_CART(state) {
