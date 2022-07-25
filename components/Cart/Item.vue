@@ -6,7 +6,7 @@
     <div class="_details">
       <h3> {{item.name}} </h3>
       <div class="_price">
-        <p> {{item.data.price}} </p>
+        <p> ₦{{item.data.price}} </p>
       </div>
       <div class="data"> 
         <span> <b>Size:</b>{{item.data.size}}" inches</span>
@@ -19,7 +19,7 @@
       </div>
     </div>
     <div class="_price">
-      <p> {{item.data.price}} </p>
+      <p> ₦{{item.data.price}} </p>
     </div>
   </div>
 </template>

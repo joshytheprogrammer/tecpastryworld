@@ -28,9 +28,9 @@ export default {
       state.cart.forEach(item => {
         let price = item.data.price
         
-        state.subtotal = parseFloat(state.subtotal) + parseFloat(price)
+        state.subtotal = Number(state.subtotal) + Number(price)
 
-        console.log(state.subtotal)
+        console.log(state.subtotal, price, Number(5000))
       });
       
     },
@@ -53,7 +53,7 @@ export default {
         data: {
           size: details.size,
           type: details.type,
-          price: details.price.replace('₦', ''),
+          price: details.price.replace('₦', '').replace(',', ''),
           message: details.message
         }
       }
