@@ -6,7 +6,7 @@
     </div>
     <div class="label">
       <span class="name">Taxes :-</span>
-      <span class="value">₦2,460</span>
+      <span class="value">{{getTaxes(subtotal)}}</span>
     </div>
     <hr>
     <div class="label">
@@ -42,6 +42,11 @@ export default {
         return value
       }
     },
+    getTaxes(value){
+      let taxes = (value / 100) * 12
+      taxes = this.formatData(taxes, "price")
+      return taxes
+    }
   }
 }
 </script>
