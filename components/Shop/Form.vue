@@ -32,7 +32,7 @@
 
         <div class="bottom-bar" v-if="inCart">
           <span class="btn-m">Added to Cart</span>
-          <a href=""></a>
+          <Back />
           <a class="danger" @click.prevent="deleteItem(item._id)">Delete</a>
         </div>
       </form>
@@ -49,6 +49,7 @@ import {mapActions} from "vuex"
 
 import NetworkError from "../../components/App/Helpers/Global/Error.vue"
 import Price from "./Price.vue"
+import Back from "../../components/App/Helpers/Global/Back.vue"
 import NoForm from "./NoForm.vue"
 
 export default {
@@ -61,7 +62,8 @@ export default {
   components: {
     Price,
     NoForm,
-    NetworkError
+    NetworkError,
+    Back
   },
   data() {
     return {
