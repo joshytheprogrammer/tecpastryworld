@@ -2,9 +2,11 @@
   <div class="cart">
     <div class="items">
       <h1>Shopping Cart</h1>
-      <div class="Qmk">
+      <div class="Qmk" v-if="cartItems.length">
         <Item v-for="item in cartItems" :key="item.id" :item="item" />
-        <p v-if="!cartNo">No items in cart yet</p>
+      </div>
+      <div class="not-showing" v-else>
+        <span>No items in cart</span>
       </div>
     </div>
     <div class="checkout">
@@ -13,7 +15,7 @@
         <div class="form">
           <Form />
         </div>
-        <div class="summary">
+        <div class="summary" v-show="cartNum">
           <Summary />
         </div>
       </div>
@@ -31,7 +33,7 @@ export default {
   computed: {
     ...mapGetters({
       'cartItems': 'global/cart/getCartItems',
-      'cartNo': 'global/cart/getCartNo'
+      'cartNum': 'global/cart/getCartNo'
     })
   },
   components: {
