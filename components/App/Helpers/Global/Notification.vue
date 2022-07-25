@@ -72,6 +72,10 @@ export default {
     &.error {
       background: $danger;
     }
+
+    &.neutral {
+      background: $primary;
+    }
   }
 }
 </style>
