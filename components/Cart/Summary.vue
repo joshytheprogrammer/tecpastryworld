@@ -1,7 +1,7 @@
 <template>
   <div class="labels">
     <div class="label">
-      <span class="name">Subtotal (3 items) :-</span>
+      <span class="name">Subtotal ( {{cartNum}} item/s) :-</span>
       <span class="value">₦20,500</span>
     </div>
     <div class="label">
@@ -18,7 +18,14 @@
 </template>
 
 <script>
+import {mapGetters} from "vuex"
+
 export default {
+  computed: {
+    ...mapGetters({
+      'cartNum': 'global/cart/getCartNo'
+    })
+  },
   data() {
     return {
 
