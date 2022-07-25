@@ -28,13 +28,13 @@
           <input class="form-control" type="text" placeholder="What message would you like on top of the cake" v-model="data.message" :disabled="inCart" required>
         </div>
         
-        <div class="bottom-bar">
-          <span class="btn-m" v-if="inCart">Added to Cart</span>
-
-          <a class="danger" @click.prevent="">Delete</a>
-        </div>
-        
         <button v-if="!inCart" class="btn" type="submit">Add to Cart</button>
+
+        <div class="bottom-bar" v-if="inCart">
+          <span class="btn-m">Added to Cart</span>
+          <a href=""></a>
+          <a class="danger" @click.prevent="deleteItem(item._id)">Delete</a>
+        </div>
       </form>
     </div>
     <div v-if="!configurable && !loading">
@@ -99,7 +99,8 @@ export default {
   },
   methods: {
     ...mapActions({
-      'addToCart': "global/cart/addToCart"
+      'addToCart': "global/cart/addToCart",
+      'deleteFromCart': "global/cart/deleteFromCart"
     }),
     onChange() {
       this.refreshPrice()
@@ -147,6 +148,9 @@ export default {
       this.addToCart(data)
 
       this.$router.push('/cart')
+    },
+    deleteItem(id) {
+      this.deleteFromCart(id)
     }
   }
 }
@@ -228,7 +232,7 @@ div {
 
       .danger {
         font-weight: 500;
-        
+
         &:hover {
           color: $danger;
         }
