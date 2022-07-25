@@ -30,6 +30,8 @@
         
         <div class="bottom-bar">
           <span class="btn-m" v-if="inCart">Added to Cart</span>
+
+          <a class="danger" @click.prevent="">Delete</a>
         </div>
         
         <button v-if="!inCart" class="btn" type="submit">Add to Cart</button>
@@ -194,6 +196,9 @@ div {
     }
 
     .bottom-bar {
+      display: flex;
+      justify-content: space-between;
+
       .btn-m {
         display: block;
         background: linear-gradient($success, $primary, $secondary);
@@ -206,6 +211,10 @@ div {
         font-weight: 400;
         border-radius: 8px;
         border: 2px solid $primary;
+      }
+
+      .danger {
+
       }
     }
 
