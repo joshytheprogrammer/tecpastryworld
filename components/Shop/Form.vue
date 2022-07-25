@@ -198,6 +198,19 @@ div {
     .bottom-bar {
       display: flex;
       justify-content: space-between;
+      align-items: center;
+
+      a {
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        text-decoration: none;
+        padding-right: 1rem;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
 
       .btn-m {
         display: block;
@@ -214,7 +227,11 @@ div {
       }
 
       .danger {
-
+        font-weight: 500;
+        
+        &:hover {
+          color: $danger;
+        }
       }
     }
 
