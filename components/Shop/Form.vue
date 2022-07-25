@@ -7,7 +7,7 @@
       <form @submit.prevent="addItem">
         <div class="form-group">
           <label>Select Size*</label>
-          <select class="form-control" v-model="data.size" @change="onChange" required>
+          <select class="form-control" v-model="data.size" @change="onChange" :disabled="inCart" required>
             <option value="8">8 inches</option>
             <option value="10">10 inches</option>
             <option value="12">12 inches</option>
@@ -16,7 +16,7 @@
         </div>
         <div class="form-group">
           <label title="This is the flavour of the cake itself. Not the decoration">Type of Cake*</label>
-          <select class="form-control" v-model="data.type" @change="onChange" required>
+          <select class="form-control" v-model="data.type" @change="onChange" :disabled="inCart" required>
             <option value="sc">Sponge Cake</option>
             <option value="rv">Red Velvet Cake</option>
             <option value="cc">Chocolate Cake</option>
@@ -25,7 +25,7 @@
         </div>
         <div class="form-group">
           <label>Cake Message*</label>
-          <input class="form-control" type="text" placeholder="What message would you like on top of the cake" v-model="data.message" required>
+          <input class="form-control" type="text" placeholder="What message would you like on top of the cake" v-model="data.message" :disabled="inCart" required>
         </div>
         
         <div class="bottom-bar">
