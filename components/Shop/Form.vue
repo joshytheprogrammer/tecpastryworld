@@ -231,14 +231,6 @@ div {
         border-radius: 8px;
         border: 2px solid $primary;
       }
-
-      .danger {
-        font-weight: 500;
-
-        &:hover {
-          color: $danger;
-        }
-      }
     }
 
     .btn {
