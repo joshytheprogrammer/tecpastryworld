@@ -42,7 +42,7 @@ export default {
       max-height: 100%;
       
       height: 300px;
-      object-fit: cover;
+      object-fit: contain;
       border-radius: 10px;
       transition: 0.5s all ease-in-out;
     }

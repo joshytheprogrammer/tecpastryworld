@@ -59,7 +59,7 @@ export default {
       width: 100%;
       height: 100%;
       max-height: 700px;
-      object-fit: cover;
+      object-fit: contain;
       border-radius: 10px 0px 0px 10px;
       transition: 0.5s all ease-in-out;
     }
@@ -88,7 +88,7 @@ export default {
   @media screen and (max-width: $large) {
     ._item {
       img {
-        object-fit: fill;
+        object-fit: contain;
       }
     }
   }
