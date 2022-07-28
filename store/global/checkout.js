@@ -25,8 +25,8 @@ export default {
     initiateCheckout() {
 
     },
-    handleOrder() {
-      console.log(this.$store['getters']['global/cart/getCartItems'])
+    handleOrder({commit}) {
+      
     },
     addPhone({ commit, dispatch }, phone) {
       commit("ADD_PHONE", phone)

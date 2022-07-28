@@ -13,12 +13,12 @@
       <span class="name">Total :-</span>
       <span class="value"> {{formatData(summary.total, "price")}} </span>
     </div>
-    <button>Proceed to checkout</button>
+    <button @click="handleOrder">Proceed to checkout</button>
   </div>
 </template>
 
 <script>
-import {mapGetters} from "vuex"
+import {mapGetters, mapActions} from "vuex"
 
 export default {
   computed: {
@@ -33,6 +33,12 @@ export default {
     }
   },
   methods: {
+    ...mapActions({
+      'order': 'global/checkout/handleOrder'
+    }),
+    handleOrder() {
+      this.order()
+    },
     formatData(value, type){
       if(type == "price") {
         let currency = '₦'

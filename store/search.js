@@ -15,6 +15,7 @@ export default {
   actions: {
     handleSearchBar({dispatch, commit}) {
       commit("HANDLE_SEARCH_BAR")
+      
       // Remove all notifications when search bar is toggled
       dispatch("global/notification/clearNotification", null, {root: true})  
     },
