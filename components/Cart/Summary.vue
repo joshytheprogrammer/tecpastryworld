@@ -15,6 +15,7 @@
     </div>
     <p class="error" v-show="process.error"> {{process.error}}... </p>
     <button @click="handleOrder" :disabled="process.loading">{{process.message}}</button>
+    {{orderDetails}}
   </div>
 </template>
 
@@ -26,7 +27,8 @@ export default {
     ...mapGetters({
       'cartNum': 'global/cart/getCartNo',
       'summary': 'global/cart/getSummary',
-      'process': 'global/checkout/returnProcess'
+      'process': 'global/checkout/returnProcess',
+      'orderDetails': 'global/checkout/returnOrder'
     })
   },
   data() {

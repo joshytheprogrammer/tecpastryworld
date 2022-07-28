@@ -28,7 +28,7 @@ export default {
       state.order.amount = amount
     },
     ADD_PRODUCTS(state, cart) {
-      state.order.products.push(cart)
+      state.order.products.push(...cart)
     },
     EDIT_PROCESS(state, process) {
       state.process.loading = process.loading
@@ -42,13 +42,9 @@ export default {
 
     },
     handleOrder({commit}) {
-      let amount = this.getters["global/cart/getTotal"]
-      let cart = this.getters["global/cart/getCartItems"]
       let process = { loading: true, error: '', message: "Verifing Price..." }
 
       commit("EDIT_PROCESS", process)
-      commit("ADD_AMOUNT", amount)
-      commit("ADD_PRODUCTS", cart)
     },
     addPhone({ commit, dispatch }, phone) {
       commit("ADD_PHONE", phone)
@@ -59,6 +55,13 @@ export default {
     },
     addPayment({commit}, mode) {
       commit("ADD_PAYMENT", mode)
+    },
+    mountCheckout({commit}) {
+      let amount = this.getters["global/cart/getTotal"]
+      let cart = this.getters["global/cart/getCartItems"]
+      
+      commit("ADD_AMOUNT", amount)
+      commit("ADD_PRODUCTS", cart)
     }
   },
   getters: {
@@ -73,6 +76,9 @@ export default {
     },
     returnProcess(state) {
       return state.process
+    },
+    returnOrder(state) {
+      return state.order
     }
   }
 }
