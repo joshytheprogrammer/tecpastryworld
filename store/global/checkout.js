@@ -34,7 +34,7 @@ export default {
   },
   getters: {
     returnPhone(state) {
-
+      return state.order.phone
     },
     returnFulfillment(state) {
       return state.order.fulfillment_method

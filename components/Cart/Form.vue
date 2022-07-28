@@ -16,7 +16,7 @@
     </div>
     <div class="form-group">
       <label>Phone Number*</label>
-      <input class="form-control" type="text" placeholder="We'll reach out to you here" required>
+      <input class="form-control" type="text" placeholder="We'll reach out to you here" v-model="phone" required>
     </div>
   </form>
 </template>
@@ -39,6 +39,11 @@ export default {
       },
       set(value) {
         this.addPayment(value)
+      }
+    },
+    phone: {
+      get() {
+        return this.$store['getters']['global/checkout/returnPhone']
       }
     }
   },
