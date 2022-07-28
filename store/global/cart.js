@@ -110,6 +110,9 @@ export default {
     },
     getSummary(state) {
       return state.summary
+    },
+    getTotal(state) {
+      return state.summary.total
     }
   }
 }

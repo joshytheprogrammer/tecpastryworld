@@ -13,7 +13,8 @@
       <span class="name">Total :-</span>
       <span class="value"> {{formatData(summary.total, "price")}} </span>
     </div>
-    <button @click="handleOrder">Proceed to checkout</button>
+    <span class="error" v-show="process.error"> {{process.error}} </span>
+    <button @click="handleOrder" :disabled="process.loading">{{process.message}}</button>
   </div>
 </template>
 
@@ -24,7 +25,8 @@ export default {
   computed: {
     ...mapGetters({
       'cartNum': 'global/cart/getCartNo',
-      'summary': 'global/cart/getSummary'
+      'summary': 'global/cart/getSummary',
+      'process': 'global/checkout/returnProcess'
     })
   },
   data() {
@@ -98,6 +100,7 @@ export default {
       background: $background;
       color: $primary;
       cursor: not-allowed;
+      box-shadow: none;
     }
   }
 }
