@@ -42,10 +42,10 @@ export default {
     initiateCheckout() {
 
     },
-    handleOrder({commit}) {
+    handleOrder({commit, dispatch}) {
       let process = { loading: true, error: '', message: "Verifing Price..." }
 
-      // dispatch("mountCheckout")
+      dispatch("mountCheckout")
       commit("EDIT_PROCESS", process)
     },
     addPhone({ commit, dispatch }, phone) {

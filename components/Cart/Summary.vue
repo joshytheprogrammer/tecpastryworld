@@ -31,9 +31,6 @@ export default {
       'orderDetails': 'global/checkout/returnOrder'
     })
   },
-  beforeMount() {
-    this.mountCheckout()
-  },
   data() {
     return {
 
