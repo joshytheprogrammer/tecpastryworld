@@ -15,6 +15,9 @@ export default {
     },
     ADD_PAYMENT(state, mode) {
       state.order.payment_mode = mode
+    },
+    ADD_PHONE(state, phone) {
+      state.order.phone = phone
     }
 
   },
@@ -23,7 +26,7 @@ export default {
 
     },
     addPhone({ commit, dispatch }, phone) {
-
+      commit("ADD_PHONE", phone)
     },
     addFulfillment({commit}, method) {
       commit("ADD_FULFILLMENT", method)

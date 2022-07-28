@@ -18,6 +18,11 @@
       <label>Phone Number*</label>
       <input class="form-control" type="text" placeholder="We'll reach out to you here" v-model="phone" required>
     </div>
+    {{
+      fulfillment + ' ' +
+      payment + ' ' +
+      phone
+    }}
   </form>
 </template>
 
@@ -44,13 +49,17 @@ export default {
     phone: {
       get() {
         return this.$store['getters']['global/checkout/returnPhone']
+      },
+      set(value) {
+        this.addPhone(value)
       }
     }
   },
   methods: {
     ...mapActions({
       'addFulfillment': 'global/checkout/addFulfillment',
-      'addPayment': 'global/checkout/addPayment'
+      'addPayment': 'global/checkout/addPayment',
+      'addPhone': 'global/checkout/addPhone'
     }),
   }
 }
