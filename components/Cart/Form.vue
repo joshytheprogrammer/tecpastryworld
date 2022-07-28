@@ -23,12 +23,20 @@
 </template>
 
 <script>
-import {mapGetters} from "vuex"
+import {mapGetters, mapActions} from "vuex"
 export default {
   computed: {
     ...mapGetters({
       fulfillment_method: "global/checkout/returnFulfillment"
     })
+  },
+  methods: {
+    ...mapActions({
+      'addFullfilment': 'global/checkout/addFullfilment'
+    }),
+    addData(data, payload) {
+      
+    }
   }
 }
 </script>
