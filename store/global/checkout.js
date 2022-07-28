@@ -27,6 +27,9 @@ export default {
     initiateCheckout() {
 
     },
+    handleOrder() {
+      
+    },
     addPhone({ commit, dispatch }, phone) {
       commit("ADD_PHONE", phone)
       dispatch("global/notification/setNotification", {type: "success", message: 'phone number added'}, {root: true})

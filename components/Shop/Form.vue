@@ -198,6 +198,11 @@ div {
           background: $light;
           outline: $secondary solid 0.1rem ;
         }
+
+        &:disabled  {
+          color: rgb(78, 77, 77);
+          outline: 1px solid $background;
+        }
       }
     }
 
