@@ -18,6 +18,9 @@ export default {
     },
     ADD_PHONE(state, phone) {
       state.order.phone = phone
+    },
+    ADD_PRODUCTS(state, cart) {
+      state.order.products.push(cart)
     }
 
   },
@@ -26,7 +29,8 @@ export default {
 
     },
     handleOrder({commit}) {
-      
+      let cart = this.getters["global/cart/getCartItems"]
+      commit("ADD_PRODUCTS", cart)
     },
     addPhone({ commit, dispatch }, phone) {
       commit("ADD_PHONE", phone)
