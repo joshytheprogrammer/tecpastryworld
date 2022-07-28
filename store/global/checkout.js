@@ -23,7 +23,7 @@ export default {
 
     },
     addFulfillment({commit}, method) {
-
+      commit("ADD_FULFILLMENT", method)
     },
     addPayment({commit}, method) {
       
@@ -34,7 +34,7 @@ export default {
 
     },
     returnFulfillment(state) {
-
+      return state.fulfillment_method
     },
     returnPayment(state) {
 

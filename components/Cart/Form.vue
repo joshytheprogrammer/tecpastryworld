@@ -6,6 +6,7 @@
         <option value="pickup" selected>Pickup</option>
         <option value="delivery" disabled>Delivery (coming soon)</option>
       </select>
+      {{fulfillment_method}}
     </div>
     <div class="form-group">
       <label>Payment Method*</label>
@@ -22,8 +23,13 @@
 </template>
 
 <script>
+import {mapGetters} from "vuex"
 export default {
-
+  computed: {
+    ...mapGetters({
+      fulfillment_method: "global/checkout/returnFulfillment"
+    })
+  }
 }
 </script>
 
