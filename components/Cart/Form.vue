@@ -51,7 +51,11 @@ export default {
         return this.$store['getters']['global/checkout/returnPhone']
       },
       set(value) {
-        this.addPhone(value)
+        let telPattern = /^^(?:(?:(?:\+?234(?:\h1)?|01)\h*)?(?:\(\d{3}\)|\d{3})|\d{4})(?:\W*\d{3})?\W*\d{4}$/;
+
+        if(value.match(telPattern)){
+          this.addPhone(value)
+        }
       }
     }
   },
