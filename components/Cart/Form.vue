@@ -1,14 +1,14 @@
 <template>
   <form>
     <div class="form-group">
-      <label title="">Fulfillment Method*</label>
+      <label>Fulfillment Method*</label>
       <select class="form-control" required>
         <option value="pickup" selected>Pickup</option>
         <option value="delivery" disabled>Delivery (coming soon)</option>
       </select>
     </div>
     <div class="form-group">
-      <label title="">Payment Method*</label>
+      <label>Payment Method*</label>
       <select class="form-control" required>
         <option value="online" selected>Online</option>
         <option value="offline">Offline</option>

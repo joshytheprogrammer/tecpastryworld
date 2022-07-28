@@ -20,7 +20,7 @@ export default {
 
     },
     addFulfillment({commit, dispatch}, method) {
-
+      
     },
     addPayment({commit, dispatch}, method) {
       
@@ -34,7 +34,7 @@ export default {
 
     },
     returnPayment(state) {
-      
+
     }
   }
 }
