@@ -4,7 +4,7 @@ export default {
     order: {
       phone: null,
       amount: null,
-      payment_mode: null,
+      payment_mode: "online",
       fulfillment_method: "pickup",
       products: []
     },
@@ -12,6 +12,9 @@ export default {
   mutations: {
     ADD_FULFILLMENT(state, method) {
       state.order.fulfillment_method = method
+    },
+    ADD_PAYMENT(state, mode) {
+      state.order.payment_mode = mode
     }
 
   },
@@ -25,8 +28,8 @@ export default {
     addFulfillment({commit}, method) {
       commit("ADD_FULFILLMENT", method)
     },
-    addPayment({commit}, method) {
-      
+    addPayment({commit}, mode) {
+      commit("ADD_PAYMENT", mode)
     }
   },
   getters: {
@@ -37,7 +40,7 @@ export default {
       return state.order.fulfillment_method
     },
     returnPayment(state) {
-
+      return state.order.payment_mode
     }
   }
 }
