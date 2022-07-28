@@ -2,7 +2,7 @@ export default {
   namespaced: true,
   state : () => ({
     order: {
-      phone: null,
+      phone: '',
       amount: null,
       payment_mode: "online",
       fulfillment_method: "pickup",
@@ -29,6 +29,7 @@ export default {
     },
     addPhone({ commit, dispatch }, phone) {
       commit("ADD_PHONE", phone)
+      dispatch("global/notification/setNotification", {type: "success", message: 'phone number added'}, {root: true})
     },
     addFulfillment({commit}, method) {
       commit("ADD_FULFILLMENT", method)

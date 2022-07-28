@@ -1,5 +1,5 @@
 <template>
-  <form>
+  <form @submit.prevent="submit">
     <div class="form-group">
       <label>Fulfillment Method*</label>
       <select class="form-control" v-model="fulfillment" required>
@@ -15,10 +15,9 @@
       </select>
     </div>
     <div class="form-group">
-      <label>Phone Number*</label>
-      <input class="form-control" type="text" placeholder="We'll reach out to you here" v-model="phone" required>
+      <label>Phone Number* <a @click.prevent="disabled = !disabled" v-show="disabled">edit</a> <span v-show="!disabled" class="error">{{error}}</span></label>
+      <input class="form-control" type="text" placeholder="We'll reach out to you here" v-model="phone" @keypress="logKeyStroke" :disabled="disabled" required>
     </div>
-    {{error}}
   </form>
 </template>
 
@@ -47,10 +46,9 @@ export default {
         return this.$store['getters']['global/checkout/returnPhone']
       },
       set(value) {
-        let telPattern = /^([0]{1})[0-9]{10}$/;
-
-        if(value.match(telPattern)){
+        if(value.match(this.telPattern)){
           this.addPhone(value)
+          this.disabled = true
           this.error = ""
         }else {
           this.error = "Invalid phone number"
@@ -60,7 +58,9 @@ export default {
   },
   data() {
     return {
-      error: ''
+      error: '',
+      disabled: false,
+      telPattern: /^([0]{1})[0-9]{10}$/,
     }
   },
   methods: {
@@ -69,6 +69,15 @@ export default {
       'addPayment': 'global/checkout/addPayment',
       'addPhone': 'global/checkout/addPhone'
     }),
+    submit() {
+      if(this.phone.match(this.telPattern)) {
+        this.disabled = true
+        this.error = ""
+      }
+    },
+    logKeyStroke(e) {
+      this.phone = e.key
+    }
   }
 }
 </script>
@@ -82,12 +91,29 @@ form {
   .form-group {
 
     label {
-      display: inline-block;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
       margin: 18px 0 3px;
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: 1px;
       font-weight: bold;
+
+      span {
+        display: inline-flex;
+        justify-content: flex-end;
+        color: $danger;
+        user-select: none;
+      }
+
+      a {
+        cursor: pointer;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     } 
 
     .form-control {
@@ -113,6 +139,11 @@ form {
         border: none;
         background: $light;
         outline: $secondary solid 0.1rem ;
+      }
+
+      &:disabled  {
+        color: rgb(78, 77, 77);
+        outline: 1px solid $background;
       }
     }
   }
