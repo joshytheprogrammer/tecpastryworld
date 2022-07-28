@@ -31,6 +31,9 @@ export default {
       'orderDetails': 'global/checkout/returnOrder'
     })
   },
+  beforeMount() {
+    this.mountCheckout()
+  },
   data() {
     return {
 
@@ -38,6 +41,7 @@ export default {
   },
   methods: {
     ...mapActions({
+      'mountCheckout': 'global/checkout/mountCheckout',
       'order': 'global/checkout/handleOrder'
     }),
     handleOrder() {
