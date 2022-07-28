@@ -15,7 +15,10 @@
       </select>
     </div>
     <div class="form-group">
-      <label>Phone Number* <a @click.prevent="disabled = !disabled" v-show="disabled">edit</a> <span v-show="!disabled" class="error">{{error}}</span></label>
+      <label>
+        Phone Number* 
+        <a @click.prevent="disabled=!disabled" v-show="disabled">edit</a> 
+        <span v-show="!disabled" class="error">{{error}}</span></label>
       <input class="form-control" type="text" placeholder="We'll reach out to you here" v-model="phone" @keypress="logKeyStroke" :disabled="disabled" required>
     </div>
   </form>
