@@ -4,11 +4,9 @@
       <label>Fulfillment Method*</label>
       <select class="form-control" v-model="fulfillment" required>
         <option value="pickup" selected>Pickup</option>
-        <option value="delivery" >Delivery (coming soon)</option>
+        <option value="delivery" disabled>Delivery (coming soon)</option>
       </select>
     </div>
-      {{fulfillment}}
-      <!-- disabled -->
     <div class="form-group">
       <label>Payment Method*</label>
       <select class="form-control" v-model="payment" required>
@@ -16,7 +14,6 @@
         <option value="offline">Offline</option>
       </select>
     </div>
-      {{payment}}
     <div class="form-group">
       <label>Phone Number*</label>
       <input class="form-control" type="text" placeholder="We'll reach out to you here" required>
@@ -29,21 +26,17 @@ import {mapGetters, mapActions} from "vuex"
 export default {
   computed: {
     fulfillment: {
-      /* By default get() is used */
       get() {
         return this.$store['getters']['global/checkout/returnFulfillment']
       },
-      /* We add a setter to change the state on key up*/
       set(value) {
-        this.addFullfilment(value)
+        this.addFulfillment(value)
       }
     },
     payment: {
-      /* By default get() is used */
       get() {
         return this.$store['getters']['global/checkout/returnPayment']
       },
-      /* We add a setter to change the state on key up*/
       set(value) {
         this.addPayment(value)
       }
@@ -51,7 +44,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      'addFullfilment': 'global/checkout/addFullfilment',
+      'addFulfillment': 'global/checkout/addFulfillment',
       'addPayment': 'global/checkout/addPayment'
     }),
   }
