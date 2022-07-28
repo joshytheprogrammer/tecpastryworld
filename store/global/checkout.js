@@ -10,6 +10,9 @@ export default {
     },
   }),
   mutations: {
+    ADD_FULFILLMENT(state, method) {
+      state.order.fulfillment_method = method
+    }
 
   },
   actions: {
@@ -19,10 +22,10 @@ export default {
     addPhone({ commit, dispatch }, phone) {
 
     },
-    addFulfillment({commit, dispatch}, method) {
-      
+    addFulfillment({commit}, method) {
+
     },
-    addPayment({commit, dispatch}, method) {
+    addPayment({commit}, method) {
       
     }
   },
