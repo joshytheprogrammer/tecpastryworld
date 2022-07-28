@@ -41,14 +41,24 @@ export default {
 
   },
   actions: {
-    initiateCheckout() {
+    async initiateCheckout({commit, dispatch, getters}) {
+      let order = getters["returnOrder"]
 
+      await axios.post('http://127.0.0.1:8000/api/order', {
+        order: order
+      }).then((res) => {
+        console.log(res.data)
+      }).catch((e) => {
+        console.log(e)
+      })
     },
     handleOrder({commit, dispatch}) {
-      let process = { loading: true, error: '', message: "Verifing Price..." }
+      // let process = { loading: true, error: '', message: "Verifing Price..." }
 
       dispatch("mountCheckout")
       commit("EDIT_PROCESS", process)
+
+      dispatch("initiateCheckout")
     },
     addPhone({ commit, dispatch }, phone) {
       commit("ADD_PHONE", phone)
