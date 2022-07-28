@@ -18,11 +18,7 @@
       <label>Phone Number*</label>
       <input class="form-control" type="text" placeholder="We'll reach out to you here" v-model="phone" required>
     </div>
-    {{
-      fulfillment + ' ' +
-      payment + ' ' +
-      phone
-    }}
+    {{error}}
   </form>
 </template>
 
@@ -55,8 +51,16 @@ export default {
 
         if(value.match(telPattern)){
           this.addPhone(value)
+          this.error = ""
+        }else {
+          this.error = "Invalid phone number"
         }
       }
+    }
+  },
+  data() {
+    return {
+      error: ''
     }
   },
   methods: {

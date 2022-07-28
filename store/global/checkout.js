@@ -8,6 +8,7 @@ export default {
       fulfillment_method: "pickup",
       products: []
     },
+    ready: false // Returns whether phone number is valid
   }),
   mutations: {
     ADD_FULFILLMENT(state, method) {
@@ -18,6 +19,7 @@ export default {
     },
     ADD_PHONE(state, phone) {
       state.order.phone = phone
+      this.ready = true
     }
 
   },
