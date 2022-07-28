@@ -7,13 +7,12 @@ export default {
       phone: '',
       amount: null,
       payment_mode: "online",
-      fulfillment_method: "pickup",
+      fulfillment: "pickup",
       products: []
     },
     process: {
       loading: false,
       error: '',
-      message: 'Proceed to checkout'
     }
   }),
   mutations: {
@@ -31,12 +30,23 @@ export default {
     },
     ADD_PRODUCTS(state, cart) {
       state.order.products = []
-      state.order.products.push(...cart)
+
+      cart.forEach(item => {
+
+        let product = {
+          id: item.id,
+          size: item.data.size,
+          type: item.data.type,
+          writing: item.data.message
+        }
+
+        state.order.products.push(product)
+
+      })
     },
     EDIT_PROCESS(state, process) {
       state.process.loading = process.loading
       state.process.error = process.error
-      state.process.message = process.message
     }
 
   },
@@ -47,13 +57,19 @@ export default {
       await axios.post('http://127.0.0.1:8000/api/order', {
         order: order
       }).then((res) => {
-        console.log(res.data)
-      }).catch((e) => {
-        console.log(e)
+        
+        if(res.data.error) {
+          commit("EDIT_PROCESS", { loading: false, error: res.data.error})
+        }
+
+        if(res.data.message) {
+          commit("EDIT_PROCESS", { loading: false, error: ''})
+          dispatch("global/notification/setNotification", {type: "success", message: res.data.message}, {root: true})
+        }
       })
     },
     handleOrder({commit, dispatch}) {
-      // let process = { loading: true, error: '', message: "Verifing Price..." }
+      let process = { loading: true, error: '' }
 
       dispatch("mountCheckout")
       commit("EDIT_PROCESS", process)
@@ -83,7 +99,7 @@ export default {
       return state.order.phone
     },
     returnFulfillment(state) {
-      return state.order.fulfillment_method
+      return state.order.fulfillment
     },
     returnPayment(state) {
       return state.order.payment_mode

@@ -14,7 +14,7 @@
       <span class="value"> {{formatData(summary.total, "price")}} </span>
     </div>
     <p class="error" v-show="process.error"> {{process.error}}... </p>
-    <button @click="handleOrder" :disabled="process.loading">{{process.message}}</button>
+    <button @click="handleOrder" :disabled="process.loading">Proceed to checkout</button>
   </div>
 </template>
 
