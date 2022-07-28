@@ -8,7 +8,6 @@ export default {
       fulfillment_method: "pickup",
       products: []
     },
-    ready: false // Returns whether phone number is valid
   }),
   mutations: {
     ADD_FULFILLMENT(state, method) {
@@ -19,7 +18,6 @@ export default {
     },
     ADD_PHONE(state, phone) {
       state.order.phone = phone
-      this.ready = true
     }
 
   },
@@ -28,7 +26,7 @@ export default {
 
     },
     handleOrder() {
-      
+      console.log(this.$store['getters']['global/cart/getCartItems'])
     },
     addPhone({ commit, dispatch }, phone) {
       commit("ADD_PHONE", phone)
