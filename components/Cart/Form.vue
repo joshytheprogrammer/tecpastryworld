@@ -2,20 +2,21 @@
   <form>
     <div class="form-group">
       <label>Fulfillment Method*</label>
-      <select class="form-control" v-model="fulfillment_method" @change="addData('f_m')" required>
+      <select class="form-control" v-model="fulfillment" required>
         <option value="pickup" selected>Pickup</option>
-        <option value="delivery" disabled>Delivery (coming soon)</option>
+        <option value="delivery" >Delivery (coming soon)</option>
       </select>
     </div>
-      {{fulfillment_method}}
+      {{fulfillment}}
+      <!-- disabled -->
     <div class="form-group">
       <label>Payment Method*</label>
-      <select class="form-control" @change="addData('p_m')" v-model="payment_method" required>
+      <select class="form-control" v-model="payment" required>
         <option value="online" selected>Online</option>
         <option value="offline">Offline</option>
       </select>
     </div>
-      {{payment_method}}
+      {{payment}}
     <div class="form-group">
       <label>Phone Number*</label>
       <input class="form-control" type="text" placeholder="We'll reach out to you here" required>
@@ -30,11 +31,21 @@ export default {
     fulfillment: {
       /* By default get() is used */
       get() {
-          return this.$store['getters']['global/checkout/returnFulfillment']
+        return this.$store['getters']['global/checkout/returnFulfillment']
       },
       /* We add a setter to change the state on key up*/
       set(value) {
-          this.addFullfilment(value)
+        this.addFullfilment(value)
+      }
+    },
+    payment: {
+      /* By default get() is used */
+      get() {
+        return this.$store['getters']['global/checkout/returnPayment']
+      },
+      /* We add a setter to change the state on key up*/
+      set(value) {
+        this.addPayment(value)
       }
     }
   },
@@ -43,9 +54,6 @@ export default {
       'addFullfilment': 'global/checkout/addFullfilment',
       'addPayment': 'global/checkout/addPayment'
     }),
-    addData(data) {
-      let payload = null
-    }
   }
 }
 </script>
