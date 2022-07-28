@@ -44,7 +44,7 @@ export default {
     handleOrder({commit}) {
       let amount = this.getters["global/cart/getTotal"]
       let cart = this.getters["global/cart/getCartItems"]
-      let process = { loading: true, error: 'Price verification failed', message: "Verifing Price..." }
+      let process = { loading: true, error: '', message: "Verifing Price..." }
 
       commit("EDIT_PROCESS", process)
       commit("ADD_AMOUNT", amount)

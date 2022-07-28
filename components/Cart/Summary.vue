@@ -13,7 +13,7 @@
       <span class="name">Total :-</span>
       <span class="value"> {{formatData(summary.total, "price")}} </span>
     </div>
-    <span class="error" v-show="process.error"> {{process.error}} </span>
+    <p class="error" v-show="process.error"> {{process.error}}... </p>
     <button @click="handleOrder" :disabled="process.loading">{{process.message}}</button>
   </div>
 </template>
@@ -74,6 +74,17 @@ export default {
       font-size: 18px;
       font-weight: 500;
     }
+  }
+
+  .error {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    text-align: center;
+    border-radius: 10px;
+    background: $danger;
+    color: $light;
+    font-size: 14px;
+    font-weight: 400;
   }
 
   button {
