@@ -5,7 +5,7 @@ export default {
       phone: null,
       amount: null,
       payment_mode: null,
-      fulfillment_method: null,
+      fulfillment_method: "pickup",
       products: []
     },
   }),
@@ -34,7 +34,7 @@ export default {
 
     },
     returnFulfillment(state) {
-      return state.fulfillment_method
+      return state.order.fulfillment_method
     },
     returnPayment(state) {
 

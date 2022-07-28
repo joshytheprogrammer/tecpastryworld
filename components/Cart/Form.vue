@@ -2,11 +2,10 @@
   <form>
     <div class="form-group">
       <label>Fulfillment Method*</label>
-      <select class="form-control" required>
+      <select class="form-control" v-model="fulfillment_method" @change="addData" required>
         <option value="pickup" selected>Pickup</option>
         <option value="delivery" disabled>Delivery (coming soon)</option>
       </select>
-      {{fulfillment_method}}
     </div>
     <div class="form-group">
       <label>Payment Method*</label>
@@ -35,7 +34,10 @@ export default {
       'addFullfilment': 'global/checkout/addFullfilment'
     }),
     addData(data, payload) {
-      
+      if(data == "f_m") {
+        payload = this.fulfillment_method
+        this.addFullfilment(payload)
+      }
     }
   }
 }
