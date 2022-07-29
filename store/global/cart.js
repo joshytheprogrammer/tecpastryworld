@@ -51,6 +51,14 @@ export default {
       state.summary.total = total
 
     },
+    CLEAR_CART(state) {
+      state.cart = []
+      state.summary = {
+        subtotal: 0,
+        taxes: 0,
+        total: 0
+      }
+    },
     INITIATE_CART(state) {
       if(localStorage.getItem('cart')){
         state.cart = JSON.parse(localStorage.getItem('cart'))
@@ -85,6 +93,9 @@ export default {
       commit('DELETE_ITEM', id)
       commit('CALCULATE_CART')
       dispatch("global/notification/setNotification", {type: "neutral", message: 'Item deleted successfully'}, {root: true})
+    },
+    clearCart({commit}) {
+      commit("CLEAR_CART")
     },
     initializeCart({commit}) {
       commit("INITIATE_CART")
