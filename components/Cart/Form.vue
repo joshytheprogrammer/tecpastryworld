@@ -79,6 +79,7 @@ export default {
       }
     },
     logKeyStroke(e) {
+      // This function was created because the setter funtion skips the first keypress.
       this.phone = e.key
     }
   }

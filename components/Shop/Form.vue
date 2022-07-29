@@ -25,6 +25,7 @@
         </div>
         <div class="form-group">
           <label>Cake Message*</label>
+          <span v-show="inCart">These settings will not reflect those in cart...</span>
           <input class="form-control" type="text" placeholder="What message would you like on top of the cake" v-model="data.message" :disabled="inCart" required>
         </div>
         
