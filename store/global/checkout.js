@@ -64,6 +64,7 @@ export default {
 
         if(res.data.message) {
           commit("EDIT_PROCESS", { loading: false, error: ''})
+          dispatch("global/cart/clearCart", {root: true})
           dispatch("global/notification/setNotification", {type: "success", message: res.data.message}, {root: true})
         }
       })
