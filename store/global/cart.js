@@ -53,11 +53,14 @@ export default {
     },
     CLEAR_CART(state) {
       state.cart = []
+      localStorage.setItem('cart', [])
+
       state.summary = {
         subtotal: 0,
         taxes: 0,
         total: 0
       }
+
     },
     INITIATE_CART(state) {
       if(localStorage.getItem('cart')){
