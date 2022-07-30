@@ -65,8 +65,8 @@ export default {
         if(res.data.message) {
           commit("EDIT_PROCESS", { loading: false, error: ''})
           dispatch("global/cart/clearCart", 0, {root: true})
-
-          window.open("https://google.com", "_blank")
+          // Create user at this point
+          window.open("https://youtube.com")
           this.$router.push("order")
           dispatch("global/notification/setNotification", {type: "success", message: res.data.message}, {root: true})
         }
