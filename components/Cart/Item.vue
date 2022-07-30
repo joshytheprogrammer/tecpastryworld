@@ -14,7 +14,7 @@
         <span> <b>Writing:</b>"{{item.data.message}}"</span>
       </div>
       <div class="actions">
-        <a @click.prevent="deleteItem(item.id)">Delete</a>
+        <a @click.prevent="deleteItem(item.id)">Remove</a>
         <a href="#">Save for Later</a>
       </div>
     </div>

@@ -95,7 +95,7 @@ export default {
     deleteFromCart({ commit, dispatch }, id) {
       commit('DELETE_ITEM', id)
       commit('CALCULATE_CART')
-      dispatch("global/notification/setNotification", {type: "neutral", message: 'Item deleted successfully'}, {root: true})
+      dispatch("global/notification/setNotification", {type: "neutral", message: 'Item removed successfully'}, {root: true})
     },
     clearCart({commit}) {
       commit("CLEAR_CART")
