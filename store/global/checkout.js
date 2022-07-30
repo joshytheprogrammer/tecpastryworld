@@ -60,14 +60,20 @@ export default {
         
         if(res.data.error) {
           commit("EDIT_PROCESS", { loading: false, error: res.data.error})
-        }
-
-        if(res.data.message) {
+        }else {
           commit("EDIT_PROCESS", { loading: false, error: ''})
           dispatch("global/cart/clearCart", 0, {root: true})
+
           // Create user at this point
-          window.open("https://youtube.com")
+
+          let url = res.data.url
+
+          if(url) {
+            window.location.href = url
+          }
+
           this.$router.push("order")
+
           dispatch("global/notification/setNotification", {type: "success", message: res.data.message}, {root: true})
         }
       })
