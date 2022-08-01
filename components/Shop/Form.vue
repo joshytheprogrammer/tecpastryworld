@@ -175,6 +175,10 @@ div {
         font-weight: bold;
       } 
 
+      span {
+        font-size: 12px;
+      }
+
       .form-control {
         width: 100%;
         height: 45px;
