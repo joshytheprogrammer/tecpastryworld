@@ -16,7 +16,9 @@
       </div>
       <div class="container products">
         <h2>Products Ordered</h2>
-        
+        <div class="data">
+          <Card />
+        </div>
       </div>
     </div>
     <Search />
