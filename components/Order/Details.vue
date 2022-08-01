@@ -1,11 +1,29 @@
 <template>
   <div class="info">
-    <p>Customer Phone: {{order.customer_phone}}</p>
-    <p>Total: {{order.amount}}</p>
-    <p>Order Status: {{order.status}}</p>
-    <p>Payment Method: {{order.mode}}</p>
-    <p>Fulfillment Method: {{order.fulfillment}}</p>
-    <p>Placed: {{order.created_at}}</p>
+    <div class="_entry">
+      <b>Customer Phone: </b>
+      <span>{{order.customer_phone}}</span>
+    </div>
+    <div class="_entry">
+      <b>Total: </b>
+      <span>{{order.amount}}</span>
+    </div>
+    <div class="_entry">
+      <b>Order Status: </b>
+      <span>{{order.status}}</span>
+    </div>
+    <div class="_entry">
+      <b>Payment Method: </b>
+      <span>{{order.mode}}</span>
+    </div>
+    <div class="_entry">
+      <b>Fulfillment Method: </b>
+      <span>{{order.fulfillment}}</span>
+    </div>
+    <div class="_entry">
+      <b>Placed: </b>
+      <span>{{order.created_at}}</span>
+    </div>
   </div>
 </template>
 
