@@ -97,7 +97,7 @@ export default {
 
     span {
       font-size: 12px;
-      padding-right: 0.5rem;
+      padding-right: 0.2rem;
 
       b {
         padding-right: 0.2rem;
