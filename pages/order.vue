@@ -2,7 +2,7 @@
   <div class="order">
     <Search />
     <div class="content" v-show="$route.query.order_no">
-      
+      This was here {{order_no}}
     </div>
     
   </div>
