@@ -17,7 +17,7 @@
       <div class="container products">
         <h2>Products Ordered</h2>
         <div class="data">
-          <Card />
+          <Card v-for="product in products" :key="product.id" :product="product" />
         </div>
       </div>
     </div>
@@ -48,18 +48,22 @@ export default {
   data() {
     return {
       order_no: this.$route.query.order_no,
-      order: {}
+      order: {},
+      products: []
     }
   },
   async fetch() {
     await axios.get('http://127.0.0.1:8000/api/order/'+this.order_no).then((res) => {
       this.order = res.data
-      this.getproducts()
     })
+
+    await this.getProducts()
   },
   methods: {
-    getProducts() {
-      
+    async getProducts() {
+      await axios.get('http://127.0.0.1:8000/api/order/getProducts/'+this.order_no).then((res) => {
+        this.products.push(res.data)
+      })
     }
   }
 }
