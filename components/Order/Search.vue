@@ -1,7 +1,7 @@
 <template>
   <div class="_search">
     <div class="_group">
-      <label>Invalid Order ID</label>
+      <label v-show="error">{{error}}</label>
       <input type="search" v-model="order_no" @keypress.enter="submitOrderNo" required placeholder="Enter your order id here">
     </div>
   </div>
@@ -11,15 +11,21 @@
 export default {
   data() {
     return {
-      order_no: this.$route.query.order_no
+      order_no: this.$route.query.order_no,
+      error: ''
     }
   },
   methods: {
     submitOrderNo() {
       if(this.order_no.length == 16) {
         this.$router.push({path: '/order', query: {order_no: this.order_no}})
+
+        this.error = ''
+      }else {
+        this.error = "Invalid Order ID"
       }
 
+      
       return
     }
   }
@@ -28,7 +34,7 @@ export default {
 
 <style lang="scss" scoped>
 ._search {
-  padding: 1rem;
+  padding: 2rem 1rem;
   display: block;
   margin: auto;
 
