@@ -6,6 +6,10 @@
     <div class="content" v-show="$route.query.order_no">
       <div class="container payment">
         <h2>Payment Details</h2>
+        <div class="info">
+          <p></p>
+        </div>
+        {{order}}
       </div>
       <div class="container products">
         <h2>Order Details</h2>
@@ -16,6 +20,7 @@
 </template>
 
 <script>
+import axios from "axios"
 import Header from "../components/Home/Helpers/Headers.vue"
 import Search from "../components/Order/Search.vue"
 export default {
@@ -28,16 +33,17 @@ export default {
       this.order_no = no
     }
   },
-  async fetch() {
-    await axios.get(''+this.order_no).then((res) => {
-
-    })
-  },
   data() {
     return {
-      order_no: this.$route.query.order_no
+      order_no: this.$route.query.order_no,
+      order: {}
     }
-  }
+  },
+  async fetch() {
+    await axios.get('http://127.0.0.1:8000/api/order/'+this.order_no).then((res) => {
+      this.order = res.data
+    })
+  },
 }
 </script>
 
@@ -53,6 +59,10 @@ export default {
 
       h2 {
         text-align: center;
+        font-size: 28px;
+        font-weight: 500;
+        padding: 1rem 0.4rem;
+        border-bottom: 1px solid $primary;
       }
     }
   }

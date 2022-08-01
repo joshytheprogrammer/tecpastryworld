@@ -77,6 +77,9 @@ export default {
 
           dispatch("global/notification/setNotification", {type: "success", message: res.data.message}, {root: true})
         }
+      }).catch((err) => {
+        dispatch("global/notification/setNotification", {type: "error", message: err}, {root: true})
+        commit("EDIT_PROCESS", { loading: false, error: err})
       })
     },
     handleOrder({commit, dispatch}) {
