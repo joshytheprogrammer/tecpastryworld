@@ -107,6 +107,13 @@ export default {
           }
         }
       }
+
+      &.products {
+        .data {
+          display: flex;
+          overflow-x: auto;
+        }
+      }
     }
   }
 

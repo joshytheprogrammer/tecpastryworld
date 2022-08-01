@@ -15,8 +15,17 @@
 </template>
 
 <script>
+import axios from "axios"
 export default {
   props: ["product"],
+  data() {
+    return {
+
+    }
+  },
+  mounted(){
+    this.fetchProduct()
+  },
   methods: {
     formatData(value, type){
       if(type == "type") {
@@ -39,10 +48,37 @@ export default {
         return value
       }
     },
+    async fetchProduct() {
+      await axios.get('http://127.0.0.1:8000/api/order/getProduct/'+this.roduct.product_id).then((res) => {
+        console.log(res)
+      })
+    }
   }
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+.product {
+  .thumb {
 
+  }
+
+  ._details {
+
+  }
+
+  ._others {
+    display: flex;
+    justify-content: flex-start;
+
+    span {
+      font-size: 14px;
+      padding-right: 0.5rem;
+
+      b {
+        padding-right: 0.2rem;
+      }
+    }
+  }
+}
 </style>
