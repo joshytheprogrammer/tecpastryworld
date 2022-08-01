@@ -21,7 +21,7 @@
       <b>Fulfillment Method: </b>
       <span>{{order.fulfillment}}</span>
     </div>
-    <div class="_entry">
+    <div class="_entry time">
       <b>Placed: </b>
       <span title="Y/M/D">{{formatter("date", order.created_at)}}</span>
     </div>
@@ -68,6 +68,10 @@ export default {
 
     ._entry {
       font-size: 14px;
+
+      span {
+        max-width: 120px;
+      }
     }
   }
 }
