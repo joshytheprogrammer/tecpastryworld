@@ -44,8 +44,10 @@ export default {
 
     label {
       display: inline-block;
+      margin: 2px 5px;
       color: $danger;
       text-transform: uppercase;
+      letter-spacing: 1px;
       font-size: 12px;
       font-weight: 500;
     }
