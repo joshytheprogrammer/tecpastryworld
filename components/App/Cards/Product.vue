@@ -3,8 +3,8 @@
     <div class="s">
       <img loading="lazy" :src="item.thumbnail" :alt="item.name">
       <div class="_details">
-        <NuxtLink :to="'/shop/'+item._slug" style="display: none;" >{{item.name}}</NuxtLink>
-        <NuxtLink :aria-label="item.name" :to="'/shop/'+item._slug" :title="item.name">{{item.name.length > 45 ? item.name.slice(0, 43) + "..." : item.name }}</NuxtLink>
+        <NuxtLink :to="'/shop/'+item._slug">{{item.name}}</NuxtLink>
+        <!-- <NuxtLink style="display: none;" :aria-label="item.name" :to="'/shop/'+item._slug" :title="item.name">{{item.name.length > 45 ? item.name.slice(0, 43) + "..." : item.name }}</NuxtLink> -->
         <span class="prices"> {{formatter(item.price)}} </span>
       </div>
     </div>
@@ -53,6 +53,11 @@ export default {
       color: $primary;
 
       a {
+        white-space: pre-line;
+        overflow: hidden;
+        height: 58.2px;
+        text-overflow: ellipsis;
+
         padding: 0.2rem 0;
         text-transform: capitalize;
         display: inherit;
