@@ -4,15 +4,19 @@
       <template #title>Order "{{order_no}}" was successfully placed</template>
     </Header>
     <div class="content" v-show="$route.query.order_no">
-      <div class="container payment">
-        <h2>Payment Details</h2>
+      <div class="container order">
+        <h2>Order Details</h2>
         <div class="info">
-          <p></p>
+          <p>Customer Phone: {{order.customer_phone}}</p>
+          <p>Total: {{order.amount}}</p>
+          <p>Order Status: {{order.status}}</p>
+          <p>Payment Method: {{order.mode}}</p>
+          <p>Fulfillment Method: {{order.fulfillment}}</p>
+          <p>Placed: {{order.created_at}}</p>
         </div>
-        {{order}}
       </div>
       <div class="container products">
-        <h2>Order Details</h2>
+        <h2>Products Ordered</h2>
       </div>
     </div>
     <Search />
