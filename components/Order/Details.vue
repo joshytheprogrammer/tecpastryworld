@@ -36,10 +36,14 @@ export default {
 <style lang="scss" scoped>
 .info {
   width: 100%;
+  padding-right: 0.4rem;
+  border-right: 1px solid $primary;
   
   ._entry {
     display: flex;
     justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 0.5px solid $primary;
   }
 }
 </style>

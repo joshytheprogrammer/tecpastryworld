@@ -71,16 +71,25 @@ export default {
       }
 
       &.details {
-        padding: 1.5rem 0.8rem;
-        
         .data {
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 1rem;
+          padding: 1.5rem 0.8rem;
         }
 
         .res {
+          padding: 1.5rem 0.8rem;
+        }
+      }
+    }
+  }
 
+  @media screen and (max-width: $medium) {
+    .content .container {
+      &.details {
+        .data {
+          display: block;
         }
       }
     }
