@@ -68,7 +68,7 @@ export default {
 
   ._details {
     display: block;
-    padding: 1rem 0.5rem;
+    padding: 0.4rem 0;
     color: $primary;
 
     a {
