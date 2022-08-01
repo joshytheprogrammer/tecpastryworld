@@ -45,5 +45,9 @@ export default {
     padding: 0.5rem 0;
     border-bottom: 0.5px solid $primary;
   }
+
+  @media screen and (max-width: $medium) {
+    border: none;
+  }
 }
 </style>
