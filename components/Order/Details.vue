@@ -29,7 +29,12 @@
 
 <script>
 export default {
-  props: ["order"]
+  props: ["order"],
+  methods: {
+    formatter() {
+      
+    }
+  }
 }
 </script>
 
