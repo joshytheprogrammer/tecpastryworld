@@ -6,10 +6,11 @@
     </div>
     <div class="_entry">
       <b>Total: </b>
-      <span>{{order.amount}}</span>
+      <span>{{formatter("amount", order.amount)}}</span>
     </div>
     <div class="_entry">
       <b>Order Status: </b>
+      <!-- Add click here to pay function -->
       <span>{{order.status}}</span>
     </div>
     <div class="_entry">
@@ -22,7 +23,7 @@
     </div>
     <div class="_entry">
       <b>Placed: </b>
-      <span>{{order.created_at}}</span>
+      <span title="Y/M/D">{{formatter("date", order.created_at)}}</span>
     </div>
   </div>
 </template>
@@ -31,8 +32,19 @@
 export default {
   props: ["order"],
   methods: {
-    formatter() {
-      
+    formatter(type, value) {
+      if(type == "amount") {
+        let currency = '₦'
+        var formatter = new Intl.NumberFormat('en-US');
+
+        value = currency + formatter.format(value)
+        return value
+      }
+
+      if(type == "date") {
+        let d = new Date(value);
+        return d;
+      }
     }
   }
 }
