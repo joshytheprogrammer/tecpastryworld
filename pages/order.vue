@@ -1,7 +1,7 @@
 <template>
   <div class="order">
     
-    YOur order {{$route.query.order_no}} was successfully placed.
+    Your order {{$route.query.order_no}} was successfully placed.
   </div>
 </template>
 
