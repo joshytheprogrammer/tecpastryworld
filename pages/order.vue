@@ -1,7 +1,7 @@
 <template>
   <div class="order">
     <Header v-show="$route.query.order_no">
-      <template #title>Order "{{order_no}}" was successfully placed</template>
+      <template #title>Thank you for choosing tecpastryworld</template>
     </Header>
     <div class="content" v-show="$route.query.order_no">
       <div class="container details">
@@ -15,7 +15,7 @@
       </div>
       <div class="container products">
         <h2>Products Ordered</h2>
-        {{order}}
+        
       </div>
     </div>
     <Search />
