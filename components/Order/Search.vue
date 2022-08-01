@@ -34,7 +34,7 @@ export default {
 
   ._group {
     width: 720px;
-
+    margin: auto;
 
     label {
       display: inline-block;
@@ -56,5 +56,11 @@ export default {
       @include search-text;
     }
   } 
+
+  @media screen and (max-width: $medium){
+    ._group {
+      width: 100%;
+    }
+  }
 }
 </style>
