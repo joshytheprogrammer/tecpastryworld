@@ -67,12 +67,13 @@ export default {
           // Create user at this point
 
           let url = res.data.url
+          let order_no = res.data.order_id
 
           if(url) {
             window.location.href = url
           }
 
-          this.$router.push("order")
+          this.$router.push({path: '/order', query: {order_no: order_no}})
 
           dispatch("global/notification/setNotification", {type: "success", message: res.data.message}, {root: true})
         }
