@@ -2,9 +2,9 @@
   <div class="order">
     <Search />
     <div class="content" v-show="$route.query.order_no">
-
+      
     </div>
-    Your order {{order_no}} was successfully placed.
+    
   </div>
 </template>
 
