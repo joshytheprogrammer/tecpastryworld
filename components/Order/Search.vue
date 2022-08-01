@@ -1,6 +1,9 @@
 <template>
   <div class="_search">
-    <input type="search" v-model="order_no" @keypress.enter="submitOrderNo" required placeholder="Enter your order id here">
+    <div class="_group">
+      <label>Invalid Order ID</label>
+      <input type="search" v-model="order_no" @keypress.enter="submitOrderNo" required placeholder="Enter your order id here">
+    </div>
   </div>
 </template>
 
@@ -13,11 +16,11 @@ export default {
   },
   methods: {
     submitOrderNo() {
-      if(this.order_no < 14) {
-        return
+      if(this.order_no.length == 16) {
+        this.$router.push({path: '/order', query: {order_no: this.order_no}})
       }
 
-      this.$router.push({path: '/order', query: {order_no: this.order_no}})
+      return
     }
   }
 }
@@ -25,20 +28,33 @@ export default {
 
 <style lang="scss" scoped>
 ._search {
-  padding: 2rem 1rem;
+  padding: 1rem;
+  display: block;
+  margin: auto;
 
-  input {
-    @include input;
-    margin: auto;
-    display: block;
-    width: 50%;
-    border: 1px solid $primary;
+  ._group {
+    width: 720px;
 
-    &:focus {
-      border: 1px solid $secondary;
+
+    label {
+      display: inline-block;
+      color: $danger;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 500;
     }
 
-    @include search-text;
-  }
+    input {
+      @include input;
+      display: block;
+      border: 1px solid $primary;
+
+      &:focus {
+        border: 1px solid $secondary;
+      }
+
+      @include search-text;
+    }
+  } 
 }
 </style>
