@@ -1,16 +1,35 @@
 <template>
   <div class="res">
     <p>If you have made payment, we will reach out to you soon. If you want to talk to us, you can reach out to us <a :href="'https://api.whatsapp.com/send?phone=2347010718819&text=Hi, I placed the order ['+order_no+']. How far?'">here</a>. </p>
-    <p>Be sure to reach out to us with the <b :title="order.customer_phone">PHONE NUMBER</b> you used to order.</p>
+    <p>Be sure to reach out to us with the <b :title="customer_phone">PHONE NUMBER</b> you used to order.</p>
   </div>
 </template>
 
 <script>
 export default {
-
+  props: ["order_no", "customer_phone"]
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
+.res {
+  p {
+    line-height: 1.8;
+    font-size: 18px;
 
+    a {
+      color: $primary;
+    }
+  }
+
+  @media screen and (max-width: $medium){
+    padding: 1.5rem 0.2rem;
+
+    p {
+      padding: 0.2rem 0;
+      line-height: 2;
+      font-size: 14px;
+    }
+  }
+}
 </style>

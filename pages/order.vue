@@ -8,7 +8,7 @@
         <h2>Order Details</h2>
         <div class="data">
           <Details :order="order" />
-          
+          <Message :customer_phone="order.customer_phone" :order_no="order_no" />
         </div>
       </div>
       <div class="container products">
@@ -27,14 +27,16 @@ import axios from "axios"
 import Details from "../components/Order/Details.vue"
 import Search from "../components/Order/Search.vue"
 import Card from "../components/Order/Card.vue"
+import Message from "../components/Order/Message.vue"
 import Header from "../components/Home/Helpers/Headers.vue"
 
 export default {
   components: {
     Search,
     Header,
+    Message,
     Details,
-    Card
+    Card,
   },
   watch: {
     '$route.query.order_no': function (no){
@@ -91,18 +93,6 @@ export default {
           gap: 1rem;
           padding: 1.5rem 0.8rem;
         }
-
-        .res {
-
-          p {
-            line-height: 1.8;
-            font-size: 18px;
-
-            a {
-              color: $primary;
-            }
-          }
-        }
       }
 
       &.products {
@@ -120,10 +110,6 @@ export default {
       &.details {
         .data {
           display: block;
-        }
-
-        .res {
-          padding: 1.5rem 0.2rem;
         }
       }
     }
