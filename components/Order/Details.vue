@@ -14,7 +14,7 @@
     </div>
     <div class="_entry">
       <b>Payment Method: </b>
-      <span>{{order.mode}}</span>
+      <span>{{order.payment_mode}}</span>
     </div>
     <div class="_entry">
       <b>Fulfillment Method: </b>
@@ -33,6 +33,13 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+.info {
+  width: 100%;
+  
+  ._entry {
+    display: flex;
+    justify-content: space-between;
+  }
+}
 </style>

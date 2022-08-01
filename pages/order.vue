@@ -4,9 +4,14 @@
       <template #title>Order "{{order_no}}" was successfully placed</template>
     </Header>
     <div class="content" v-show="$route.query.order_no">
-      <div class="container order">
+      <div class="container details">
         <h2>Order Details</h2>
-        <Details :order="order" />
+        <div class="data">
+          <Details :order="order" />
+          <div class="res">
+            a
+          </div>
+        </div>
       </div>
       <div class="container products">
         <h2>Products Ordered</h2>
@@ -63,6 +68,20 @@ export default {
         font-weight: 500;
         padding: 1rem 0.4rem;
         border-bottom: 1px solid $primary;
+      }
+
+      &.details {
+        padding: 1.5rem 0.8rem;
+        
+        .data {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 1rem;
+        }
+
+        .res {
+
+        }
       }
     }
   }
