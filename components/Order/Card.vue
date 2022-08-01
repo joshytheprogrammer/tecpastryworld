@@ -1,5 +1,5 @@
 <template>
-  <div class="product">
+  <div class="product" v-show="item">
     <div class="thumb">
       <img :src="item.thumbnail" :alt="'Cart Item - '+item.name">
     </div>
@@ -51,13 +51,18 @@ export default {
 
 <style lang="scss" scoped>
 .product {
-
+  width: 220px;
+  padding: 1rem;
+  
   .thumb {
     img {
-      width: 200px;
-      height: 200px;
+      width: 100%;
+      max-height: 100%;
+      
+      height: 150px;
+      object-fit: contain;
       border-radius: 10px;
-      object-fit: cover;
+      transition: 0.5s all ease-in-out;
     }
   }
 
@@ -69,15 +74,14 @@ export default {
     a {
       white-space: pre-line;
       overflow: hidden;
-      height: 58.2px;
+      height: 40.8px;
       text-overflow: ellipsis;
 
-      padding: 0.2rem 0;
       text-transform: capitalize;
       display: inherit;
       color: inherit;
       text-decoration: none;
-      font-size: 21px;
+      font-size: 16px;
       font-weight: 600;
 
       &:hover {
@@ -92,7 +96,7 @@ export default {
     justify-content: flex-start;
 
     span {
-      font-size: 14px;
+      font-size: 12px;
       padding-right: 0.5rem;
 
       b {

@@ -110,6 +110,7 @@ export default {
 
       &.products {
         .data {
+          cursor: grab;
           display: flex;
           overflow-x: auto;
         }
