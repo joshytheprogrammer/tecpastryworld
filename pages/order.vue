@@ -49,7 +49,7 @@ export default {
     return {
       order_no: this.$route.query.order_no,
       order: {},
-      products: []
+      products: ''
     }
   },
   async fetch() {
@@ -62,7 +62,7 @@ export default {
   methods: {
     async getProducts() {
       await axios.get('http://127.0.0.1:8000/api/order/getProducts/'+this.order_no).then((res) => {
-        this.products.push(res.data)
+        this.products = res.data
       })
     }
   }
