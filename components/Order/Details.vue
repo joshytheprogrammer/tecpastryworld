@@ -65,6 +65,10 @@ export default {
 
   @media screen and (max-width: $medium) {
     border: none;
+
+    ._entry {
+      font-size: 14px;
+    }
   }
 }
 </style>

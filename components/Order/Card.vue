@@ -1,10 +1,10 @@
 <template>
   <div class="product">
     <div class="thumb">
-      <img src="" alt="">
+      <img :src="item.thumbnail" :alt="'Cart Item - '+item.name">
     </div>
     <div class="_details">
-
+      <NuxtLink :to="'/shop/'+item._slug" :aria-label="item.name" :title="item.name">{{item.name}}</NuxtLink>
     </div>
     <div class="_others">
       <span> <b>Size:</b>{{product.cake_size}}" inches</span>
@@ -20,7 +20,7 @@ export default {
   props: ["product"],
   data() {
     return {
-
+      item: ''
     }
   },
   mounted(){
@@ -39,18 +39,10 @@ export default {
           return "Fruit Cake"
         }
       }
-
-      if(type == "price") {
-        let currency = '₦'
-        var formatter = new Intl.NumberFormat('en-US');
-
-        value = currency + formatter.format(value)
-        return value
-      }
     },
     async fetchProduct() {
-      await axios.get('http://127.0.0.1:8000/api/order/getProduct/'+this.roduct.product_id).then((res) => {
-        console.log(res)
+      await axios.get('http://127.0.0.1:8000/api/order/getProduct/'+this.product.product_id).then((res) => {
+        this.item = res.data.data[0]
       })
     }
   }
@@ -59,12 +51,40 @@ export default {
 
 <style lang="scss" scoped>
 .product {
-  .thumb {
 
+  .thumb {
+    img {
+      width: 200px;
+      height: 200px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
   }
 
   ._details {
+    display: block;
+    padding: 1rem 0.5rem;
+    color: $primary;
 
+    a {
+      white-space: pre-line;
+      overflow: hidden;
+      height: 58.2px;
+      text-overflow: ellipsis;
+
+      padding: 0.2rem 0;
+      text-transform: capitalize;
+      display: inherit;
+      color: inherit;
+      text-decoration: none;
+      font-size: 21px;
+      font-weight: 600;
+
+      &:hover {
+        text-decoration: underline;
+        text-decoration-color: $primary;
+      }
+    }
   }
 
   ._others {
