@@ -9,7 +9,7 @@
         <div class="data">
           <Details :order="order" />
           <div class="res">
-            <p>If you have made payment, we will reach out to you soon. If you want to talk to us, maybe you have questions about your order, you can reach out to us <a :href="'https://api.whatsapp.com/send?phone=2347010718819&text=Hi, I placed the order ['+order_no+']. How far?'">here</a>. </p>
+            <p>If you have made payment, we will reach out to you soon. If you want to talk to us, you can reach out to us <a :href="'https://api.whatsapp.com/send?phone=2347010718819&text=Hi, I placed the order ['+order_no+']. How far?'">here</a>. </p>
             <p>Be sure to reach out to us with the <b :title="order.customer_phone">PHONE NUMBER</b> you used to order.</p>
           </div>
         </div>
@@ -103,7 +103,7 @@ export default {
         }
 
         .res {
-          padding: 1.5rem 0.8rem;
+          padding: 1.5rem 0.2rem;
         }
       }
     }
