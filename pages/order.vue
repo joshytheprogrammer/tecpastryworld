@@ -1,12 +1,12 @@
 <template>
   <div class="order">
-    <Search />
     <Header v-show="$route.query.order_no">
       <template #title>Order "{{order_no}}" was successfully placed</template>
     </Header>
     <div class="content" v-show="$route.query.order_no">
-      This was here {{order_no}}
+      <div class="container payment"></div>
     </div>
+    <Search />
   </div>
 </template>
 
@@ -23,8 +23,10 @@ export default {
       this.order_no = no
     }
   },
-  mounted() {
-    
+  async fetch() {
+    await axios.get(''+this.order_no).then((res) => {
+
+    })
   },
   data() {
     return {
@@ -34,6 +36,6 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 
 </style>
