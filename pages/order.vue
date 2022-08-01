@@ -28,13 +28,16 @@
 <script>
 import axios from "axios"
 import Details from "../components/Order/Details.vue"
-import Header from "../components/Home/Helpers/Headers.vue"
 import Search from "../components/Order/Search.vue"
+import Card from "../components/Order/Card.vue"
+import Header from "../components/Home/Helpers/Headers.vue"
+
 export default {
   components: {
     Search,
     Header,
-    Details
+    Details,
+    Card
   },
   watch: {
     '$route.query.order_no': function (no){
@@ -51,8 +54,14 @@ export default {
   async fetch() {
     await axios.get('http://127.0.0.1:8000/api/order/'+this.order_no).then((res) => {
       this.order = res.data
+      this.getproducts()
     })
   },
+  methods: {
+    getProducts() {
+      
+    }
+  }
 }
 </script>
 
