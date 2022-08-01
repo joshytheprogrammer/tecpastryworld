@@ -4,7 +4,12 @@
       <template #title>Order "{{order_no}}" was successfully placed</template>
     </Header>
     <div class="content" v-show="$route.query.order_no">
-      <div class="container payment"></div>
+      <div class="container payment">
+        <h2>Payment Details</h2>
+      </div>
+      <div class="container products">
+        <h2>Order Details</h2>
+      </div>
     </div>
     <Search />
   </div>
@@ -37,5 +42,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.order {
+  .content {
+    .container {
+      width: 90%;
+      margin: 1rem auto;
+      height: 300px;
+      border-radius: 12px;
+      background: $light;
 
+      h2 {
+        text-align: center;
+      }
+    }
+  }
+}
 </style>
