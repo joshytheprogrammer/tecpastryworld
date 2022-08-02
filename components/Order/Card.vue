@@ -97,7 +97,7 @@ export default {
     justify-content: flex-start;
 
     span {
-      font-size: 12px;
+      font-size: 10px;
       padding-right: 0.2rem;
 
       b {
