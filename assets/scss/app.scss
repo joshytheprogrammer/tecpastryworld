@@ -26,6 +26,7 @@ html,
 body  {
   background: $background;
   overflow-x: hidden;
+  zoom: 0.9;
 }
 
 @media screen and (max-width: $s-medium) {
