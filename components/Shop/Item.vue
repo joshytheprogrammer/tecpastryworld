@@ -43,6 +43,9 @@ export default {
   min-width: 90%;
   max-width: 90%;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 2rem 0;
   
   ._item {
