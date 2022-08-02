@@ -53,6 +53,7 @@ export default {
 .product {
   width: 220px;
   padding: 1rem;
+  margin-right: 2rem;
   
   .thumb {
     img {
