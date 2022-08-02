@@ -263,5 +263,15 @@ div {
       }
     }
   }
+
+  @media screen and (max-width: $medium){
+    form {
+      .bottom-bar {
+        .btn-m {
+          padding: 6px 9px;
+        }
+      }
+    }
+  }
 }
 </style>
