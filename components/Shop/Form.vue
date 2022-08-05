@@ -148,8 +148,7 @@ export default {
         this.data,
         this.$route.params.slug
       ]
-
-      // this.$router.push({path: this.$router.path, query: {size: this.data.size, type: this.data.type, writing: this.data.message}})
+      
       this.$router.push('/cart')
       this.addToCart(data)
     },
