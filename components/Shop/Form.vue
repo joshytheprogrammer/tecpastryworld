@@ -142,15 +142,14 @@ export default {
       
       return currency+formatter.format(price)
     },
-    addItem() {
+    async addItem() {
       let data = [
         this.item,
         this.data
       ]
 
+      await this.$router.push({path: this.$router.path, query: {size: this.data.size, type: this.data.type, writing: this.data.message}})
       this.addToCart(data)
-
-      this.$router.push('/cart')
     },
     deleteItem(id) {
       this.deleteFromCart(id)
