@@ -2,6 +2,7 @@
   <div class="after_item">
     <NetworkError v-if="$fetchState.error || error" :message="error" />
     <div v-if="configurable">
+      
       <p>**Prices exclude VAT and other taxes</p>
       <Price :loading="priceLoading" :price="data.price" />
       <form @submit.prevent="addItem">
@@ -68,17 +69,21 @@ export default {
   },
   data() {
     return {
+      editing: this.$route.query.edit ? this.$route.query.edit : this.inCart,
       configurable: true,
       loading: true,
       priceLoading: true,
       data: {
         price: '',
-        size: '',
-        type: '',
-        message: ''
+        size: this.$route.query.size ? this.$route.query.size : '',
+        type: this.$route.query.type ? this.$route.query.type : '',
+        message: this.$route.query.writing ? this.$route.query.writing : ''
       },
       error: '',
     }
+  },
+  mounted() {
+
   },
   async fetch() {
     await axios.get('http://127.0.0.1:8000/api/config/getFormat/'+this.item._id).then((response) => {
@@ -130,9 +135,13 @@ export default {
     },
     setData(format) {
       // Assign Variables
-      this.data.size = format.size
-      this.data.type = format.type
-
+      if(this.data.size.length == 0) {
+        this.data.size = format.size
+      }
+      if(this.data.type.length == 0) {
+        this.data.type = format.type
+      }
+      
       // Return Price
       this.refreshPrice()
     },
@@ -148,7 +157,7 @@ export default {
         this.data,
         this.$route.params.slug
       ]
-      
+
       this.$router.push('/cart')
       this.addToCart(data)
     },

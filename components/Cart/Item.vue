@@ -14,7 +14,7 @@
         <span> <b>Writing:</b>"{{item.data.message}}"</span>
       </div>
       <div class="actions">
-        <NuxtLink :to="'/shop/'+item.slug+'?size='+item.data.size+'&type='+item.data.type+'&writing='+item.data.message">Edit</NuxtLink>
+        <NuxtLink :to="'/shop/'+item.slug+'?size='+item.data.size+'&type='+item.data.type+'&writing='+item.data.message+'&edit=true'">Edit</NuxtLink>
         <a href="#">Save for Later</a>
         <a @click.prevent="deleteItem(item.id)">Remove</a>
       </div>
