@@ -69,7 +69,7 @@ export default {
   },
   data() {
     return {
-      editing: this.$route.query.edit ? this.$route.query.edit : this.inCart,
+      // editing: '',
       configurable: true,
       loading: true,
       priceLoading: true,
@@ -83,7 +83,7 @@ export default {
     }
   },
   mounted() {
-
+    // this.checkEditing()
   },
   async fetch() {
     await axios.get('http://127.0.0.1:8000/api/config/getFormat/'+this.item._id).then((response) => {
@@ -163,6 +163,14 @@ export default {
     },
     deleteItem(id) {
       this.deleteFromCart(id)
+    },
+    checkEditing() {
+      if(this.$route.query.edit) {
+        this.editing = this.$route.query.edit
+      }else {
+        this.editing = false
+      }
+      // This function doesnt work yet.
     }
   }
 }
