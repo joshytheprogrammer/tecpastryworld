@@ -72,12 +72,14 @@ export default {
     addToCart({ commit, dispatch }, product) {
       let info = product[0]
       let details = product[1]
+      let slug = product[2]
 
       // assigning variables
       let item = {
         id: info._id,
         img: info.thumbnail,
         name: info.name,
+        slug: slug,
         data: {
           size: details.size,
           type: details.type,

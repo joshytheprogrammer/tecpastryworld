@@ -8,14 +8,15 @@
       <div class="_price">
         <p> {{formatData(item.data.price, "price")}} </p>
       </div>
-      <div class="data"> 
+      <div class="data">
         <span> <b>Size:</b>{{item.data.size}}" inches</span>
         <span> <b>Type:</b>{{formatData(item.data.type, "type")}}</span>
         <span> <b>Writing:</b>"{{item.data.message}}"</span>
       </div>
       <div class="actions">
-        <a @click.prevent="deleteItem(item.id)">Remove</a>
+        <NuxtLink :to="'/shop/'+item.slug">Edit</NuxtLink>
         <a href="#">Save for Later</a>
+        <a @click.prevent="deleteItem(item.id)">Remove</a>
       </div>
     </div>
     <div class="_price">
