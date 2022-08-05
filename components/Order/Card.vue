@@ -4,7 +4,7 @@
       <img :src="item.thumbnail" :alt="'Cart Item - '+item.name">
     </div>
     <div class="_details">
-      <NuxtLink :to="'/shop/'+item._slug" :aria-label="item.name" :title="item.name">{{item.name}}</NuxtLink>
+      <NuxtLink :to="'/shop/'+item._slug+'?size='+product.cake_size+'&type='+product.cake_type+'&writing='+product.writing" :aria-label="item.name" :title="item.name">{{item.name}}</NuxtLink>
     </div>
     <div class="_others">
       <span> <b>Size:</b>{{product.cake_size}}" inches</span>
