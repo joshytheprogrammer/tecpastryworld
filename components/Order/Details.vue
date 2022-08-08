@@ -42,8 +42,8 @@ export default {
       }
 
       if(type == "date") {
-        let d = new Date(value);
-        return d;
+        // let d = new Date(value);
+        return value;
       }
     }
   }
