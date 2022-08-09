@@ -41,14 +41,12 @@ export default {
         }
 
         state.order.products.push(product)
-
       })
     },
     EDIT_PROCESS(state, process) {
       state.process.loading = process.loading
       state.process.error = process.error
     }
-
   },
   actions: {
     async initiateCheckout({commit, dispatch, getters}) {

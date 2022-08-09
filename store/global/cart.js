@@ -45,7 +45,6 @@ export default {
       total = subtotal + taxes
 
       // Assign Values
-
       state.summary.subtotal = subtotal
       state.summary.taxes = taxes
       state.summary.total = total
@@ -60,7 +59,6 @@ export default {
         taxes: 0,
         total: 0
       }
-
     },
     INITIATE_CART(state) {
       if(localStorage.getItem('cart')){

@@ -34,7 +34,6 @@ export default {
         // Send error message
         dispatch("global/notification/setNotification", error, {root: true})
       }
-      
     }
   },
   getters: {
