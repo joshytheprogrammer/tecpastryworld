@@ -23,7 +23,7 @@
     </div>
     <div class="_entry time">
       <b>Placed: </b>
-      <span title="Y/M/D">{{formatter("date", order.created_at)}}</span>
+      <span title="Y/M/D">{{order.created_at}}</span>
     </div>
   </div>
 </template>
@@ -39,11 +39,6 @@ export default {
 
         value = currency + formatter.format(value)
         return value
-      }
-
-      if(type == "date") {
-        // let d = new Date(value);
-        return value;
       }
     }
   }
