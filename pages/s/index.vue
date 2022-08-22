@@ -10,21 +10,22 @@
     <!-- Search for cakes here, use the SearchCard component to render it here -->
     <div class="container" v-else>
       <section class="results">
-        a
+        <Results :results="search.results" />
       </section>
       <section class="other">
-        a
+        coming soon...
       </section>
     </div>
-    
   </div>
 </template>
 
 <script>
 import FirstMessage from "~/components/Search/Message.vue"
+import Results from "~/components/Search/Results.vue"
 export default {
   components: {
-    FirstMessage
+    FirstMessage,
+    Results
   },
   watch: {
     '$route.query.k': function (k){
