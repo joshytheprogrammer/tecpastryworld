@@ -11,7 +11,8 @@
     <div class="_entry">
       <b>Order Status: </b>
       <!-- Add click here to pay function -->
-      <span>{{order.status}}</span>
+      <span v-if="loading">loading...</span>
+      <span v-else>{{order.status}} (<a @click.prevent="getPaymentStatus" href="#">refresh</a>)</span>
     </div>
     <div class="_entry">
       <b>Payment Method: </b>
@@ -31,6 +32,11 @@
 <script>
 export default {
   props: ["order"],
+  data() {
+    return {
+      loading: false,
+    }
+  },
   methods: {
     formatter(type, value) {
       if(type == "amount") {
@@ -40,6 +46,9 @@ export default {
         value = currency + formatter.format(value)
         return value
       }
+    },
+    getPaymentStatus() {
+      this.loading = true
     }
   }
 }
@@ -56,6 +65,17 @@ export default {
     justify-content: space-between;
     padding: 0.5rem 0;
     border-bottom: 0.5px solid $primary;
+
+    span {
+      a {
+        color: $primary;
+        padding: 0 4px;
+
+        &:hover {
+          color: $secondary;
+        }
+      }
+    }
   }
 
   @media screen and (max-width: $medium) {
