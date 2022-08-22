@@ -13,8 +13,8 @@ import axios from "axios"
 export default {
   props: ["order_no", "order_status", "customer_phone"],
   async mounted () {
-    await axios.get('').then((res) => {
-
+    await axios.get('http://127.0.0.1:8000/api/order/getPayment/'+this.order_no).then((res) => {
+      console.log(res)
     })
   }
 }
