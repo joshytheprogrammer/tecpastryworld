@@ -9,7 +9,7 @@
     </div>
     <!-- Search for cakes here, use the SearchCard component to render it here -->
     <div class="container" v-else>
-      <section class="results">
+      <section class="BfoxW">
         <Results :results="search.results" />
       </section>
       <section class="other">
