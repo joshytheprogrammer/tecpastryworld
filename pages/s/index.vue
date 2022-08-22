@@ -51,18 +51,21 @@ export default {
 
   .container {
     display: grid;
-    grid-template-columns: 1.5fr 1.8fr;
+    grid-template-columns: 3fr 1fr;
 
     .BfoxW {
       margin: 1rem 0;
       border-radius: 8px;
-      // border: 2px solid $primary;
       padding: 1rem;
       background: $light;
     }
 
     @media screen and (max-width: $m-large) {
       display: block;
+
+      .BfoxW {
+        max-width: 100%;
+      }
     }
   }
 }

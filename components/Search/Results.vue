@@ -44,7 +44,7 @@
         </div>
       </div>
     </div>
-    <!-- <div class="categories">
+    <div class="categories">
       <div class="s">
         <div class="category">
           <img loading="lazy" src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80" alt="'TEC product category - '+chocolate">
@@ -89,7 +89,7 @@
           </div>
         </div>
       </div>
-    </div> -->
+    </div>
   </div>
 </template>
 
@@ -101,11 +101,11 @@ export default {
 
 <style lang="scss" scoped>
 .results {
+
   .products {
     margin: 1rem 0;
 
     .product {
-      
       
       .s {
         display: grid;
