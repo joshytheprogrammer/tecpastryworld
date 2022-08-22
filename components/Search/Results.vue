@@ -50,6 +50,8 @@ export default {
 <style lang="scss" scoped>
 .results {
   .products {
+    margin: 1rem 0;
+    
     .product {
       display: grid;
       grid-template-columns: 1fr 2fr;
