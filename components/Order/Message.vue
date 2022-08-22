@@ -8,10 +8,14 @@
 </template>
 
 <script>
+import axios from "axios"
+
 export default {
   props: ["order_no", "order_status", "customer_phone"],
-  mounted () {
+  async mounted () {
+    await axios.get('').then((res) => {
 
+    })
   }
 }
 </script>
