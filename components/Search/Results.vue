@@ -105,16 +105,12 @@ export default {
 
   .categories {
     margin: 1rem 0;
-
-    display: grid;
-    gap: 1rem;
-    justify-items: center;
-    grid-template-columns: repeat(5, 1fr);
+    width: 220px;
 
     .category {
       img {
         width: 100%;
-        height: 528px;
+        height: 378px;
         object-fit: cover;
         border-radius: 10px;
         transition: 0.5s all ease-in-out;
