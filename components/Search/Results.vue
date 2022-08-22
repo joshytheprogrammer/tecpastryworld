@@ -45,44 +45,8 @@
       </div>
     </div>
     <div class="categories">
-      <div class="s">
-        <div class="category">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80" alt="'TEC product category - '+chocolate">
-          <div class="_details">
-            <NuxtLink to="/categories/5887782">Chocolate cakes</NuxtLink>
-          </div>
-        </div>
-        <div class="category">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80" alt="'TEC product category - '+chocolate">
-          <div class="_details">
-            <NuxtLink to="/categories/5887782">Chocolate cakes</NuxtLink>
-          </div>
-        </div>
-        <div class="category">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80" alt="'TEC product category - '+chocolate">
-          <div class="_details">
-            <NuxtLink to="/categories/5887782">Chocolate cakes</NuxtLink>
-          </div>
-        </div>
-        <div class="category">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80" alt="'TEC product category - '+chocolate">
-          <div class="_details">
-            <NuxtLink to="/categories/5887782">Chocolate cakes</NuxtLink>
-          </div>
-        </div>
-        <div class="category">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80" alt="'TEC product category - '+chocolate">
-          <div class="_details">
-            <NuxtLink to="/categories/5887782">Chocolate cakes</NuxtLink>
-          </div>
-        </div>
-        <div class="category">
-          <img loading="lazy" src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80" alt="'TEC product category - '+chocolate">
-          <div class="_details">
-            <NuxtLink to="/categories/5887782">Chocolate cakes</NuxtLink>
-          </div>
-        </div>
-        <div class="category">
+      <div class="category">
+        <div class="s">
           <img loading="lazy" src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80" alt="'TEC product category - '+chocolate">
           <div class="_details">
             <NuxtLink to="/categories/5887782">Chocolate cakes</NuxtLink>
@@ -153,12 +117,9 @@ export default {
 
   .categories {
     margin: 1rem 0;
-    
-    .s {
-      display: flex;
-      overflow: auto;
 
-      .category {
+    .category {
+      .s {
         max-width: 220px;
         margin-right: 1rem;
 
@@ -191,6 +152,11 @@ export default {
         }
       }
     }
+    
+    // .s {
+    //   display: flex;
+    //   overflow: auto;
+    // }
   }
 }
 </style>

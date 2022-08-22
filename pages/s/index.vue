@@ -51,7 +51,7 @@ export default {
 
   .container {
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 1.2fr 1.8fr;
 
     .BfoxW {
       margin: 1rem 0;
