@@ -64,7 +64,12 @@ export default {
   },
   async mounted() {
     if (this.ref.length && this.order_no.length) {
-      
+      await axios.post('http://127.0.0.1:8000/api/order/payment/verify/', {
+        'reference' : this.ref,
+        'order_id' : this.order_no
+      }).then((res) => {
+        dispatch("global/notification/setNotification", {type: "neutral", message: 'Item added successfully'}, {root: true})
+      })
     }
   },
   methods: {
