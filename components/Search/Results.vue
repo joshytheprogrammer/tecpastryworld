@@ -39,10 +39,48 @@
       </div>
     </div>
     <div class="categories">
-      <div class="category">
-        <img loading="lazy" src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80" alt="'TEC product category - '+chocolate">
-        <div class="_details">
-          <NuxtLink to="/categories/5887782">Chocolate cakes</NuxtLink>
+      <div class="s">
+        <div class="category">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80" alt="'TEC product category - '+chocolate">
+          <div class="_details">
+            <NuxtLink to="/categories/5887782">Chocolate cakes</NuxtLink>
+          </div>
+        </div>
+        <div class="category">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80" alt="'TEC product category - '+chocolate">
+          <div class="_details">
+            <NuxtLink to="/categories/5887782">Chocolate cakes</NuxtLink>
+          </div>
+        </div>
+        <div class="category">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80" alt="'TEC product category - '+chocolate">
+          <div class="_details">
+            <NuxtLink to="/categories/5887782">Chocolate cakes</NuxtLink>
+          </div>
+        </div>
+        <div class="category">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80" alt="'TEC product category - '+chocolate">
+          <div class="_details">
+            <NuxtLink to="/categories/5887782">Chocolate cakes</NuxtLink>
+          </div>
+        </div>
+        <div class="category">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80" alt="'TEC product category - '+chocolate">
+          <div class="_details">
+            <NuxtLink to="/categories/5887782">Chocolate cakes</NuxtLink>
+          </div>
+        </div>
+        <div class="category">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80" alt="'TEC product category - '+chocolate">
+          <div class="_details">
+            <NuxtLink to="/categories/5887782">Chocolate cakes</NuxtLink>
+          </div>
+        </div>
+        <div class="category">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80" alt="'TEC product category - '+chocolate">
+          <div class="_details">
+            <NuxtLink to="/categories/5887782">Chocolate cakes</NuxtLink>
+          </div>
         </div>
       </div>
     </div>
@@ -105,37 +143,44 @@ export default {
 
   .categories {
     margin: 1rem 0;
-    width: 220px;
+    max-width: 720px;
+    
+    .s {
+      display: flex;
+      overflow: auto;
 
-    .category {
-      img {
-        width: 100%;
-        height: 378px;
-        object-fit: cover;
-        border-radius: 10px;
-        transition: 0.5s all ease-in-out;
-      }
+      .category {
+        max-width: 220px;
+        margin-right: 1rem;
 
-      ._details {
-        display: block;
-        padding: 1rem 0.5rem;
-        color: $primary;
+        img {
+          width: 220px;
+          height: 328px;
+          object-fit: cover;
+          border-radius: 10px;
+          transition: 0.5s all ease-in-out;
+        }
 
-        a {
-          padding: 0.2rem 0;
-          display: inherit;
-          color: inherit;
-          text-decoration: none;
-          font-size: 21px;
-          font-weight: 600;
+        ._details {
+          display: block;
+          padding: 1rem 0.5rem;
+          color: $primary;
 
-          &:hover {
-            text-decoration: underline;
-            text-decoration-color: $primary;
+          a {
+            padding: 0.2rem 0;
+            display: inherit;
+            color: inherit;
+            text-decoration: none;
+            font-size: 21px;
+            font-weight: 600;
+
+            &:hover {
+              text-decoration: underline;
+              text-decoration-color: $primary;
+            }
           }
         }
       }
-
     }
   }
 }
