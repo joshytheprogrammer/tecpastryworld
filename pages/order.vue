@@ -68,6 +68,7 @@ export default {
         'reference' : this.ref,
         'order_id' : this.order_no
       }).then((res) => {
+        this.order.status = "pending"
         this.$store.dispatch("global/notification/setNotification", {type: "success", message: res.data.success}, {root: true})
       })
     }

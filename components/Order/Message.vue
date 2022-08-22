@@ -1,8 +1,9 @@
 <template>
   <div class="res">
-    <p v-show="order_status">If you haven't made payment, you can do so <a href="">here</a>. </p>
+    <p v-show="order_status">If you haven't made payment, you can do so <a href="#">here</a>. </p>
     <p>If you have made payment, we will reach out to you soon. If you want to talk to us, you can reach out to us <a :href="'https://api.whatsapp.com/send?phone=2347010718819&text=Hi, I placed the order ['+order_no+']. Whats wrong?'">here</a>. </p>
     <p>Be sure to reach out to us with the <b :title="customer_phone">PHONE NUMBER</b> you used to order.</p>
+    <p>Order Status and its meaning -> <b>{ awaiting_payment : Payment not yet verified }</b>, <b>{ pending : Cake is being prepared }</b>, <b>{ successful : Customer satisifed }</b></p>
   </div>
 </template>
 
