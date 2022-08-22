@@ -5,7 +5,31 @@
         <img src="https://res.cloudinary.com/dsgvwxygr/image/upload/v1658826487/tec/products/edited_image_with_label_vrbcdx-removebg-preview_in8nuc.png" alt="chococlate_cake">
         <div class="_right">
           <div class="_details">
-            <a>10 Inch Double Layer Whipped Cream Cake With Chocolates On Top.</a>
+            <NuxtLink to="shop/10-inch-double-layer-whipped-cream-cake-with-chocolates-on-top-gwer435t">10 Inch Double Layer Whipped Cream Cake With Chocolates On Top.</NuxtLink>
+            <p>[ ₦20,500 - ₦40,000 ]</p>
+          </div>
+          <div class="_actions">
+
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <img src="https://res.cloudinary.com/dsgvwxygr/image/upload/v1658826830/tec/products/1D22D433-FA9A-43A8-B46B-7DB3715FE0C6_pv1wsw-removebg-preview_kexbzd.png" alt="chococlate_cake">
+        <div class="_right">
+          <div class="_details">
+            <NuxtLink to="shop/10-inch-double-layer-butter-cream-cake-with-gold-coins-flr34tnb">10 Inch Double Layer Butter Cream Cake With Gold Coins.</NuxtLink>
+            <p>[ ₦14,000 - ₦35,000 ]</p>
+          </div>
+          <div class="_actions">
+
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <img src="https://res.cloudinary.com/dsgvwxygr/image/upload/v1658826345/tec/products/signal-2022-04-05-122625_001_zrzlp3-removebg-preview_d7zujj.png" alt="chococlate_cake">
+        <div class="_right">
+          <div class="_details">
+            <NuxtLink to="shop/10-inch-double-layer-butter-cream-cake-with-chocolate-drip-and-gold-coins-f5643g0b">10 Inch Double Layer Butter Cream Cake With Chocolate Drip And Gold Coins.</NuxtLink>
             <p>[ ₦20,500 - ₦40,000 ]</p>
           </div>
           <div class="_actions">
@@ -30,6 +54,7 @@ export default {
       display: grid;
       grid-template-columns: 1fr 2fr;
       border: 1px solid $primary;
+      margin: 1rem 0;
       
       height: 150px;
       border-radius: 10px;
@@ -46,9 +71,19 @@ export default {
         padding: 0.5rem;
 
         a {
-          height: auto;
-          font-size: 18px;
+          display: block;
+          padding: 0.2rem 0;
+          text-transform: capitalize;
+          display: inherit;
+          color: inherit;
+          text-decoration: none;
+          font-size: 21px;
           font-weight: 600;
+
+          &:hover {
+            text-decoration: underline;
+            text-decoration-color: $primary;
+          }
         }
 
         span {
