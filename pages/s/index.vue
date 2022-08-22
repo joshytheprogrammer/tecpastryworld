@@ -52,6 +52,14 @@ export default {
   .container {
     display: grid;
     grid-template-columns: 2fr 1fr;
+
+    .BfoxW {
+      margin: 1rem 0;
+      border-radius: 8px;
+      border: 2px solid $primary;
+      padding: 1rem;
+      background: $light;
+    }
   }
 }
 </style>
