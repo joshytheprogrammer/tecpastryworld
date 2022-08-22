@@ -60,6 +60,10 @@ export default {
       padding: 1rem;
       background: $light;
     }
+
+    @media screen and (max-width: $m-large) {
+      display: block;
+    }
   }
 }
 </style>
