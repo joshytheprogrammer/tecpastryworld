@@ -98,10 +98,6 @@ export default {
 
     ._entry {
       font-size: 14px;
-
-      span {
-        max-width: 120px;
-      }
     }
   }
 }
