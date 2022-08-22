@@ -11,7 +11,7 @@
     <div class="_entry">
       <b>Order Status: </b>
       <!-- Add click here to pay function -->
-      <span><b>{{order.status}}</b> <a v-if="order.status == 'awaiting_payment'" @click.prevent="getPaymentStatus" href="#">(refresh)</a></span>
+      <span><b>{{order.status}}</b> <a v-if="order.status == 'awaiting_payment'" @click="getPaymentStatus">(refresh)</a></span>
     </div>
     <div class="_entry">
       <b>Payment Method: </b>
@@ -29,6 +29,8 @@
 </template>
 
 <script>
+import axios from "axios"
+
 export default {
   props: ["order"],
   data() {
@@ -46,8 +48,15 @@ export default {
         return value
       }
     },
-    getPaymentStatus() {
-      this.loading = true
+    async getPaymentStatus() {
+      await axios.post('http://127.0.0.1:8000/api/order/payment/verify', {
+        'order_id': this.order.id 
+      }).then((res) => {
+        console.log(res.data.error)
+        this.$store.dispatch("global/notification/setNotification", {type: "error", message: res.data.error}, {root: true})
+        this.$store.dispatch("global/notification/setNotification", {type: "success", message: res.data.success}, {root: true})
+      })
+      
     }
   }
 }
