@@ -11,7 +11,8 @@
     <div class="_entry">
       <b>Order Status: </b>
       <!-- Add click here to pay function -->
-      <span><b>{{order.status}}</b> <a v-if="order.status == 'awaiting_payment'" @click="getPaymentStatus">(refresh)</a></span>
+      <span v-if="loading">loading...</span>
+      <span v-else><b>{{order.status}}</b> <a v-if="order.status == 'awaiting_payment'" @click="getPaymentStatus">(refresh)</a></span>
     </div>
     <div class="_entry">
       <b>Payment Method: </b>
@@ -49,14 +50,17 @@ export default {
       }
     },
     async getPaymentStatus() {
+      this.loading = true
       await axios.post('http://127.0.0.1:8000/api/order/payment/verify', {
         'order_id': this.order.id 
       }).then((res) => {
-        console.log(res.data.error)
-        this.$store.dispatch("global/notification/setNotification", {type: "error", message: res.data.error}, {root: true})
-        this.$store.dispatch("global/notification/setNotification", {type: "success", message: res.data.success}, {root: true})
+        if(res.data.success) {
+          this.$store.dispatch("global/notification/setNotification", {type: "success", message: res.data.success}, {root: true})
+        }else if(res.data.error) {
+          this.$store.dispatch("global/notification/setNotification", {type: "error", message: res.data.error}, {root: true})
+        }
       })
-      
+      this.loading = false
     }
   }
 }
@@ -75,12 +79,15 @@ export default {
     border-bottom: 0.5px solid $primary;
 
     span {
+
       a {
         color: $primary;
+        cursor: pointer;
         padding: 0 4px;
 
         &:hover {
-          color: $secondary;
+          color: $dark;
+          text-decoration: underline;
         }
       }
     }
