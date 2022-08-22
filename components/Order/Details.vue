@@ -12,7 +12,7 @@
       <b>Order Status: </b>
       <!-- Add click here to pay function -->
       <span v-if="loading">loading...</span>
-      <span v-else>{{order.status}} (<a @click.prevent="getPaymentStatus" href="#">refresh</a>)</span>
+      <span v-else><b>{{order.status}}</b> (<a @click.prevent="getPaymentStatus" href="#">refresh</a>)</span>
     </div>
     <div class="_entry">
       <b>Payment Method: </b>

@@ -1,7 +1,7 @@
 <template>
   <div class="order">
     <Header v-show="$route.query.order_no">
-      <template #title>Thank you for choosing tecpastryworld</template>
+      <template #title>Thank you for choosing tecpastryworld {{ref}}</template>
     </Header>
     <div class="content" v-show="$route.query.order_no">
       <div class="container details">
@@ -42,11 +42,15 @@ export default {
     '$route.query.order_no': function (no){
       this.order_no = no
       this.$fetch()
+    },
+    '$route.query.reference': function (ref) {
+      this.ref = ref
     }
   },
   data() {
     return {
       order_no: this.$route.query.order_no,
+      ref: this.$route.query.reference ? this.$route.query.reference : '',
       order: {},
       products: ''
     }
@@ -58,8 +62,10 @@ export default {
 
     await this.getProducts()
   },
-  mounted() {
-
+  async mounted() {
+    if (this.ref.length && this.order_no.length) {
+      
+    }
   },
   methods: {
     async getProducts() {
