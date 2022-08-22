@@ -58,6 +58,9 @@ export default {
 
     await this.getProducts()
   },
+  mounted() {
+    
+  },
   methods: {
     async getProducts() {
       await axios.get('http://127.0.0.1:8000/api/order/getProducts/'+this.order_no).then((res) => {
