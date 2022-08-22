@@ -8,7 +8,7 @@
         <h2>Order Details</h2>
         <div class="data">
           <Details :order="order" />
-          <Message :customer_phone="order.customer_phone" :order_no="order_no" />
+          <Message :customer_phone="order.customer_phone" :order_no="order_no" :order_status="order.status" />
         </div>
       </div>
       <div class="container products">
@@ -59,7 +59,7 @@ export default {
     await this.getProducts()
   },
   mounted() {
-    
+
   },
   methods: {
     async getProducts() {
