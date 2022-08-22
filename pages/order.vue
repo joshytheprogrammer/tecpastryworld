@@ -63,7 +63,7 @@ export default {
     await this.getProducts()
   },
   async mounted() {
-    if (this.ref.length && this.order_no.length && this.order.status != 'awaiting_payment') {
+    if (this.ref.length && this.order_no.length && this.order.status == 'awaiting_payment') {
       await axios.post('http://127.0.0.1:8000/api/order/payment/verify/', {
         'reference' : this.ref,
         'order_id' : this.order_no
