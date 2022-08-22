@@ -36,7 +36,7 @@ export default {
   data(){
     return {
       search: {
-        total: 130,
+        total: 0,
         term: this.$route.query.k,
         results: [],
       }
@@ -51,12 +51,12 @@ export default {
 
   .container {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1.5fr 1.8fr;
 
     .BfoxW {
       margin: 1rem 0;
       border-radius: 8px;
-      border: 2px solid $primary;
+      // border: 2px solid $primary;
       padding: 1rem;
       background: $light;
     }
