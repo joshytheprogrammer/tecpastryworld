@@ -4,7 +4,7 @@
     <p>If you have made payment, we will reach out to you soon. </p>
     <p>If you want to talk to us, you can reach out to us <a :href="'https://api.whatsapp.com/send?phone=2347010718819&text=Hi, I placed the order ['+order_no+']. Whats wrong?'">here</a>. </p>
     <p>Be sure to reach out to us with the <b :title="customer_phone">PHONE NUMBER</b> you used to order.</p>
-    <p>Order Status and its meaning -> <b>{ awaiting_payment : Payment not yet verified }</b>, <b>{ pending : Product is being prepared }</b>, <b>{ successful : Customer satisifed }</b></p>
+    <p>Order Status and its meaning -> { <b>awaiting_payment</b> : Payment not yet verified }, { <b>pending</b> : Product is being prepared }, { <b>successful</b> : Customer satisifed }</p>
   </div>
 </template>
 
