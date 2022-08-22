@@ -1,7 +1,7 @@
 <template>
   <div class="order">
     <Header v-show="$route.query.order_no">
-      <template #title>Thank you for choosing tecpastryworld {{ref}}</template>
+      <template #title>Thank you for choosing tecpastryworld 🙏</template>
     </Header>
     <div class="content" v-show="$route.query.order_no">
       <div class="container details">
@@ -68,7 +68,7 @@ export default {
         'reference' : this.ref,
         'order_id' : this.order_no
       }).then((res) => {
-        dispatch("global/notification/setNotification", {type: "neutral", message: 'Item added successfully'}, {root: true})
+        this.$store.dispatch("global/notification/setNotification", {type: "success", message: res.data.success}, {root: true})
       })
     }
   },
