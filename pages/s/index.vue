@@ -47,7 +47,11 @@ export default {
     }
   },
   async fetch() {
-
+    await axios.post('http://127.0.0.1:8000/api/search/', {
+      'query': this.search.term
+    }).then((res) => {
+      this.search.results = res.data.data
+    })
   }
 }
 </script>

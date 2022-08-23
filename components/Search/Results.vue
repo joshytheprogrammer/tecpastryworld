@@ -1,92 +1,17 @@
 <template>
   <div class="results">
     <div class="products">
-      <div class="product">
+      <div class="product" v-for="item in results" :key="item._id">
         <div class="s">
-          <img loading="lazy" src="https://res.cloudinary.com/dsgvwxygr/image/upload/v1658826487/tec/products/edited_image_with_label_vrbcdx-removebg-preview_in8nuc.png" alt="chococlate_cake">
+          <img loading="lazy" :src="item.thumbnail" :alt="item.name">
           <div class="_details">
-            <NuxtLink to="shop/10-inch-double-layer-whipped-cream-cake-with-chocolates-on-top-gwer435t">10 Inch Double Layer Whipped Cream Cake With Chocolates On Top.</NuxtLink>
-            <p>[ ₦20,500 - ₦40,000 ]</p>
-          </div>
-          <div class="_actions">
-
-          </div>
-        </div>
-      </div>
-      <div class="product">
-        <div class="s">
-          <img loading="lazy" src="https://res.cloudinary.com/dsgvwxygr/image/upload/v1658826487/tec/products/edited_image_with_label_vrbcdx-removebg-preview_in8nuc.png" alt="chococlate_cake">
-          <div class="_details">
-            <NuxtLink to="shop/10-inch-double-layer-whipped-cream-cake-with-chocolates-on-top-gwer435t">10 Inch Double Layer Whipped Cream Cake With Chocolates On Top.</NuxtLink>
-            <p>[ ₦20,500 - ₦40,000 ]</p>
-          </div>
-          <div class="_actions">
-
-          </div>
-        </div>
-      </div>
-      <div class="product">
-        <div class="s">
-          <img loading="lazy" src="https://res.cloudinary.com/dsgvwxygr/image/upload/v1658826487/tec/products/edited_image_with_label_vrbcdx-removebg-preview_in8nuc.png" alt="chococlate_cake">
-          <div class="_details">
-            <NuxtLink to="shop/10-inch-double-layer-whipped-cream-cake-with-chocolates-on-top-gwer435t">10 Inch Double Layer Whipped Cream Cake With Chocolates On Top.</NuxtLink>
-            <p>[ ₦20,500 - ₦40,000 ]</p>
-          </div>
-          <div class="_actions">
-
-          </div>
-        </div>
-      </div>
-      <div class="product">
-        <div class="s">
-          <img loading="lazy" src="https://res.cloudinary.com/dsgvwxygr/image/upload/v1658826487/tec/products/edited_image_with_label_vrbcdx-removebg-preview_in8nuc.png" alt="chococlate_cake">
-          <div class="_details">
-            <NuxtLink to="shop/10-inch-double-layer-whipped-cream-cake-with-chocolates-on-top-gwer435t">10 Inch Double Layer Whipped Cream Cake With Chocolates On Top.</NuxtLink>
-            <p>[ ₦20,500 - ₦40,000 ]</p>
-          </div>
-          <div class="_actions">
-
-          </div>
-        </div>
-      </div>
-      <div class="product">
-        <div class="s">
-          <img loading="lazy" src="https://res.cloudinary.com/dsgvwxygr/image/upload/v1658826487/tec/products/edited_image_with_label_vrbcdx-removebg-preview_in8nuc.png" alt="chococlate_cake">
-          <div class="_details">
-            <NuxtLink to="shop/10-inch-double-layer-whipped-cream-cake-with-chocolates-on-top-gwer435t">10 Inch Double Layer Whipped Cream Cake With Chocolates On Top.</NuxtLink>
-            <p>[ ₦20,500 - ₦40,000 ]</p>
-          </div>
-          <div class="_actions">
-
-          </div>
-        </div>
-      </div>
-      <div class="product">
-        <div class="s">
-          <img loading="lazy" src="https://res.cloudinary.com/dsgvwxygr/image/upload/v1658826487/tec/products/edited_image_with_label_vrbcdx-removebg-preview_in8nuc.png" alt="chococlate_cake">
-          <div class="_details">
-            <NuxtLink to="shop/10-inch-double-layer-whipped-cream-cake-with-chocolates-on-top-gwer435t">10 Inch Double Layer Whipped Cream Cake With Chocolates On Top.</NuxtLink>
-            <p>[ ₦20,500 - ₦40,000 ]</p>
-          </div>
-          <div class="_actions">
-
-          </div>
-        </div>
-      </div>
-      <div class="product">
-        <div class="s">
-          <img loading="lazy" src="https://res.cloudinary.com/dsgvwxygr/image/upload/v1658826487/tec/products/edited_image_with_label_vrbcdx-removebg-preview_in8nuc.png" alt="chococlate_cake">
-          <div class="_details">
-            <NuxtLink to="shop/10-inch-double-layer-whipped-cream-cake-with-chocolates-on-top-gwer435t">10 Inch Double Layer Whipped Cream Cake With Chocolates On Top.</NuxtLink>
-            <p>[ ₦20,500 - ₦40,000 ]</p>
-          </div>
-          <div class="_actions">
-
+            <NuxtLink :to="'/shop/'+item._slug" :aria-label="item.name" :title="item.name">{{item.name}}</NuxtLink>
+            <span class="prices"> [ {{formatter(item.price)}} ] </span>
           </div>
         </div>
       </div>
     </div>
-    <div class="categories">
+    <!-- <div class="categories">
       <div class="category">
         <div class="s">
           <img loading="lazy" src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80" alt="'TEC product category - '+chocolate">
@@ -159,13 +84,28 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
 export default {
-  props: ["results"]
+  props: ["results"],
+  methods: {
+    formatter(price) {
+      price = JSON.parse(price)
+
+      let lowest = price.lowest
+      let highest = price.highest
+
+      let currency = '₦'
+
+      var formatter = new Intl.NumberFormat('en-US');
+      price = currency + formatter.format(lowest) + ' - ' + currency + formatter.format(highest)
+
+      return price
+    }
+  }
 }
 </script>
 
