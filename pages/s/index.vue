@@ -50,14 +50,12 @@ export default {
   padding: 0.5rem;
 
   .container {
-    display: grid;
-    grid-template-columns: 1.2fr 1.8fr;
+    display: flex;
+    flex-direction: column;
 
     .BfoxW {
       margin: 1rem 0;
-      border-radius: 8px;
       padding: 1rem;
-      background: $light;
     }
 
     @media screen and (max-width: $m-large) {
