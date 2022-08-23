@@ -55,7 +55,6 @@ export default {
 
     .BfoxW {
       margin: 1rem 0;
-      padding: 1rem;
     }
 
     @media screen and (max-width: $m-large) {

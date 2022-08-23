@@ -43,8 +43,74 @@
           </div>
         </div>
       </div>
+      <div class="product">
+        <div class="s">
+          <img src="https://res.cloudinary.com/dsgvwxygr/image/upload/v1658826487/tec/products/edited_image_with_label_vrbcdx-removebg-preview_in8nuc.png" alt="chococlate_cake">
+          <div class="_right">
+            <div class="_details">
+              <NuxtLink to="shop/10-inch-double-layer-whipped-cream-cake-with-chocolates-on-top-gwer435t">10 Inch Double Layer Whipped Cream Cake With Chocolates On Top.</NuxtLink>
+              <p>[ ₦20,500 - ₦40,000 ]</p>
+            </div>
+            <div class="_actions">
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="s">
+          <img src="https://res.cloudinary.com/dsgvwxygr/image/upload/v1658826487/tec/products/edited_image_with_label_vrbcdx-removebg-preview_in8nuc.png" alt="chococlate_cake">
+          <div class="_right">
+            <div class="_details">
+              <NuxtLink to="shop/10-inch-double-layer-whipped-cream-cake-with-chocolates-on-top-gwer435t">10 Inch Double Layer Whipped Cream Cake With Chocolates On Top.</NuxtLink>
+              <p>[ ₦20,500 - ₦40,000 ]</p>
+            </div>
+            <div class="_actions">
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="s">
+          <img src="https://res.cloudinary.com/dsgvwxygr/image/upload/v1658826487/tec/products/edited_image_with_label_vrbcdx-removebg-preview_in8nuc.png" alt="chococlate_cake">
+          <div class="_right">
+            <div class="_details">
+              <NuxtLink to="shop/10-inch-double-layer-whipped-cream-cake-with-chocolates-on-top-gwer435t">10 Inch Double Layer Whipped Cream Cake With Chocolates On Top.</NuxtLink>
+              <p>[ ₦20,500 - ₦40,000 ]</p>
+            </div>
+            <div class="_actions">
+
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="categories">
+      <div class="category">
+        <div class="s">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80" alt="'TEC product category - '+chocolate">
+          <div class="_details">
+            <NuxtLink to="/categories/5887782">Chocolate cakes</NuxtLink>
+          </div>
+        </div>
+      </div>
+      <div class="category">
+        <div class="s">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80" alt="'TEC product category - '+chocolate">
+          <div class="_details">
+            <NuxtLink to="/categories/5887782">Chocolate cakes</NuxtLink>
+          </div>
+        </div>
+      </div>
+      <div class="category">
+        <div class="s">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80" alt="'TEC product category - '+chocolate">
+          <div class="_details">
+            <NuxtLink to="/categories/5887782">Chocolate cakes</NuxtLink>
+          </div>
+        </div>
+      </div>
       <div class="category">
         <div class="s">
           <img loading="lazy" src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80" alt="'TEC product category - '+chocolate">
@@ -105,22 +171,27 @@ export default {
 
 <style lang="scss" scoped>
 .results {
-  max-width: 720px;
+  // max-width: 720px;
   padding: 1rem;
   border-radius: 8px;
   background: $light;
 
   .products {
     margin: 1rem 0;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    
 
     .product {
-      
+      padding: 1rem;
+
       .s {
         display: grid;
         grid-template-columns: 1fr 2fr;
         border: 1px solid $primary;
         margin: 1rem 0;
-        
+        max-width: 500px;
         height: 150px;
         border-radius: 10px;
 
