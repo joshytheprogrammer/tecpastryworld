@@ -125,7 +125,7 @@ export default {
     getCartItem: (state) => (id) => {
       let item = state.cart.find(p => p.id === id)
 
-      return item
+      return item.data
     },
     getSummary(state) {
       return state.summary

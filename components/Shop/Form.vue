@@ -59,6 +59,9 @@ export default {
   computed: {
     inCart() {
       return this.$store.getters['global/cart/inCart'](this.item._id)
+    },
+    cartD() {
+      return this.$store.getters['global/cart/getCartItem'](this.item._id)
     }
   },
   components: {
@@ -69,21 +72,24 @@ export default {
   },
   data() {
     return {
-      // editing: '',
       configurable: true,
       loading: true,
       priceLoading: true,
       data: {
         price: '',
-        size: this.$route.query.size ? this.$route.query.size : '',
-        type: this.$route.query.type ? this.$route.query.type : '',
-        message: this.$route.query.writing ? this.$route.query.writing : ''
+        size: '',
+        type: '',
+        message: ''
       },
       error: '',
     }
   },
   mounted() {
-    // this.checkEditing()
+    if(this.cartD) {
+      this.data.size = this.cartD.size
+      this.data.type = this.cartD.type
+      this.data.message = this.cartD.message
+    }
   },
   async fetch() {
     await axios.get('http://127.0.0.1:8000/api/config/getFormat/'+this.item._id).then((response) => {
