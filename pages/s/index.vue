@@ -43,7 +43,7 @@ export default {
         term: this.$route.query.k,
         results: [],
       },
-      error
+      error: ''
     }
   },
   async fetch() {
