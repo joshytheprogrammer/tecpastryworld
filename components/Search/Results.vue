@@ -3,85 +3,13 @@
     <div class="products">
       <div class="product">
         <div class="s">
-          <img src="https://res.cloudinary.com/dsgvwxygr/image/upload/v1658826487/tec/products/edited_image_with_label_vrbcdx-removebg-preview_in8nuc.png" alt="chococlate_cake">
-          <div class="_right">
-            <div class="_details">
-              <NuxtLink to="shop/10-inch-double-layer-whipped-cream-cake-with-chocolates-on-top-gwer435t">10 Inch Double Layer Whipped Cream Cake With Chocolates On Top.</NuxtLink>
-              <p>[ ₦20,500 - ₦40,000 ]</p>
-            </div>
-            <div class="_actions">
-
-            </div>
+          <img loading="lazy" src="https://res.cloudinary.com/dsgvwxygr/image/upload/v1658826487/tec/products/edited_image_with_label_vrbcdx-removebg-preview_in8nuc.png" alt="chococlate_cake">
+          <div class="_details">
+            <NuxtLink to="shop/10-inch-double-layer-whipped-cream-cake-with-chocolates-on-top-gwer435t">10 Inch Double Layer Whipped Cream Cake With Chocolates On Top.</NuxtLink>
+            <p>[ ₦20,500 - ₦40,000 ]</p>
           </div>
-        </div>
-      </div>
-      <div class="product">
-        <div class="s">
-          <img src="https://res.cloudinary.com/dsgvwxygr/image/upload/v1658826487/tec/products/edited_image_with_label_vrbcdx-removebg-preview_in8nuc.png" alt="chococlate_cake">
-          <div class="_right">
-            <div class="_details">
-              <NuxtLink to="shop/10-inch-double-layer-whipped-cream-cake-with-chocolates-on-top-gwer435t">10 Inch Double Layer Whipped Cream Cake With Chocolates On Top.</NuxtLink>
-              <p>[ ₦20,500 - ₦40,000 ]</p>
-            </div>
-            <div class="_actions">
+          <div class="_actions">
 
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="product">
-        <div class="s">
-          <img src="https://res.cloudinary.com/dsgvwxygr/image/upload/v1658826487/tec/products/edited_image_with_label_vrbcdx-removebg-preview_in8nuc.png" alt="chococlate_cake">
-          <div class="_right">
-            <div class="_details">
-              <NuxtLink to="shop/10-inch-double-layer-whipped-cream-cake-with-chocolates-on-top-gwer435t">10 Inch Double Layer Whipped Cream Cake With Chocolates On Top.</NuxtLink>
-              <p>[ ₦20,500 - ₦40,000 ]</p>
-            </div>
-            <div class="_actions">
-
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="product">
-        <div class="s">
-          <img src="https://res.cloudinary.com/dsgvwxygr/image/upload/v1658826487/tec/products/edited_image_with_label_vrbcdx-removebg-preview_in8nuc.png" alt="chococlate_cake">
-          <div class="_right">
-            <div class="_details">
-              <NuxtLink to="shop/10-inch-double-layer-whipped-cream-cake-with-chocolates-on-top-gwer435t">10 Inch Double Layer Whipped Cream Cake With Chocolates On Top.</NuxtLink>
-              <p>[ ₦20,500 - ₦40,000 ]</p>
-            </div>
-            <div class="_actions">
-
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="product">
-        <div class="s">
-          <img src="https://res.cloudinary.com/dsgvwxygr/image/upload/v1658826487/tec/products/edited_image_with_label_vrbcdx-removebg-preview_in8nuc.png" alt="chococlate_cake">
-          <div class="_right">
-            <div class="_details">
-              <NuxtLink to="shop/10-inch-double-layer-whipped-cream-cake-with-chocolates-on-top-gwer435t">10 Inch Double Layer Whipped Cream Cake With Chocolates On Top.</NuxtLink>
-              <p>[ ₦20,500 - ₦40,000 ]</p>
-            </div>
-            <div class="_actions">
-
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="product">
-        <div class="s">
-          <img src="https://res.cloudinary.com/dsgvwxygr/image/upload/v1658826487/tec/products/edited_image_with_label_vrbcdx-removebg-preview_in8nuc.png" alt="chococlate_cake">
-          <div class="_right">
-            <div class="_details">
-              <NuxtLink to="shop/10-inch-double-layer-whipped-cream-cake-with-chocolates-on-top-gwer435t">10 Inch Double Layer Whipped Cream Cake With Chocolates On Top.</NuxtLink>
-              <p>[ ₦20,500 - ₦40,000 ]</p>
-            </div>
-            <div class="_actions">
-
-            </div>
           </div>
         </div>
       </div>
@@ -180,34 +108,29 @@ export default {
     margin: 1rem 0;
     display: grid;
     justify-items: center;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     
 
     .product {
-      padding: 1rem;
+      padding: 1rem 0;
 
       .s {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        border: 1px solid $primary;
-        margin: 1rem 0;
-        max-width: 500px;
-        height: 150px;
-        border-radius: 10px;
-
         img {
           width: 100%;
-          height: 140px;
+          max-height: 100%;
+          
+          height: 300px;
           object-fit: contain;
-          border-right: 1px solid $primary;
-          border-radius: 10px 0px 0px 10px;
+          border-radius: 10px;
+          transition: 0.5s all ease-in-out;
         }
 
         ._details {
-          padding: 0.5rem;
+          display: block;
+          padding: 1rem 0.5rem;
+          color: $primary;
 
           a {
-            display: block;
             padding: 0.2rem 0;
             text-transform: capitalize;
             display: inherit;
@@ -223,7 +146,45 @@ export default {
           }
 
           span {
-            font-size: 16px;
+            font-size: 18px;
+            font-weight: 400;
+          }
+        }
+      }
+
+      @media screen and (max-width: $s-medium) {
+        padding: 0;
+        margin: 1rem 0;
+        width: 100%;
+
+        .s {
+          display: grid;
+          grid-template-columns: 1fr 2fr;
+          border: 1px solid $primary;
+          
+          height: 150px;
+          border-radius: 10px;
+          
+          img {
+            width: 100%;
+            height: 150px;
+            object-fit: contain;
+            border-right: 1px solid $primary;
+            border-radius: 10px 0px 0px 10px;
+          }
+
+          ._details {
+            padding: 0.5rem;
+
+            a {
+              height: auto;
+              font-size: 18px;
+              font-weight: 600;
+            }
+
+            span {
+              font-size: 16px;
+            }
           }
         }
       }
