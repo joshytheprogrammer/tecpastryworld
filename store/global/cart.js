@@ -130,8 +130,6 @@ export default {
       }else {
         return undefined
       }
-
-      
     },
     getSummary(state) {
       return state.summary
