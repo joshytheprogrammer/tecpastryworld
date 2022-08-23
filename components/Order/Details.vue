@@ -56,6 +56,7 @@ export default {
       }).then((res) => {
         if(res.data.success) {
           this.$store.dispatch("global/notification/setNotification", {type: "success", message: res.data.success}, {root: true})
+          this.order.status = 'pending'
         }else if(res.data.error) {
           this.$store.dispatch("global/notification/setNotification", {type: "error", message: res.data.error}, {root: true})
         }
