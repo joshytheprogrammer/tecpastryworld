@@ -28,9 +28,6 @@
 <script>
 import {mapActions} from "vuex"
 export default {
-  components: {
-    
-  },
   props: ["item"],
   methods: {
     ...mapActions({
