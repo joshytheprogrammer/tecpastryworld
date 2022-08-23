@@ -170,7 +170,6 @@ export default {
       }else {
         this.editing = false
       }
-      // This function doesnt work yet.
     }
   }
 }

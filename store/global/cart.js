@@ -122,6 +122,11 @@ export default {
         return false
       }
     },
+    getCartItem: (state) => (id) => {
+      let item = state.cart.find(p => p.id === id)
+
+      return item
+    },
     getSummary(state) {
       return state.summary
     },
