@@ -1,14 +1,14 @@
 <template>
   <div class="search">
     <FirstMessage :total="search.total" :term="search.term" />
-
-    <!-- Display frequently searched terms if query is empty, if the search query is not there i,e /s insead of /s?k=search_term -->
     <div class="f_s" v-if="!search.term">
       <!-- Frequently Searched Queries Component -->
     </div>
     <!-- Search for cakes here, use the SearchCard component to render it here -->
+    <Loader v-if="$fetchState.pending" type="clip" />
+    <NetworkError v-else-if="$fetchState.error || error" :message="error" />
     <div class="container" v-else>
-      <section class="BfoxW">
+      <section class="BfoxW" v-if="search.term">
         <Results :results="search.results" />
       </section>
       <section class="other">
@@ -19,12 +19,17 @@
 </template>
 
 <script>
+import axios from "axios"
+import NetworkError from "../../components/App/Helpers/Global/Error.vue"
+import Loader from "../../components/App/Helpers/Global/Loader.vue"
 import FirstMessage from "~/components/Search/Message.vue"
 import Results from "~/components/Search/Results.vue"
 export default {
   components: {
     FirstMessage,
-    Results
+    Results,
+    Loader,
+    NetworkError
   },
   watch: {
     '$route.query.k': function (k){
@@ -37,8 +42,12 @@ export default {
         total: 0,
         term: this.$route.query.k,
         results: [],
-      }
+      },
+      error
     }
+  },
+  async fetch() {
+
   }
 }
 </script>
