@@ -34,6 +34,7 @@ export default {
   watch: {
     '$route.query.k': function (k){
       this.search.term = k
+      this.$fetch()
     }
   },
   data(){
@@ -50,6 +51,7 @@ export default {
     await axios.post('http://127.0.0.1:8000/api/search/', {
       'query': this.search.term
     }).then((res) => {
+      this.search.total = res.data.data.length
       this.search.results = res.data.data
     })
   }
