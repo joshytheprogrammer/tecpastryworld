@@ -39,7 +39,7 @@ export default {
     img {
       width: 100%;
       max-height: 100%;
-      
+
       height: 300px;
       object-fit: contain;
       border-radius: 10px;
@@ -54,7 +54,7 @@ export default {
       a {
         white-space: pre-line;
         overflow: hidden;
-        height: 58.2px;
+        height: 54.2px;
         text-overflow: ellipsis;
 
         padding: 0.2rem 0;
@@ -87,10 +87,10 @@ export default {
       display: grid;
       grid-template-columns: 1fr 2fr;
       border: 1px solid $primary;
-      
+
       height: 150px;
       border-radius: 10px;
-      
+
       img {
         width: 100%;
         height: 150px;

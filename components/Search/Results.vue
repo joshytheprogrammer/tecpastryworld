@@ -121,7 +121,7 @@ export default {
     display: grid;
     justify-items: center;
     grid-template-columns: repeat(4, 1fr);
-    
+
 
     .product {
       padding: 1rem 0;
@@ -130,7 +130,7 @@ export default {
         img {
           width: 100%;
           max-height: 100%;
-          
+
           height: 300px;
           object-fit: contain;
           border-radius: 10px;
@@ -173,10 +173,10 @@ export default {
           display: grid;
           grid-template-columns: 1fr 2fr;
           border: 1px solid $primary;
-          
+
           height: 150px;
           border-radius: 10px;
-          
+
           img {
             width: 100%;
             height: 150px;
@@ -201,13 +201,31 @@ export default {
         }
       }
     }
+
+    @media screen and (max-width: $large) {
+      width: 100%;
+      padding: 0;
+      grid-template-columns: repeat(4,1fr);
+    }
+
+    @media screen and (max-width: $m-large) {
+      grid-template-columns: repeat(3,1fr);
+    }
+
+    @media screen and (max-width: $medium) {
+      grid-template-columns: repeat(2,1fr);
+    }
+
+    @media screen and (max-width: $s-medium) {
+      display: block;
+    }
   }
 
   .categories {
     margin: 1rem 0;
     display: flex;
     overflow: auto;
-    
+
     .category {
 
       .s {
@@ -243,9 +261,9 @@ export default {
         }
       }
     }
-    
+
     // .s {
-      
+
     // }
   }
 }
