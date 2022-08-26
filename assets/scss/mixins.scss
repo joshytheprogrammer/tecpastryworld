@@ -1,12 +1,19 @@
 @mixin logo-styles {
   text-decoration: none;
+
   font: {
     size: 36px;
     weight: 600;
   }
+
   text-transform: uppercase;
   cursor: pointer;
   user-select: none;
+
+  sup {
+    font-size: 14px;
+    font-weight: 400;
+  }
 }
 
 @mixin search-text {

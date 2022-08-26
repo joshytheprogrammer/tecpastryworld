@@ -1,7 +1,7 @@
 <template>
   <div class="navbar">
     <nav>
-      <NuxtLink to="/" class="logo" title="Go home">tec</NuxtLink>
+      <NuxtLink to="/" class="logo" title="Go home">tec <sup>beta</sup></NuxtLink>
       <div class="actions">
         <!-- Search Icon with other functions-->
         <SearchIcon />

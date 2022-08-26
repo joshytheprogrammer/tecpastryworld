@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <NuxtLink to="/" class="logo" title="Go home">tec</NuxtLink>
+    <NuxtLink to="/" class="logo" title="Go home">tec <sup>beta</sup></NuxtLink>
     <Bar />
     <Links />
   </nav>
