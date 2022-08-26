@@ -43,7 +43,7 @@ export default {
   },
   data() {
     return {
-      
+
     }
   }
 }
@@ -58,7 +58,7 @@ export default {
     background: $light;
     border-right: 1px solid $primary;
     width: 100%;
-    
+
     h1 {
       border-bottom: 1px solid $primary;
       padding: 40px 1rem;
@@ -75,12 +75,16 @@ export default {
         padding: 20px 1rem;
       }
     }
+
+    .not-showing {
+      padding: 20px 1rem;
+    }
   }
 
   .checkout {
     margin-left: 0.5rem;
     background: $light;
-    
+
     h1 {
       border-bottom: 1px solid $primary;
       padding: 40px 1rem;
