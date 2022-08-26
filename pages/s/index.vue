@@ -44,15 +44,23 @@ export default {
         term: this.$route.query.k,
         results: [],
       },
-      error: ''
+      error: 'An error occurred'
     }
   },
   async fetch() {
     await axios.post('http://127.0.0.1:8000/api/search/', {
       'query': this.search.term
     }).then((res) => {
-      this.search.total = res.data.data.length
-      this.search.results = res.data.data
+      this.error = ''
+
+      if(res.data.data) {
+        this.search.total = res.data.data.length
+        this.search.results = res.data.data
+      }
+
+      if(res.data.error) {
+        this.error = res.data.error
+      }
     })
   }
 }
