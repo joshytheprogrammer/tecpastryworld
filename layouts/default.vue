@@ -1,5 +1,5 @@
 <template>
-  <div class="app" ontouchstart="">
+  <div class="app">
     <MNavigation v-if="mobile" />
     <DNavigation v-else />
     <div class="body">
@@ -45,13 +45,13 @@ export default {
       isMobile: 'mobile/checkWidth',
     }),
   },
-  
+
 }
 </script>
 
 <style lang="scss">
 .body {
-  // min-height: 100vh;
+  // 
   margin-top: 70px;
 }
 </style>

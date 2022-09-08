@@ -14,9 +14,9 @@
     <div class="categories">
       <div class="category" v-for="item in results.categories" :key="item.id">
         <div class="s">
-          <img loading="lazy" :src="'item.thumbnail'" :alt="'TEC product category - '+item.name">
+          <img loading="lazy" :src="item.thumbnail" :alt="'TEC product category - '+item.name">
           <div class="_details">
-            <NuxtLink to="/categories/5887782">{{item.name}}</NuxtLink>
+            <NuxtLink :to="'/categories/'+item.id">{{item.name}}</NuxtLink>
           </div>
         </div>
       </div>
