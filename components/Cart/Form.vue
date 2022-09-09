@@ -2,22 +2,22 @@
   <form @submit.prevent="submit">
     <div class="form-group">
       <label>Fulfillment Method*</label>
-      <select class="form-control" v-model="fulfillment" required>
+      <select class="form-control" v-model="fulfillment" :disabled="disabled" required>
         <option value="pickup" selected>Pickup</option>
         <option value="delivery" disabled>Delivery (coming soon)</option>
       </select>
     </div>
     <div class="form-group">
       <label>Payment Method*</label>
-      <select class="form-control" v-model="payment" required>
+      <select class="form-control" v-model="payment" :disabled="disabled" required>
         <option value="online" selected>Online</option>
         <option value="offline">Offline</option>
       </select>
     </div>
     <div class="form-group">
       <label>
-        Phone Number* 
-        <a @click.prevent="disabled=!disabled" v-show="disabled">edit</a> 
+        Phone Number*
+        <a @click.prevent="disabled=!disabled" v-show="disabled">edit</a>
         <span v-show="!disabled" class="error">{{error}}</span></label>
       <input class="form-control" type="text" placeholder="We'll reach out to you here" v-model="phone" @keypress="logKeyStroke" :disabled="disabled" required>
     </div>
@@ -118,7 +118,7 @@ form {
           text-decoration: underline;
         }
       }
-    } 
+    }
 
     .form-control {
       width: 100%;
