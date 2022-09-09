@@ -13,7 +13,7 @@
 
 <script>
 import axios from "axios"
-import Headers from "./Helpers/Headers.vue"
+import Headers from "../App/Helpers/Global/Headers.vue"
 import Card from "../App/Cards/Product.vue"
 
 import Loader from "../App/Helpers/Global/Loader.vue"

@@ -28,7 +28,7 @@ import Details from "../components/Order/Details.vue"
 import Search from "../components/Order/Search.vue"
 import Card from "../components/Order/Card.vue"
 import Message from "../components/Order/Message.vue"
-import Header from "../components/Home/Helpers/Headers.vue"
+import Header from "../components/App/Helpers/Global/Headers.vue"
 
 export default {
   components: {
