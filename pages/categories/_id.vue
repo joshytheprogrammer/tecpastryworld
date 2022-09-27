@@ -27,9 +27,6 @@ export default {
       error: '',
     }
   },
-  mounted() {
-    this.$fetch()
-  },
   async fetch() {
     await axios.get('http://127.0.0.1:8000/api/categories/'+this.$route.params.id+'/products').then((response) => {
       this.products.push(...response.data.data)
