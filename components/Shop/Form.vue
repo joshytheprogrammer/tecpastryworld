@@ -2,7 +2,7 @@
   <div class="after_item">
     <NetworkError v-if="$fetchState.error || error" :message="error" />
     <div v-if="configurable">
-      
+
       <p>**Prices exclude VAT and other taxes</p>
       <Price :loading="priceLoading" :price="data.price" />
       <form @submit.prevent="addItem">
@@ -29,7 +29,7 @@
           <span v-show="inCart">These settings may not reflect those in cart...</span>
           <input class="form-control" type="text" placeholder="What message would you like on top of the cake" v-model="data.message" :disabled="inCart" required>
         </div>
-        
+
         <button v-if="!inCart" class="btn" type="submit">Add to Cart</button>
 
         <div class="bottom-bar" v-if="inCart">
@@ -93,9 +93,10 @@ export default {
   },
   async fetch() {
     await axios.get('http://127.0.0.1:8000/api/config/getFormat/'+this.item._id).then((response) => {
-
+      console.log(response)
       // Decide whether to show form or not
-      this.configurable = response.data[0].configurable
+      this.configurable = response.data[0].configuration
+      // console.log(format)
       let format = JSON.parse(response.data[0].format)
 
       // Checks if format exists
@@ -147,14 +148,14 @@ export default {
       if(this.data.type.length == 0) {
         this.data.type = format.type
       }
-      
+
       // Return Price
       this.refreshPrice()
     },
     formatPrice(price) {
       let currency = '₦'
       var formatter = new Intl.NumberFormat('en-US');
-      
+
       return currency+formatter.format(price)
     },
     addItem() {
@@ -185,7 +186,7 @@ export default {
 div {
 
   form {
-    
+
     .form-group {
 
       label {
@@ -195,7 +196,7 @@ div {
         text-transform: uppercase;
         letter-spacing: 1px;
         font-weight: bold;
-      } 
+      }
 
       span {
         font-size: 12px;
