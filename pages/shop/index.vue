@@ -1,12 +1,15 @@
 <template>
   <div class="shop">
-    Coming Soon
+    <Soon />
   </div>
 </template>
 
 <script>
+import Soon from "../../components/App/Helpers/Global/Soon.vue"
 export default {
-
+  components: {
+    Soon
+  }
 }
 </script>
 
