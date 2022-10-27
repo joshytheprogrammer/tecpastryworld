@@ -34,7 +34,7 @@ export default {
       // Calculate subtotal
       state.cart.forEach(item => {
         let price = item.data.price
-        
+
         subtotal = Number(subtotal) + Number(price)
       });
 
@@ -89,13 +89,23 @@ export default {
       commit('ADD_ITEM', item)
       commit('CALCULATE_CART')
 
-      // Dispatch Notification
-      dispatch("global/notification/setNotification", {type: "neutral", message: 'Item added successfully'}, {root: true})
+      let errors = {
+        type: "neutral",
+        message: "Item added successfully"
+      }
+
+      dispatch("mutationErrors", errors)
     },
     deleteFromCart({ commit, dispatch }, id) {
       commit('DELETE_ITEM', id)
       commit('CALCULATE_CART')
-      dispatch("global/notification/setNotification", {type: "neutral", message: 'Item removed successfully'}, {root: true})
+
+      let errors = {
+        type: "error",
+        message: "Item removed successfully"
+      }
+
+      dispatch("mutationErrors", errors)
     },
     clearCart({commit}) {
       commit("CLEAR_CART")
@@ -103,6 +113,9 @@ export default {
     initializeCart({commit}) {
       commit("INITIATE_CART")
       commit("CALCULATE_CART")
+    },
+    mutationErrors({ dispatch }, error) {
+      dispatch("global/notification/setNotification", {...error}, {root: true})
     }
   },
   getters: {
