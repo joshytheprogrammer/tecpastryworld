@@ -1,5 +1,5 @@
 <template>
-  <div class="cart" @click="$router.push('/cart')">
+  <div class="cart" @click="$router.push('/cart')" title="Cart">
     <span>{{cartNum}}</span>
     <Icon icon="akar-icons:cart" width="24" height="24" />
   </div>
