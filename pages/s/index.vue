@@ -12,7 +12,7 @@
         <Results :results="search.results" />
       </section>
       <section class="other">
-        coming soon...
+        <report-link></report-link>
       </section>
     </div>
   </div>
@@ -24,12 +24,14 @@ import NetworkError from "../../components/App/Helpers/Global/Error.vue"
 import Loader from "../../components/App/Helpers/Global/Loader.vue"
 import FirstMessage from "~/components/Search/Message.vue"
 import Results from "~/components/Search/Results.vue"
+import ReportLink from "~/components/App/Helpers/Global/ReportLink.vue"
 export default {
   components: {
     FirstMessage,
     Results,
     Loader,
-    NetworkError
+    NetworkError,
+    ReportLink
   },
   watch: {
     '$route.query.k': function (k){

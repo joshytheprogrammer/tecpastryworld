@@ -12,6 +12,10 @@ export default {
 
 <style lang="scss" scoped>
 div {
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+
   a {
     padding-top: 12px;
     font-size: 18px;
