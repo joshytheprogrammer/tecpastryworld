@@ -2,7 +2,7 @@
   <div class="links">
     <NuxtLink to="/">Home</NuxtLink>
     <NuxtLink to="/shop">Shop</NuxtLink>
-    <a target="_blank" href="https://forms.gle/KEWgwDrad4EnVCGF7">Report</a>
+    <!-- <a target="_blank" href="https://forms.gle/KEWgwDrad4EnVCGF7">Report</a> -->
     <CartIcon />
   </div>
 </template>
