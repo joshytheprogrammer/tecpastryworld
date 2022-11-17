@@ -64,6 +64,7 @@ export default {
 
           // Create user at this point
 
+
           let url = res.data.url
           let order_no = res.data.order_id
 
@@ -93,6 +94,9 @@ export default {
     },
     addPhone({ commit, dispatch }, phone) {
       commit("ADD_PHONE", phone)
+
+      // Store user phone number in localstorage
+      dispatch("global/user/storePhone", phone, {root: true})
       dispatch("global/notification/setNotification", {type: "success", message: 'phone number added'}, {root: true})
     },
     addFulfillment({commit}, method) {

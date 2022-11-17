@@ -18,7 +18,8 @@
       <label>
         Phone Number*
         <a @click.prevent="disabled=!disabled" v-show="disabled">edit</a>
-        <span v-show="!disabled" class="error">{{error}}</span></label>
+        <span v-show="!disabled" class="error">{{error}}</span>
+      </label>
       <input class="form-control" type="text" placeholder="We'll reach out to you here" v-model="phone" @keypress="logKeyStroke" :disabled="disabled" required>
     </div>
   </form>
@@ -64,6 +65,12 @@ export default {
       error: '',
       disabled: false,
       telPattern: /^([0]{1})[0-9]{10}$/,
+    }
+  },
+  mounted() {
+    if(localStorage.getItem('phone') & !this.phone) {
+      this.phone = localStorage.getItem('phone')
+      this.submit
     }
   },
   methods: {
