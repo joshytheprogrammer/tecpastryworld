@@ -6,6 +6,7 @@
     <div v-else class="products">
       <Product v-for="item in products" :key="item.id" :item="item" />
     </div>
+    <AppHelpersGlobalReportLink />
   </div>
 </template>
 

@@ -17,7 +17,7 @@ div {
   width: 100%;
 
   a {
-    padding-top: 12px;
+    padding: 12px;
     font-size: 18px;
     font-weight: 400;
     color: $dark;
