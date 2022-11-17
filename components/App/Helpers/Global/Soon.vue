@@ -2,19 +2,8 @@
   <div class="coming">
     <h1>Coming Soon</h1>
     <p>Hi there 👋. The page you are looking for is currently undergoing development. We'll have it ready as soon as possible.</p>
-    <report-link></report-link>
   </div>
 </template>
-
-<script>
-import ReportLink from "./ReportLink.vue"
-export default {
-  components: {
-    ReportLink
-  }
-}
-</script>
-
 <style lang="scss" scoped>
 .coming {
   display: flex;

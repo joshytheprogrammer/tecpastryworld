@@ -16,7 +16,7 @@
         <!-- <Empty v-else /> -->
       </section>
       <section class="other">
-        <report-link></report-link>
+        <AppHelpersGlobalReportLink />
       </section>
     </div>
   </div>
@@ -29,15 +29,12 @@ import Loader from "../../components/App/Helpers/Global/Loader.vue"
 import FirstMessage from "~/components/Search/Message.vue"
 import Results from "~/components/Search/Results.vue"
 // import EmptyMessage from "~/components/Search/Empty.vue"
-import ReportLink from "~/components/App/Helpers/Global/ReportLink.vue"
-
 export default {
   components: {
     FirstMessage,
     Results,
     Loader,
     NetworkError,
-    ReportLink
   },
   watch: {
     '$route.query.k': function (k){

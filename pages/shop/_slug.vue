@@ -5,6 +5,8 @@
     <Item :item="product" v-else />
     <!-- <Gallery /> -->
     <!-- <Reviews /> -->
+
+    <AppHelpersGlobalReportLink />
   </div>
 </template>
 

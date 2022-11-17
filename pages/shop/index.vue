@@ -1,6 +1,7 @@
 <template>
   <div class="shop">
     <Soon />
+    <AppHelpersGlobalReportLink />
   </div>
 </template>
 
