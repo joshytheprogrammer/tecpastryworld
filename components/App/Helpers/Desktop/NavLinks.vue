@@ -2,6 +2,7 @@
   <div class="links">
     <NuxtLink to="/">Home</NuxtLink>
     <NuxtLink to="/shop">Shop</NuxtLink>
+    <a target="_blank" href="https://forms.gle/KEWgwDrad4EnVCGF7">Report</a>
     <CartIcon />
   </div>
 </template>
@@ -22,7 +23,7 @@ export default {
 
   a {
     text-decoration: none;
-    padding: 0 12px;
+    padding: 0 8px;
     color: $light;
     cursor: pointer;
 
@@ -32,13 +33,13 @@ export default {
     &:hover {
       text-decoration: underline;
       text-decoration-color: $light;
-      text-underline-offset: 9px; 
+      text-underline-offset: 9px;
     }
 
     &.nuxt-link-exact-active {
       text-decoration: underline;
       text-decoration-color: $light;
-      text-underline-offset: 9px; 
+      text-underline-offset: 9px;
       color: $light;
     }
   }
