@@ -1,0 +1,23 @@
+<template>
+  <div>
+    <a target="_blank" href="https://forms.gle/KEWgwDrad4EnVCGF7">Report an issue</a>
+  </div>
+</template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style lang="scss" scoped>
+div {
+  a {
+    padding-top: 12px;
+    font-size: 18px;
+    font-weight: 400;
+    color: $dark;
+    text-align: center;
+  }
+}
+</style>
