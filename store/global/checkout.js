@@ -97,7 +97,7 @@ export default {
 
       // Store user phone number in localstorage
       dispatch("global/user/storePhone", phone, {root: true})
-      dispatch("global/notification/setNotification", {type: "success", message: 'phone number added'}, {root: true})
+      // dispatch("global/notification/setNotification", {type: "success", message: 'phone number added'}, {root: true})
     },
     addFulfillment({commit}, method) {
       commit("ADD_FULFILLMENT", method)
