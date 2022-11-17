@@ -9,7 +9,11 @@
     <NetworkError v-else-if="$fetchState.error || error" :message="error" />
     <div class="container" v-else>
       <section class="BfoxW" v-if="search.term">
-        <Results :results="search.results" />
+        <Results v-if="search.total" :results="search.results" />
+        <p v-else>
+          Sorry we could not find what you were looking for. Try being more generic.
+        </p>
+        <!-- <Empty v-else /> -->
       </section>
       <section class="other">
         <report-link></report-link>
@@ -24,7 +28,9 @@ import NetworkError from "../../components/App/Helpers/Global/Error.vue"
 import Loader from "../../components/App/Helpers/Global/Loader.vue"
 import FirstMessage from "~/components/Search/Message.vue"
 import Results from "~/components/Search/Results.vue"
+// import EmptyMessage from "~/components/Search/Empty.vue"
 import ReportLink from "~/components/App/Helpers/Global/ReportLink.vue"
+
 export default {
   components: {
     FirstMessage,
@@ -55,9 +61,12 @@ export default {
     }).then((res) => {
       this.error = ''
 
-      if(res.data.data) {
-        this.search.total = res.data.data.length
+      if(res.data.data.products.length > 0 & res.data.data.categories.length > 0) {
+        this.search.total = res.data.data.products.length + res.data.data.categories.length
         this.search.results = res.data.data
+      }else {
+        this.search.total = 0
+        this.search.results = []
       }
 
       if(res.data.error) {

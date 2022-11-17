@@ -21,7 +21,6 @@ div {
     font-size: 18px;
     font-weight: 400;
     color: $dark;
-    text-align: center;
   }
 }
 </style>
