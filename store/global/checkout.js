@@ -54,8 +54,8 @@ export default {
 
       await axios.post('http://127.0.0.1:8000/api/order', {
         order: order
-      }).then((res) => {
-        
+      }).then(async (res) => {
+
         if(res.data.error) {
           commit("EDIT_PROCESS", { loading: false, error: res.data.error})
         }else {
@@ -71,7 +71,10 @@ export default {
             window.location.href = url
           }
 
-          this.$router.push({path: '/order', query: {order_no: order_no}})
+          // Wait three seconds before redirecting the user
+          setTimeout(() => {
+            this.$router.push({path: '/order', query: {order_no: order_no}})
+          }, 5000)
 
           dispatch("global/notification/setNotification", {type: "success", message: res.data.message}, {root: true})
         }
