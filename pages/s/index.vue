@@ -16,7 +16,7 @@
         <!-- <Empty v-else /> -->
       </section>
       <section class="other">
-        <AppHelpersGlobalReportLink />
+        <!--  -->
       </section>
     </div>
   </div>

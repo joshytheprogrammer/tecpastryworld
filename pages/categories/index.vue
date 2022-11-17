@@ -1,7 +1,6 @@
 <template>
   <div>
     <!-- List all categories available -->
-    <AppHelpersGlobalReportLink />
   </div>
 </template>
 

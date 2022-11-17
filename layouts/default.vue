@@ -6,6 +6,7 @@
       <Notification v-if="notyExists.message" />
       <Nuxt keep-alive :keep-alive-props="{ max: 10 }" />
     </div>
+    <AppHelpersGlobalReportLink />
   </div>
 </template>
 
@@ -51,7 +52,7 @@ export default {
 
 <style lang="scss">
 .body {
-  // 
+  //
   margin-top: 70px;
 }
 </style>

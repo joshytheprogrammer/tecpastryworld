@@ -3,6 +3,7 @@
     <Jumbotron />
     <Recommended />
     <Categories />
+    
   </div>
 </template>
 
