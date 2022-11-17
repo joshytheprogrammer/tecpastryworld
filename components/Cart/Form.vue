@@ -11,7 +11,7 @@
       <label>Payment Method*</label>
       <select class="form-control" v-model="payment" :disabled="disabled" required>
         <option value="online" selected>Online</option>
-        <option value="offline">Offline</option>
+        <option value="offline" disabled>Offline (coming soon)</option>
       </select>
     </div>
     <div class="form-group">
