@@ -26,6 +26,57 @@ export default {
       error: '',
     }
   },
+  head(){
+    return {
+      title: this.product.name + " tecpastryworld product " + this.product._id,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.product.name + " you can purchase this product from this site or call us using product id - "+ this.product._id
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: this.product.name + " tecpastryworld product " + this.product._id
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: this.product.name + " - you can purchase this product for " + this.product.price + " from this site or call us using product id - " + this.product._id
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: this.product.thumbnail
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: 'https://www.tecpastryworld/shop/'+this.product._slug
+        },
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: this.product.name + " tecpastryworld product " + this.product._id
+        },
+        { hid: 'twitter:description',
+          name: "twitter:description",
+          content: this.product.name + " - you can purchase this product for " + this.product.price + " from this site or call us using product id - " + this.product._id
+        },
+        {
+          hid: 'twitter:image',
+          name: "twitter:image",
+          content: this.product.thumbnail
+        },
+        {
+          hid: "twitter:card",
+          name: "twitter:card",
+          content: "summary_large_image"
+        },
+      ]
+    }
+  },
   mounted(){
     this.$fetch()
   },
