@@ -8,7 +8,7 @@
           <p class="p_r" title="the range of prices available">[ {{formatter(item.price)}} ]</p>
         </div>
         <Form :item="item" />
-      </div> 
+      </div>
     </div>
   </div>
 </template>
@@ -47,12 +47,12 @@ export default {
   flex-direction: column;
   align-items: center;
   padding: 2rem 0;
-  
+
   ._item {
     background: $light;
     border-radius: 10px;
     width: fit-content;
-    max-height: 700px;
+    max-height: 640px;
     color: $primary;
     display: grid;
     grid-template-columns: 1fr 1.5fr;
