@@ -1,8 +1,7 @@
 <template>
   <div class="after_item">
     <NetworkError v-if="$fetchState.error || error" :message="error" />
-    <div v-if="configurable">
-
+    <div v-if="configurable === 'default'">
       <p>**Prices exclude VAT and other taxes</p>
       <Price :loading="priceLoading" :price="data.price" />
       <form @submit.prevent="addItem">
@@ -39,7 +38,7 @@
         </div>
       </form>
     </div>
-    <div v-if="!configurable && !loading">
+    <div v-if="configurable != 'default' && !loading">
       <NoForm :id="item._id" :img="item.thumbnail" />
     </div>
   </div>
@@ -93,12 +92,12 @@ export default {
   },
   async fetch() {
     await axios.get('http://127.0.0.1:8000/api/config/getFormat/'+this.item._id).then((response) => {
-      console.log(response)
       // Decide whether to show form or not
       this.configurable = response.data[0].configuration
-      // console.log(format)
-      let format = JSON.parse(response.data[0].format)
+      // console.log(this.configurable)
 
+      let format = JSON.parse(response.data[0].format)
+      // console.log(format.size)
       // Checks if format exists
       if(format) {
         this.setData(format)
