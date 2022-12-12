@@ -56,7 +56,7 @@ export default {
 
   .items {
     background: $light;
-    border-right: 1px solid $primary;
+    // border-right: 1px solid $primary;
     width: 100%;
 
     h1 {
