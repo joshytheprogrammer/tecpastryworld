@@ -3,7 +3,7 @@
     <div class="s">
       <img loading="lazy" :src="item.thumbnail" :alt="'TEC product category - '+item.name">
       <div class="_details">
-        <NuxtLink :to="'/categories/'+item.id">{{item.name}}</NuxtLink>
+        <NuxtLink :to="'/categories/'+item.slug">{{item.name}}</NuxtLink>
       </div>
     </div>
   </div>
