@@ -54,9 +54,9 @@ export default {
       a {
         white-space: pre-line;
         overflow: hidden;
-        height: 54.2px;
+        // height: 54.2px;
+        height: 86px;
         text-overflow: ellipsis;
-
         padding: 0.2rem 0;
         text-transform: capitalize;
         display: inherit;
