@@ -48,7 +48,7 @@ export default {
   background: $light;
 
   .products {
-    margin: 1rem 0;
+    margin: 2rem 0;
     display: grid;
     justify-items: center;
     grid-template-columns: repeat(5, 1fr);
@@ -73,7 +73,7 @@ export default {
   }
 
   .categories {
-    margin: 1rem 0;
+    margin: 2rem 0;
     display: flex;
     overflow: auto;
 
