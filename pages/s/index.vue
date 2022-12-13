@@ -57,18 +57,15 @@ export default {
       'query': this.search.term
     }).then((res) => {
       this.error = ''
+      let results = res.data
 
-      if(res.data.data.products.length > 0 & res.data.data.categories.length > 0) {
-        this.search.total = res.data.data.products.length + res.data.data.categories.length
-        this.search.results = res.data.data
-      }else {
-        this.search.total = 0
-        this.search.results = []
-      }
+      // + results.categories.length
 
-      if(res.data.error) {
-        this.error = res.data.error
-      }
+      this.search.total = results.products.length
+      // this.search.total = 9
+      this.search.results = results
+    }).catch((e) => {
+      this.error = e.message
     })
   }
 }
