@@ -47,23 +47,27 @@ export default {
   margin-bottom: 2rem;
 
   .categories {
-    margin: 2rem;
+    padding: 2rem 12px;
+    display: flex;
+    // justif
+    overflow: auto;
+    // margin: 2rem;
 
-    display: grid;
-    gap: 1rem;
-    justify-items: center;
-    grid-template-columns: repeat(5, 1fr);
+    // display: grid;
+    // gap: 1rem;
+    // justify-items: center;
+    // grid-template-columns: repeat(5, 1fr);
 
-    @media screen and (max-width: $m-large) {
-      grid-template-columns: repeat(3,1fr);
-    }
+    // @media screen and (max-width: $m-large) {
+    //   grid-template-columns: repeat(3,1fr);
+    // }
 
-    @media screen and (max-width: $medium) {
-      width: 100%;
-      margin: 0;
-      padding: 0.9rem;
-      grid-template-columns: repeat(2,1fr);
-    }
+    // @media screen and (max-width: $medium) {
+    //   width: 100%;
+    //   margin: 0;
+    //   padding: 0.9rem;
+    //   grid-template-columns: repeat(2,1fr);
+    // }
   }
 }
 </style>
