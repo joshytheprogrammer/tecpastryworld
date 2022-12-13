@@ -55,7 +55,8 @@ export default {
         white-space: pre-line;
         overflow: hidden;
         // height: 54.2px;
-        height: 86px;
+        // height: 86px;
+        height: fit-content;
         text-overflow: ellipsis;
         padding: 0.2rem 0;
         text-transform: capitalize;
