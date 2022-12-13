@@ -20,10 +20,14 @@ export default {
   padding: 1rem 0;
 
   .s {
+    max-width: 220px;
+    margin-right: 1rem;
 
     img {
-      width: 100%;
-      height: 528px;
+      // width: 100%;
+      // height: 528px;
+      width: 220px;
+      height: 328px;
       object-fit: cover;
       border-radius: 10px;
       transition: 0.5s all ease-in-out;
@@ -55,26 +59,26 @@ export default {
     }
   }
 
-  @media screen and (max-width: $s-medium) {
-    .s {
-      img {
-        width: 100%;
-        height: 420px;
-      }
+  // @media screen and (max-width: $s-medium) {
+  //   .s {
+  //     img {
+  //       width: 100%;
+  //       height: 420px;
+  //     }
 
-      ._details {
-        padding: 0.5rem;
+  //     ._details {
+  //       padding: 0.5rem;
 
-        a {
-          font-size: 18px;
-          font-weight: 600;
-        }
+  //       a {
+  //         font-size: 18px;
+  //         font-weight: 600;
+  //       }
 
-        span {
-          font-size: 16px;
-        }
-      }
-    }
-  }
+  //       span {
+  //         font-size: 16px;
+  //       }
+  //     }
+  //   }
+  // }
 }
 </style>
