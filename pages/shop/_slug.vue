@@ -53,7 +53,7 @@ export default {
         {
           hid: 'og:url',
           property: 'og:url',
-          content: 'https://www.tecpastryworld/shop/'+this.product._slug
+          content: 'https://www.tecpastryworld.com/shop/'+this.product._slug
         },
         {
           hid: 'twitter:title',
