@@ -127,9 +127,11 @@ export default {
     min-width: 100%;
     max-width: 100%;
 
-    img {
-      max-height: 400px;
-      object-fit: contain;
+    ._item {
+      img {
+        max-height: 400px;
+        object-fit: contain;
+      }
     }
   }
 }
